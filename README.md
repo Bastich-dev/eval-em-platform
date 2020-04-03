@@ -7,7 +7,7 @@ Nous devions réaliser une application web qui permet de gérer au mieux la pré
 
 Cette application doit être utile pour les étudiants, les formateurs et l’école.
 
-Les questions auxquelles votre application doit répondre au minimum sont les suivantes :
+Les questions auxquelles notre application doit répondre au minimum sont les suivantes :
 
 1. En temps qu’étudiant, comment avertir le formateur de mon retard ou de mon absence.
 
