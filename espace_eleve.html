@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Dashboard</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
+    type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
+      id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon ">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Espace étudiant </div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-sign-in-alt"></i>
+          <span>Espace Conection</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading h3">
+        Interface
+      </div>
+
+
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          Planning
+        </a>
+        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          Statut actuel
+        </a>
+        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          Abscences
+        </a>
+        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          Annonces
+        </a>
+        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          Prévenir
+        </a>
+
+
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-none  d-sm,-flex d-lg-none  rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <div class="dropdown ml-1 d-sm-none ">
+            <button class="btn btn-link d-md-none rounded-circle mr-3 " type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-bars"></i>
+            </button>
+            <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+              <li class="nav-item">
+
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="mr-3 fas fa-fw fa-wrench"></i>
+                  Espace conection
+                </a>
+                <hr class="sidebar-divider">
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="mr-3 fas fa-fw fa-wrench"></i>
+                  Planning
+                </a>
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="mr-3 fas fa-fw fa-wrench"></i>
+                  Statut actuel
+                </a>
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="mr-3 fas fa-fw fa-wrench"></i>
+                  Abscences
+                </a>
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="mr-3 fas fa-fw fa-wrench"></i>
+                  Annonces
+                </a>
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="mr-3 fas fa-fw fa-wrench"></i>
+                  Prévenir
+                </a>
+
+
+              </li>
+
+            </div>
+          </div>
+
+
+
+
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item ">
+              <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);"> FI DEV-2
+                </span>
+
+              </a>
+
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);">Bastien
+                  Chantrel</span>
+
+              </a>
+
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Abscences cette semaine
+                      </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">5h30 </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-check-circle fa-2x text-300" style="color: #1cc88a;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Abscences ce mois ci</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">25 h 30 min</div>
+                    </div>
+                    <div class="col-auto">
+
+                      <i class="fas fa-exclamation-triangle fa-2x text-300" style="color: #f6c23e;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Abscences ce trimestre</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-exclamation-circle fa-2x text-300" style="color:#e74a3b"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Abcences à justifier</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">12</div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-exclamation-circle fa-2x text-300" style="color:#e74a3b"></i>
+                    </div>
+                  </div>
+
+                </div>
+                <a class="btn btn-primary m-2 text-uppercase" href="#">Justifier maintenant</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary text-uppercase">Planning de la semaine</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area" style="background-color: white;">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary text-uppercase">Statut actuel </h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class=" pt-1 pb-1 text-center">
+                    <p class="h1 m-4 font-weight-bold ">Présent</p>
+                    <i class="fas fa-check-circle text-300 fa-4x" style="color: #1cc88a; "></i>
+                  </div>
+                  <p class="h4  mt-3 font-weight-bold text-center">Vous êtes actuellement en cours</p>
+                  <div class="btn btn-primary col-12 p-3 mt-4   text-center small text-uppercase">
+                    Prévenir Formateur
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-7 mb-4">
+
+              <!-- Project Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-uppercase">Relevé d'abscences</h6>
+                </div>
+                <div class="card-body" style="max-height: 500px; overflow: scroll; overflow-x: hidden;">
+                  <div class="card mb-2  pl-5 border-left-success">
+                    <div class="card-body">
+                      <i class="fas fa-check-circle text-300 fa-1x" style="color: #1cc88a; "></i>
+                      <b class="m-2 text-uppercase"> justifiée</b>
+                      <span class="float-right">Stencyl</span>
+                      <br>
+                      <a href="#" class="m-2 text-uppercase"> Justificatif</a>
+                      <span class="float-right">11/04/2020 - 14h30 à 17h</span>
+                    </div>
+                  </div>
+                  <div class="card mb-2  pl-5 border-left-danger">
+                    <div class="card-body">
+                      <i class="fas fa-exclamation-circle text-300 fa-1x" style="color: #e74a3b; "></i>
+                      <b class="m-2 text-uppercase"> à justifier</b>
+                      <span class="float-right">DataVizualisation </span>
+                      <br>
+                      <a href="#" class="btn btn-primary mt-2 btn-icon-split">
+                        <span class="icon text-white-50">
+                          <i class="fas fa-arrow-right"></i>
+                        </span>
+                        <span class="text">Justifier</span>
+                      </a>
+                      <span class=" mt-2 float-right">11/04/2020 - 14h30 à 17h</span>
+
+                    </div>
+                  </div>
+
+
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-5 mb-4">
+
+              <!-- Project Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-uppercase">Messages Importants</h6>
+                </div>
+                <div style="max-height: 500px; overflow: scroll; overflow-x: hidden;">
+                  <div class="card m-4  border-bottom-secondary">
+                    <div class="card-body">
+                      <b>COVID-19</b> <br>
+                      Grâce à notre plateforme e-Learning développée depuis 4 ans, à une équipe pédagogique qui assiste
+                      chaque étudiant, grâce à nos enseignants experts en classes virtuelles, nous assurons à distance
+                      un
+                      enseignement de qualité.
+
+                    </div>
+                  </div>
+                  <div class="card m-4  border-bottom-secondary">
+                    <div class="card-body">
+                      <b>Job Dating</b> <br>
+                      Participez à notre prochain Job Dating, le mercredi 13 mai 2020 de 9h30 à 13h30.
+
+                      Sous forme de speed-dating, des professionnels et nos étudiants se rencontrent avec l'ambition de
+                      trouver un futur collaborateur pour les uns et une expérience enrichissante pour les autres.
+                    </div>
+                  </div>
+                  <div class="card m-4  border-bottom-secondary">
+                    <div class="card-body">
+                      <b>Titre</b> <br>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quam illo distinctio omnis
+                      esse
+                      reprehenderit perferendis? Aliquid voluptatibus quod cumque. Laboriosam nostrum aspernatur placeat
+                      autem ipsa repudiandae provident totam consectetur!
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <div class="col-lg-6 mb-4">
+
+              <!-- Illustrations -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-uppercase">Prévenir un formateur</h6>
+                </div>
+                <!-- Contact Section Form -->
+                <div class="row mt-4 mb-3">
+                  <div class="col-lg-10 mx-auto">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                      <div class='row justify-content-center h5'>
+                        <b>Prévenir</b>
+                        <div class="dropdown ml-3 ">
+                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Formateur
+                          </button>
+                          <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Thierry Tranchina</a>
+                            <a class="dropdown-item" href="#">Maxime Dubois </a>
+                            <a class="dropdown-item" href="#">J.M Cléry</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='row align-items-center h5 justify-content-center'>
+                        <b>Pour l'horaire </b>
+                        <div class="dropdown ml-3 m-2">
+                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Horaire
+                          </button>
+                          <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <a href="#" class="btn btn-primary btn-icon-split m-3">
+                        <span class="icon text-white-50">
+                          <i class="fas fa-folder-open"></i>
+                        </span>
+                        <span class="text">Ajouter photo, documents, etc ..</span>
+                      </a>
+
+
+                      <div class="control-group ml-3 mr-3  mt-4">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+
+                          <textarea class="form-control " id="message" rows="5" placeholder="Message"
+                            required="required"
+                            data-validation-required-message="Veuillez renseigner un message"></textarea>
+                          <p class="help-block text-danger"></p>
+                        </div>
+                      </div>
+
+
+                      <div id="success"></div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-xl m-3" id="sendMessageButton">Envoyer</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+
+
+              </div>
+            </div>
+            <!-- Content Column -->
+            <div class="col-lg-6 mb-4">
+
+              <!-- Project Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-uppercase">Actualités de l'école /ou/ Contacter
+                    coordina.teur(trice)</h6>
+                </div>
+
+              </div>
+            </div>
+
+
+
+          </div>
+          <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Bascent 2020</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+
+      </div>
+      <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

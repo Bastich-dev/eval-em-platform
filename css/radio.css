@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Dax:400,900");
+
+html {
+  background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+.middle {
+  width: 100%;
+  text-align: center;
+  /* Made by */
+}
+.middle h1 {
+  font-family: "Dax", sans-serif;
+  color: #fff;
+}
+.middle input[type="radio"] {
+  display: none;
+}
+.middle input[type="radio"]:checked + .box {
+  background-color: #0275d8;
+}
+.middle input[type="radio"]:checked + .box span {
+  color: white;
+  transform: translateY(70px);
+}
+.middle input[type="radio"]:checked + .box span:before {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.middle .box {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  transition: all 250ms ease;
+  will-change: transition;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  font-family: "Dax", sans-serif;
+  font-weight: 900;
+  border: 0.3px solid #0275d8;
+}
+.middle .box:active {
+  transform: translateY(10px);
+}
+.middle .box span {
+  position: absolute;
+  transform: translate(0, 60px);
+  left: 0;
+  right: 0;
+  top:-40px;
+  transition: all 300ms ease;
+  font-size: 1em;
+  user-select: none;
+  color: #0275d8;
+}
+.middle .box span:before {
+  font-size: 2.2em;
+  font-family: FontAwesome;
+  display: block;
+  transform: translateY(-80px);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  font-weight: normal;
+  color: white;
+}
+.middle .eleve span:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+}
+
+.middle .formateur span:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f501";
+}
+
+.middle .admin span:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f4fe";
+}
+.middle p {
+  color: #fff;
+  font-family: "Dax", sans-serif;
+  font-weight: 400;
+}
+.middle p a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #fff;
+}
+.middle p span:after {
+  content: "\f0e7";
+  font-family: FontAwesome;
+  color: yellow;
+}
