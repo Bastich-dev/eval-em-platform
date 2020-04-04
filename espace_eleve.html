@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>CR - Espace étudiant</title>
 
   <!-- Custom fonts for this template-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
@@ -28,17 +28,17 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <!-- Sidebar -->
+    <!-- Sidebar lg -->
     <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
       id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <div class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon ">
           <i class="fas fa-user-graduate"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Espace étudiant </div>
-      </a>
+      </div>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
@@ -97,12 +97,7 @@
       </div>
 
     </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Sidebar -->
-
-    <!-- End of Sidebar -->
-
+    <!-- End of Sidebar lg -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -113,7 +108,7 @@
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- Sidebar Toggle (Topbar) -->
+          <!-- Sidebar Toggle (md sm & xs) -->
           <button id="sidebarToggleTop" class="btn btn-link d-none  d-sm,-flex d-lg-none  rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
@@ -125,7 +120,6 @@
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
               <li class="nav-item">
-
                 <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Espace conection
@@ -151,16 +145,9 @@
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Prévenir
                 </a>
-
-
               </li>
-
             </div>
           </div>
-
-
-
-
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -185,7 +172,6 @@
                   Chantrel</span>
 
               </a>
-
             </li>
 
           </ul>
@@ -196,12 +182,10 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-
-
           <!-- Content Row -->
           <div class="row">
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Card abscences hebdomadaire -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
@@ -219,7 +203,7 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Card abscences mensuel -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
@@ -229,7 +213,6 @@
                       <div class="h5 mb-0 font-weight-bold text-gray-800">25 h 30 min</div>
                     </div>
                     <div class="col-auto">
-
                       <i class="fas fa-exclamation-triangle fa-2x text-300" style="color: #f6c23e;"></i>
                     </div>
                   </div>
@@ -239,7 +222,7 @@
 
 
 
-            <!-- Pending Requests Card Example -->
+            <!-- Card abscences trimestre -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
@@ -256,7 +239,7 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Card abscences à justifier -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
@@ -266,16 +249,13 @@
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                           <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">12</div>
-
                         </div>
-
                       </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-exclamation-circle fa-2x text-300" style="color:#e74a3b"></i>
                     </div>
                   </div>
-
                 </div>
                 <a class="btn btn-primary m-2 text-uppercase" href="#">Justifier maintenant</a>
               </div>
@@ -287,7 +267,7 @@
 
           <div class="row">
 
-            <!-- Area Chart -->
+            <!-- Chart Planning -->
             <div class="col-xl-8 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -297,13 +277,12 @@
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-area" style="background-color: white;">
-
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Pie Chart -->
+            <!-- Chart Statut -->
             <div class="col-xl-4 col-lg-5">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -331,7 +310,7 @@
             <!-- Content Column -->
             <div class="col-lg-7 mb-4">
 
-              <!-- Project Card Example -->
+              <!-- Chart Abscences -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Relevé d'abscences</h6>
@@ -360,19 +339,14 @@
                         <span class="text">Justifier</span>
                       </a>
                       <span class=" mt-2 float-right">11/04/2020 - 14h30 à 17h</span>
-
                     </div>
                   </div>
-
-
-
                 </div>
               </div>
-
             </div>
             <div class="col-lg-5 mb-4">
 
-              <!-- Project Card Example -->
+              <!-- Chart Messages -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Messages Importants</h6>
@@ -385,14 +359,12 @@
                       chaque étudiant, grâce à nos enseignants experts en classes virtuelles, nous assurons à distance
                       un
                       enseignement de qualité.
-
                     </div>
                   </div>
                   <div class="card m-4  border-bottom-secondary">
                     <div class="card-body">
                       <b>Job Dating</b> <br>
                       Participez à notre prochain Job Dating, le mercredi 13 mai 2020 de 9h30 à 13h30.
-
                       Sous forme de speed-dating, des professionnels et nos étudiants se rencontrent avec l'ambition de
                       trouver un futur collaborateur pour les uns et une expérience enrichissante pour les autres.
                     </div>
@@ -407,13 +379,8 @@
                     </div>
                   </div>
                 </div>
-
               </div>
-
-
             </div>
-
-
 
           </div>
 
@@ -422,7 +389,7 @@
 
             <div class="col-lg-6 mb-4">
 
-              <!-- Illustrations -->
+              <!-- Chart Prévenir -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Prévenir un formateur</h6>
@@ -460,26 +427,20 @@
                           </div>
                         </div>
                       </div>
-
                       <a href="#" class="btn btn-primary btn-icon-split m-3">
                         <span class="icon text-white-50">
                           <i class="fas fa-folder-open"></i>
                         </span>
                         <span class="text">Ajouter photo, documents, etc ..</span>
                       </a>
-
-
                       <div class="control-group ml-3 mr-3  mt-4">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-
                           <textarea class="form-control " id="message" rows="5" placeholder="Message"
                             required="required"
                             data-validation-required-message="Veuillez renseigner un message"></textarea>
                           <p class="help-block text-danger"></p>
                         </div>
                       </div>
-
-
                       <div id="success"></div>
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-xl m-3" id="sendMessageButton">Envoyer</button>
@@ -487,25 +448,20 @@
                     </form>
                   </div>
                 </div>
-
-
-
               </div>
             </div>
+
             <!-- Content Column -->
             <div class="col-lg-6 mb-4">
 
-              <!-- Project Card Example -->
+              <!-- Chart Actualités -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Actualités de l'école /ou/ Contacter
                     coordina.teur(trice)</h6>
                 </div>
-
               </div>
             </div>
-
-
 
           </div>
           <!-- /.container-fluid -->
@@ -534,25 +490,6 @@
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
 
