@@ -21,9 +21,8 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 - Template de base 
 
-- SB Admin 2
-Visualisation (https://translate.googleusercontent.com/translate_c?depth=1&hl=fr&prev=search&rurl=translate.google.com&sl=en&sp=nmt4&u=https://blackrockdigital.github.io/startbootstrap-sb-admin-2/&usg=ALkJrhhtZ29nWhtrhdRSyuCC57c-tnXcdQ)
-[Github] (https://translate.googleusercontent.com/translate_c?depth=1&hl=fr&prev=search&rurl=translate.google.com&sl=en&sp=nmt4&u=https://github.com/BlackrockDigital/startbootstrap-sb-admin-2&usg=ALkJrhhvjZDFaurVruGJFCkAFltkSTLaHQ)
+> [SB Admin 2](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
+
 
 - Jquery
 > [Smooth Scroll](https://www.design-fluide.com/17-11-2013/un-defilement-anime-smooth-scroll-en-jquery-sans-plugin/)
