@@ -16,10 +16,24 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 3. Pour l’école, comment avoir accès à une synthèse permettant de connaître les étudiants présents, absents ou en retard par classe, par élève.
 
 
+
+## Technologies utilisées
+
+- Template de base 
+
+- SB Admin 2
+Visualisation (https://translate.googleusercontent.com/translate_c?depth=1&hl=fr&prev=search&rurl=translate.google.com&sl=en&sp=nmt4&u=https://blackrockdigital.github.io/startbootstrap-sb-admin-2/&usg=ALkJrhhtZ29nWhtrhdRSyuCC57c-tnXcdQ)
+[Github] (https://translate.googleusercontent.com/translate_c?depth=1&hl=fr&prev=search&rurl=translate.google.com&sl=en&sp=nmt4&u=https://github.com/BlackrockDigital/startbootstrap-sb-admin-2&usg=ALkJrhhvjZDFaurVruGJFCkAFltkSTLaHQ)
+
+- Jquery
+> [Smooth Scroll](https://www.design-fluide.com/17-11-2013/un-defilement-anime-smooth-scroll-en-jquery-sans-plugin/)
+
 ## Gestion des données
 
 
 
+
+# Wireframe
 
 ## Espace Connection
 

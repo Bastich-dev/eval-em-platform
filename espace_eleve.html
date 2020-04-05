@@ -28,9 +28,19 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
+
+
+    <!-- Prevent Fixed position -->
+    <ul class="d-none d-md-flex d-sm-flex d-lg-flex sidebar sidebar-dark" style="visibility: hidden;">
+      <li class="nav-item">
+        <div class="nav-link">
+        </div>
+      </li>
+    </ul>
+
     <!-- Sidebar lg -->
     <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
-      id="accordionSidebar">
+      id="accordionSidebar" style="position: fixed;">
 
       <!-- Sidebar - Brand -->
       <div class="sidebar-brand d-flex align-items-center justify-content-center">
@@ -62,23 +72,28 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed js-scrollTo" href="#eleve-planning" aria-expanded="true"
+          aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           Planning
         </a>
-        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed js-scrollTo" href="#eleve-statut" aria-expanded="true"
+          aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           Statut actuel
         </a>
-        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed js-scrollTo" href="#eleve-absences" aria-expanded="true"
+          aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          Abscences
+          Absences
         </a>
-        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed js-scrollTo" href="#eleve-annonces" aria-expanded="true"
+          aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           Annonces
         </a>
-        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed js-scrollTo" href="#eleve-prevenir" aria-expanded="true"
+          aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           Prévenir
         </a>
@@ -99,11 +114,18 @@
     </ul>
     <!-- End of Sidebar lg -->
 
+    <!-- Fade for scroll to ancre -->
+    <div id='fadeForScroll'
+      style="display: none; position: absolute; width: 100%; height: 100%; background-color: black; z-index: 2; opacity: 0.3; ">
+    </div>
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
-      <div id="content">
+      <div id="content" style="overflow: hidden;">
+
+
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -120,28 +142,33 @@
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
               <li class="nav-item">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed " href="index.html" aria-expanded="true" aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Espace conection
                 </a>
-                <hr class="sidebar-divider">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                <hr class="sidebar-divider ">
+                <a class="nav-link collapsed js-scrollTo" href="#eleve-planning" aria-expanded="true"
+                  aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Planning
                 </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed js-scrollTo" href="#eleve-statut" aria-expanded="true"
+                  aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Statut actuel
                 </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed js-scrollTo" href="#eleve-absences" aria-expanded="true"
+                  aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Abscences
+                  Absences
                 </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed js-scrollTo" href="#eleve-annonces" aria-expanded="true"
+                  aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Annonces
                 </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed js-scrollTo" href="#eleve-prevenir" aria-expanded="true"
+                  aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Prévenir
                 </a>
@@ -257,7 +284,8 @@
                     </div>
                   </div>
                 </div>
-                <a class="btn btn-primary m-2 text-uppercase" href="#">Justifier maintenant</a>
+                <a class="btn btn-primary m-2 text-uppercase js-scrollTo" href="#eleve-absences">Justifier
+                  maintenant</a>
               </div>
             </div>
 
@@ -268,7 +296,7 @@
           <div class="row">
 
             <!-- Chart Planning -->
-            <div class="col-xl-8 col-lg-7">
+            <div class="col-xl-8 col-lg-7 " id="eleve-planning">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -283,7 +311,7 @@
             </div>
 
             <!-- Chart Statut -->
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-4 col-lg-5" id="eleve-statut">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -296,9 +324,10 @@
                     <i class="fas fa-check-circle text-300 fa-4x" style="color: #1cc88a; "></i>
                   </div>
                   <p class="h4  mt-3 font-weight-bold text-center">Vous êtes actuellement en cours</p>
-                  <div class="btn btn-primary col-12 p-3 mt-4   text-center small text-uppercase">
+                  <a class="btn btn-primary col-12 p-3 mt-4   text-center small text-uppercase text-white js-scrollTo"
+                    href="#eleve-prevenir">
                     Prévenir Formateur
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -308,7 +337,7 @@
           <div class="row">
 
             <!-- Content Column -->
-            <div class="col-lg-7 mb-4">
+            <div class="col-lg-7 mb-4" id="eleve-absences">
 
               <!-- Chart Abscences -->
               <div class="card shadow mb-4">
@@ -347,7 +376,7 @@
             <div class="col-lg-5 mb-4">
 
               <!-- Chart Messages -->
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="eleve-annonces">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Messages Importants</h6>
                 </div>
@@ -387,7 +416,7 @@
           <!-- Content Row -->
           <div class="row">
 
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-6 mb-4" id="eleve-prevenir">
 
               <!-- Chart Prévenir -->
               <div class="card shadow mb-4">
@@ -486,7 +515,7 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="scroll-to-top rounded" href="#page-top" style="z-index: 4;">
       <i class="fas fa-angle-up"></i>
     </a>
 
@@ -509,7 +538,7 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    <script src='js/smooth-scroll.js'></script>
 </body>
 
 </html>
