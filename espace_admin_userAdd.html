@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CR - Espace administrateur</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
+        type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar lg -->
+        <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
+            id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <div class="sidebar-brand d-flex align-items-center justify-content-center">
+                <div class="sidebar-brand-icon ">
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Espace admin </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-sign-in-alt"></i>
+                    <span>Espace Conection</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading h3">
+                Interface
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Justifications
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Cours
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Abscences
+                </a>
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Eleves
+                </a>
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Formateurs
+                </a>
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Classes
+                </a>
+                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Admins
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Ajouter</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Ajouter</h6>
+                        <a class="collapse-item" href="utilities-other.html">Cours</a>
+                        <a class="collapse-item" href="utilities-color.html">Elève</a>
+                        <a class="collapse-item" href="utilities-border.html">Formateur</a>
+                        <a class="collapse-item" href="utilities-animation.html">Classe</a>
+                        <a class="collapse-item" href="utilities-other.html">Admin</a>
+
+                    </div>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar lg -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (md sm & xs) -->
+                    <button id="sidebarToggleTop"
+                        class="btn btn-link d-none  d-sm,-flex d-lg-none  rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="dropdown ml-1 d-sm-none ">
+                        <button class="btn btn-link d-md-none rounded-circle mr-3 " type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="#" aria-expanded="true"
+                                    aria-controls="collapseUtilities">
+                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
+                                    Espace conection
+                                </a>
+                                <hr class="sidebar-divider">
+                                <a class="nav-link collapsed" href="#" aria-expanded="true"
+                                    aria-controls="collapseUtilities">
+                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
+                                    Planning
+                                </a>
+                                <a class="nav-link collapsed" href="#" aria-expanded="true"
+                                    aria-controls="collapseUtilities">
+                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
+                                    Statut actuel
+                                </a>
+                                <a class="nav-link collapsed" href="#" aria-expanded="true"
+                                    aria-controls="collapseUtilities">
+                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
+                                    Abscences
+                                </a>
+                                <a class="nav-link collapsed" href="#" aria-expanded="true"
+                                    aria-controls="collapseUtilities">
+                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
+                                    Annonces
+                                </a>
+                                <a class="nav-link collapsed" href="#" aria-expanded="true"
+                                    aria-controls="collapseUtilities">
+                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
+                                    Prévenir
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item ">
+                            <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
+                                    Administrateur
+                                </span>
+
+                            </a>
+
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2"
+                                    style="font-size: calc(1.5vw + 1.5vh);">Bastien
+                                    Chantrel</span>
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <div class="container ">
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter utilisateur
+                                        </h3>
+
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <div class="row ">
+
+                                            <div class="col-6">
+                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                                                    <b>Nom</b>
+                                                    <input type="password" class="mt-2 form-control form-control-user"
+                                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                                </div>
+                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                                                    <b>Prenom</b>
+                                                    <input type="password" class="mt-2 form-control form-control-user"
+                                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                                </div>
+                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                                                    <b>Classe</b>
+                                                    <input type="password" class="mt-2 form-control form-control-user"
+                                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                                </div>
+                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                                                    <b>Groupe</b>
+                                                    <input type="password" class="mt-2 form-control form-control-user"
+                                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-5 col-sm-12">
+                                                <div class="d-flex">
+                                                    <div class="mt-4 ml-5 " style="height: 250px; width: 250px;   background: url('../assets/anonymous-user.png');
+                                                        background-position: center;
+                                                        background-size: cover">
+                                                    </div>
+
+                                                    <div class="ml-2 mt-5 ">
+                                                        <a href="#" class="btn btn-primary btn-icon-split m-2">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-folder-open"></i>
+                                                            </span>
+                                                            <span class="text">Ajouter une image</span>
+                                                        </a>
+                                                        <br>
+                                                        <button href="#" class=" btn-dark btn-icon-split m-2" disabled>
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-level-down-alt"></i>
+                                                            </span>
+                                                            <span class="text">C://</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+
+                                            <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
+                                                <b class="ml-2">E-mail</b>
+                                                <input type="password" class="mt-2 ml-2 form-control form-control-user"
+                                                    id="exampleInputPassword" placeholder="Mot de passe">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row ">
+
+                                            <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
+                                                <b class="ml-2">Poste</b>
+                                                <input type="password" class="mt-2 ml-2 form-control form-control-user"
+                                                    id="exampleInputPassword" placeholder="Mot de passe">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <a class="btn btn-primary m-5 " href="">
+                                                <h3 class="m-2">Ajouter utilisateur</h3>
+                                            </a>
+                                            <a class="btn btn-danger m-5  " href="">
+                                                <h3 class="m-2">Vider champs</h3>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Bascent 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <!-- Bootstrap core JavaScript-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <!-- Page level plugins -->
+    <script src="css/jquery.dataTables.js"></script>
+    <script src="css/dataTables.bootstrap4.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/datatables-demo.js"></script>
+</body>
+
+</html>
