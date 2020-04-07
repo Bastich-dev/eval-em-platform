@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CR - Espace étudiant</title>
+  <title>CR - Espace Formateur cours</title>
 
   <!-- Custom fonts for this template-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
@@ -31,9 +31,19 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
+
+    <!-- Prevent Fixed position -->
+    <ul class="d-none d-md-flex d-sm-flex d-lg-flex sidebar sidebar-dark" style="visibility: hidden;">
+      <li class="nav-item">
+        <div class="nav-link">
+        </div>
+      </li>
+    </ul>
+
+
     <!-- Sidebar lg -->
     <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
-      id="accordionSidebar">
+      id="accordionSidebar" style="position: fixed;">
 
       <!-- Sidebar - Brand -->
       <div class="sidebar-brand d-flex align-items-center justify-content-center">
@@ -65,17 +75,17 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="espace_formateur.html" aria-expanded="true"
+        <a class="nav-link collapsed js-scrollTo" href="espace_formateur.html#formateur-cours" aria-expanded="true"
           aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           Cours du jour
         </a>
-        <a class="nav-link collapsed" href="espace_formateur.html" aria-expanded="true"
+        <a class="nav-link collapsed" href="espace_formateur.html#formateur-planning" aria-expanded="true"
           aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           Planning semaine
         </a>
-        <a class="nav-link collapsed" href="espace_formateur.html" aria-expanded="true"
+        <a class="nav-link collapsed" href="espace_formateur.html#formateur-allCours" aria-expanded="true"
           aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           Tout mes cours
@@ -119,23 +129,22 @@
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
               <li class="nav-item">
-                <a class="nav-link collapsed" href="espace_formateur.html" aria-expanded="true"
-                  aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="index.html" aria-expanded="true" aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Espace conection
                 </a>
                 <hr class="sidebar-divider">
-                <a class="nav-link collapsed" href="espace_formateur.html" aria-expanded="true"
+                <a class="nav-link collapsed" href="espace_formateur.html#formateur-cours" aria-expanded="true"
                   aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Cours du jour
                 </a>
-                <a class="nav-link collapsed" href="espace_formateur.html" aria-expanded="true"
+                <a class="nav-link collapsed" href="espace_formateur.html#formateur-planning" aria-expanded="true"
                   aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Planning semaine
                 </a>
-                <a class="nav-link collapsed" href="espace_formateur.html" aria-expanded="true"
+                <a class="nav-link collapsed" href="espace_formateur.html#formateur-allCours" aria-expanded="true"
                   aria-controls="collapseUtilities">
                   <i class="mr-3 fas fa-fw fa-wrench"></i>
                   Tout mes cours
@@ -238,7 +247,7 @@
                     </div>
                   </div>
                 </div>
-                <a class="btn btn-primary ml-4 mr-4 text-uppercase" href="#">Fin du cours </a>
+                <a class="btn btn-primary ml-4 mr-4 text-uppercase" href="#">Pause </a>
               </div>
             </div>
 

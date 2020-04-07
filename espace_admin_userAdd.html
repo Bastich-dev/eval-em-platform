@@ -29,10 +29,16 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+        <!-- Prevent Fixed position -->
+        <ul class="d-none d-md-flex d-sm-flex d-lg-flex sidebar sidebar-dark" style="visibility: hidden;">
+            <li class="nav-item">
+                <div class="nav-link">
+                </div>
+            </li>
+        </ul>
         <!-- Sidebar lg -->
         <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
-            id="accordionSidebar">
+            id="accordionSidebar" style="position: fixed;">
 
             <!-- Sidebar - Brand -->
             <div class="sidebar-brand d-flex align-items-center justify-content-center">
@@ -55,66 +61,22 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading h3">
-                Interface
-            </div>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Justifications
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Cours
-                </a>
-            </li>
-            <hr class="sidebar-divider">
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Abscences
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Eleves
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Formateurs
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Classes
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Admins
-                </a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Ajouter</span>
+                    <span style="font-size:20px;">Ajouter</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Ajouter</h6>
-                        <a class="collapse-item" href="utilities-other.html">Cours</a>
-                        <a class="collapse-item" href="utilities-color.html">Elève</a>
-                        <a class="collapse-item" href="utilities-border.html">Formateur</a>
-                        <a class="collapse-item" href="utilities-animation.html">Classe</a>
-                        <a class="collapse-item" href="utilities-other.html">Admin</a>
+                        <a class="collapse-item" href="404.html">Cours</a>
+                        <a class="collapse-item sidebar_ajout_user" href="espace_admin_userAdd.html">Elève</a>
+                        <a class="collapse-item sidebar_ajout_user" href="espace_admin_userAdd.html">Formateur</a>
+                        <a class="collapse-item" href="404.html">Classe</a>
+                        <a class="collapse-item sidebar_ajout_user" href="espace_admin_userAdd.html">Admin</a>
 
                     </div>
                 </div>
@@ -122,13 +84,83 @@
 
             <hr class="sidebar-divider">
 
+
+            <!-- Heading -->
+            <div class="sidebar-heading h3">
+                Interface
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="404.html" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Justifications
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="404.html" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Cours
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <!-- Heading -->
+            <div class="sidebar-heading h3">
+                Listes
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed js-scrollTo" href="espace_admin.html#admin-reste" aria-expanded="true"
+                    aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Reste à justifier
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed js-scrollTo" href="espace_admin.html#admin-eleve" aria-expanded="true"
+                    aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Elève
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed js-scrollTo" href="espace_admin.html#admin-formateur" aria-expanded="true"
+                    aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Formateur
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed js-scrollTo" href="espace_admin.html#admin-classes" aria-expanded="true"
+                    aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Classe
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed js-scrollTo" href="espace_admin.html#admin-admin" aria-expanded="true"
+                    aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    Admin
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
         </ul>
-        <!-- End of Sidebar lg -->
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -227,105 +259,128 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter utilisateur
-                                        </h3>
+                                <form id='formulaire' action="">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div
+                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter
+                                                utilisateur
+                                            </h3>
 
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="row ">
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
 
-                                            <div class="col-6">
-                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
-                                                    <b>Nom</b>
-                                                    <input type="password" class="mt-2 form-control form-control-user"
-                                                        id="exampleInputPassword" placeholder="Mot de passe">
-                                                </div>
-                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
-                                                    <b>Prenom</b>
-                                                    <input type="password" class="mt-2 form-control form-control-user"
-                                                        id="exampleInputPassword" placeholder="Mot de passe">
-                                                </div>
-                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
-                                                    <b>Classe</b>
-                                                    <input type="password" class="mt-2 form-control form-control-user"
-                                                        id="exampleInputPassword" placeholder="Mot de passe">
-                                                </div>
-                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
-                                                    <b>Groupe</b>
-                                                    <input type="password" class="mt-2 form-control form-control-user"
-                                                        id="exampleInputPassword" placeholder="Mot de passe">
-                                                </div>
-                                            </div>
+                                            <div class="row ">
 
-                                            <div class="col-lg-5 col-sm-12">
-                                                <div class="d-flex">
-                                                    <div class="mt-4 ml-5 " style="height: 250px; width: 250px;   background: url('../assets/anonymous-user.png');
-                                                        background-position: center;
-                                                        background-size: cover">
+                                                <div class="col-6">
+                                                    <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                                                        <b>Nom</b>
+                                                        <input type="text" class="mt-2 form-control form-control-user"
+                                                            id="input-nom" name='nom'>
                                                     </div>
+                                                    <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                                                        <b>Prenom</b>
+                                                        <input type="text" class="mt-2 form-control form-control-user"
+                                                            id="input-prenom" name='prenom'>
+                                                    </div>
+                                                    <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                                                        <b>Classe</b>
 
-                                                    <div class="ml-2 mt-5 ">
-                                                        <a href="#" class="btn btn-primary btn-icon-split m-2">
-                                                            <span class="icon text-white-50">
-                                                                <i class="fas fa-folder-open"></i>
-                                                            </span>
-                                                            <span class="text">Ajouter une image</span>
-                                                        </a>
-                                                        <br>
-                                                        <button href="#" class=" btn-dark btn-icon-split m-2" disabled>
-                                                            <span class="icon text-white-50">
-                                                                <i class="fas fa-level-down-alt"></i>
-                                                            </span>
-                                                            <span class="text">C://</span>
-                                                        </button>
+                                                        <select name="classe" id="input-classe"
+                                                            class="mt-2 form-control form-control-user" disabled>
+                                                            <option value=""></option>
+                                                            <option value="eleve">DEV-2</option>
+                                                            <option value="formateur">COM-2</option>
+                                                            <option value="administrateur">Prépa A</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                                                        <b>Groupe</b>
+                                                        <input type="text" class="mt-2 form-control form-control-user"
+                                                            id="input-groupe" disabled name='groupe'>
                                                     </div>
                                                 </div>
 
+                                                <div class="col-lg-5 col-sm-12">
+                                                    <div class="d-flex">
+                                                        <div class="mt-4 ml-5 " style="height: 250px; width: 250px;   background: url('assets/anonymous-user.png');
+                                                            background-position: center;
+                                                            background-size: cover">
+                                                        </div>
+
+                                                        <div class="ml-2 mt-5 ">
+                                                            <a href="#" class="btn btn-primary btn-icon-split m-2">
+                                                                <span class="icon text-white-50">
+                                                                    <i class="fas fa-folder-open"></i>
+                                                                </span>
+                                                                <span class="text">Ajouter une image</span>
+                                                            </a>
+                                                            <br>
+                                                            <button href="#" class=" btn-dark btn-icon-split m-2"
+                                                                disabled>
+                                                                <span class="icon text-white-50">
+                                                                    <i class="fas fa-level-down-alt"></i>
+                                                                </span>
+                                                                <span class="text">C://</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="row ">
+
+                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
+                                                    <b class="ml-2">E-mail</b>
+                                                    <input type="text" class="mt-2 ml-2 form-control form-control-user"
+                                                        id="input-mail" name='mail'>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row ">
+
+                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
+                                                    <b class="ml-2">Poste</b>
+
+                                                    <select name="poste" id="input-poste"
+                                                        class="mt-2 ml-2 form-control form-control-user" required>
+                                                        <option value=""></option>
+                                                        <option value="eleve">Élève</option>
+                                                        <option value="formateur">Formateur</option>
+                                                        <option value="administrateur">Administrateur</option>
+                                                    </select>
+                                                </div>
+
 
 
                                             </div>
-                                        </div>
-                                        <div class="row ">
 
-                                            <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
-                                                <b class="ml-2">E-mail</b>
-                                                <input type="password" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Mot de passe">
+
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <input type="submit" class="btn btn-primary m-5"
+                                                    style="font-size: calc( 1.5vw + 1.5vh );" id='input-ajouter'
+                                                    value='Ajouter utilisateur'>
+
+
+                                                <input type="button" class="btn btn-danger m-5"
+                                                    style="font-size: calc( 1.5vw + 1.5vh );" id='input-ajouter'
+                                                    value='Vider champs'>
+                                                </a>
                                             </div>
-
                                         </div>
 
-                                        <div class="row ">
-
-                                            <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
-                                                <b class="ml-2">Poste</b>
-                                                <input type="password" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Mot de passe">
-                                            </div>
-
-
-                                        </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <a class="btn btn-primary m-5 " href="">
-                                                <h3 class="m-2">Ajouter utilisateur</h3>
-                                            </a>
-                                            <a class="btn btn-danger m-5  " href="">
-                                                <h3 class="m-2">Vider champs</h3>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -380,6 +435,12 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="js/demo/datatables-demo.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+    <script src="js/add_user.js"></script>
+    <script src="js/sidebar-admin.js"></script>
+
 </body>
 
 </html>

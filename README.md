@@ -19,7 +19,7 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 ## Technologies utilisées
 
-- Template de base 
+- ## Template de base 
 
 > [SB Admin 2](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
 
@@ -36,9 +36,46 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 ## Espace Connection
 
+Aucunes données affichées 
+
+Données envoyées :
+
+- Identifiant
+- Mot de passe
+- Poste 
+
+Accèes à un espace "Mot de passe oublié" qui permet de récuperer son mot de passe avec son identifiant et son adresse mail .
+Si l'utilisateur à oublié son identifiant, il devra aller voir l'administration directement pour obtenir ses informations personelles .
+
+
+
 ## Espace Etudiant
 
 
+L'élève aura accèes a toutes ses informations sur une seule page .
+Cete page est "Mobile Friendly" pour faciliter la visibilité auprès des élèves qui pourront consulter ses informations via leurs téléphones .
+
+Données affichées :
+
+// Eleve : 
+-  
+
+Données envoyées :
+
+// Prévenir formateur
+- Nom
+- Prenom
+- Classe
+- Formateur
+- Justificatif
+
+// Justifier absence
+- Nom
+- Prenom
+- Classe
+- Abscence
+- Message
+- Justificatif
 
 ## Espace Formateur
 

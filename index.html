@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CR - Login</title>
+  <title>CR - S'identifier</title>
 
   <!-- Custom fonts for this template-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
@@ -37,6 +37,8 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
+
+              <!-- LEFT  -->
               <div class="col-lg-6 d-none d-lg-flex  ">
                 <div class="container" style="height: 100%; width: 110%;">
                   <img src="assets/Logo_LEM.jfif" alt="" style="max-width: 100%; max-height: 40%;">
@@ -52,65 +54,51 @@
                     <h5>informations@ecole-multimedia.com</h5>
                   </div>
                 </div>
-
-
-
               </div>
+
+
+              <!-- RIGHT -->
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h2 text-gray-900 mb-4"><b>Bienvenue sur l'espace de l'École Multimédia</b></h1>
                   </div>
-                  <form class="user mt-5">
+
+                  <form class="user mt-5" id="formLogin">
 
                     <div class="row">
                       <div class="col-xs-12">
-
                         <div class="middle">
-
                           <label>
                             <input type="radio" name="radio" checked id='login_eleve' />
                             <div class="eleve box">
                               <span>Étudiant</span>
                             </div>
                           </label>
-
                           <label>
                             <input type="radio" name="radio" id='login_formateur' />
                             <div class="formateur box">
                               <span>Formateur</span>
                             </div>
                           </label>
-
                           <label>
                             <input type="radio" name="radio" id='login_admin' />
                             <div class="admin box">
                               <span>Admin</span>
                             </div>
                           </label>
-
                         </div>
                       </div>
                     </div>
-
-
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user mt-4" id="exampleInputEmail"
-                        aria-describedby="emailHelp" placeholder=" Identifiant">
+                        placeholder=" Identifiant">
                     </div>
                     <div class="form-group mb-5">
                       <input type="password" class="form-control form-control-user" id="exampleInputPassword"
                         placeholder="Mot de passe">
                     </div>
-                    <!-- <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
-                    </div> -->
-                    <b href="" id='login' class="btn btn-primary btn-user btn-block h3">
-                      Se connecter
-                    </b>
+                    <input type="submit" value='Se connecter' class="btn btn-primary btn-user btn-block h3">
                     <hr>
 
                   </form>
@@ -118,7 +106,6 @@
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Mot de passe oublié ?</a>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -143,7 +130,15 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-  <script src="js/login.js"></script>
+  <script>
+    $('#formLogin').on('submit', function (e) {
+      e.preventDefault()
+
+      if (($('#login_eleve')[0].checked) == true) { self.location.href = 'espace_eleve.html' }
+      else if (($('#login_formateur')[0].checked) == true) { self.location.href = 'espace_formateur.html' }
+      else if (($('#login_admin')[0].checked) == true) { self.location.href = 'espace_admin.html' }
+    })
+  </script>
 </body>
 
 </html>
