@@ -57,25 +57,27 @@ Cete page est "Mobile Friendly" pour faciliter la visibilité auprès des élèv
 
 Données affichées :
 
-// Eleve : 
--  
+- Eleve -> Nom
+- Eleve -> Prenom
+- Eleve -> Classe
+- Classe -> Statut
 
 Données envoyées :
 
 // Prévenir formateur
-- Nom
-- Prenom
-- Classe
-- Formateur
-- Justificatif
+- Eleve -> Nom
+- Eleve -> Prenom
+- Eleve -> Classe
+- Eleve -> Formateur
+- Eleve -> Justificatif
 
 // Justifier absence
-- Nom
-- Prenom
-- Classe
-- Abscence
-- Message
-- Justificatif
+- Eleve -> Nom
+- Eleve -> Prenom
+- Eleve -> Classe
+- Eleve -> Abscence
+- Eleve -> Message
+- Eleve -> Justificatif
 
 ## Espace Formateur
 
