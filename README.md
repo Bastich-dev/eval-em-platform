@@ -19,16 +19,16 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 # Connection Test
 
 - Élève : 
-Identifiant : robertTest
-Mot de passe : 123
+> Identifiant : robertTest
+> Mot de passe : 123
 
 - Formateur : 
-Identifiant : michelTest
-Mot de passe : 456
+> Identifiant : michelTest
+> Mot de passe : 456
 
 - Administrateur : 
-Identifiant : carlosTest
-Mot de passe : 789
+> Identifiant : carlosTest
+> Mot de passe : 789
 
 ## Technologies utilisées
 
