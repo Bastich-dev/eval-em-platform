@@ -65,7 +65,7 @@ Si l'utilisateur à oublié son identifiant, il devra aller voir l'administratio
 ## Espace Etudiant
 
 
-L'élève aura accèes a toutes ses informations sur une seule page .
+<!-- L'élève aura accèes a toutes ses informations sur une seule page .
 Cete page est "Mobile Friendly" pour faciliter la visibilité auprès des élèves qui pourront consulter ses informations via leurs téléphones .
 
 Données affichées :
@@ -90,7 +90,7 @@ Données envoyées :
 - Eleve -> Classe
 - Eleve -> Abscence
 - Eleve -> Message
-- Eleve -> Justificatif
+- Eleve -> Justificatif -->
 
 ## Espace Formateur
 
