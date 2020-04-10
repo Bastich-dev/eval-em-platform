@@ -91,13 +91,19 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user mt-4" id="exampleInputEmail"
+                      <input type="text" class="form-control form-control-user mt-4" id="Identifiant"
                         placeholder=" Identifiant">
                     </div>
-                    <div class="form-group mb-5">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword"
+                    <div class="form-group mb-3">
+                      <input type="password" class="form-control form-control-user" id="Password"
                         placeholder="Mot de passe">
                     </div>
+                    <div id='errId' class="text-center m-3 text-danger" style="visibility: hidden; font-size: 12px;">Les
+                      informations
+                      entrées
+                      sont
+                      incorectes, <a href="forgot-password.html">avez vous avez peut-être oublié votre mot de passe
+                        ?</a> </div>
                     <input type="submit" value='Se connecter' class="btn btn-primary btn-user btn-block h3">
                     <hr>
 
@@ -127,18 +133,14 @@
   <!-- Core plugin JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
+  <!-- Firebase Cloud Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-  <script>
-    $('#formLogin').on('submit', function (e) {
-      e.preventDefault()
-
-      if (($('#login_eleve')[0].checked) == true) { self.location.href = 'espace_eleve.html' }
-      else if (($('#login_formateur')[0].checked) == true) { self.location.href = 'espace_formateur.html' }
-      else if (($('#login_admin')[0].checked) == true) { self.location.href = 'espace_admin.html' }
-    })
-  </script>
+  <script src='js/login.js'></script>
 </body>
 
 </html>

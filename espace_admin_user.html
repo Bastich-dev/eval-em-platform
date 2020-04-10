@@ -30,17 +30,24 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
+        <!-- Prevent Fixed position -->
+        <ul class="d-none d-md-flex d-sm-flex d-lg-flex sidebar sidebar-dark" style="visibility: hidden;">
+            <li class="nav-item">
+                <div class="nav-link">
+                </div>
+            </li>
+        </ul>
         <!-- Sidebar lg -->
         <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
-            id="accordionSidebar">
+            id="accordionSidebar" style="position: fixed;">
 
             <!-- Sidebar - Brand -->
-            <div class="sidebar-brand d-flex align-items-center justify-content-center">
+            <a href="espace_admin.html" class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-user-cog"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Espace admin </div>
-            </div>
+            </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -52,8 +59,9 @@
                     <span>Espace Conection</span></a>
             </li>
 
-            <!-- Divider -->
+
             <hr class="sidebar-divider">
+
 
             <!-- Heading -->
             <div class="sidebar-heading h3">
@@ -61,65 +69,75 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="espace_admin_justifications.html">
                     <i class="fas fa-fw fa-wrench"></i>
-                    Justifications
+                    <span> Justifications </span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="espace_admin_cours.html">
                     <i class="fas fa-fw fa-wrench"></i>
-                    Cours
-                </a>
-            </li>
-            <hr class="sidebar-divider">
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Abscences
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Eleves
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Formateurs
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Classes
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    Admins
+                    <span>Cours</span>
                 </a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Ajouter</span>
+                    <span>Classes</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseClassses" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Ajouter</h6>
-                        <a class="collapse-item" href="utilities-other.html">Cours</a>
-                        <a class="collapse-item" href="utilities-color.html">Elève</a>
-                        <a class="collapse-item" href="utilities-border.html">Formateur</a>
-                        <a class="collapse-item" href="utilities-animation.html">Classe</a>
-                        <a class="collapse-item" href="utilities-other.html">Admin</a>
-
+                        <a class="collapse-item" href="espace_admin_classeAdd.html"> Ajouter</a>
+                        <a class=" collapse-item sidebar_ajout_user" href="espace_admin.html#admin-classes">
+                            Afficher</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Élèves</span>
+                </a>
+                <div id="collapseEleve" class="collapse">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'> Ajouter</a>
+                        <a class=" js-scrollTo collapse-item sidebar_ajout_user" href="espace_admin.html#admin-eleve">
+                            Afficher</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFormateur">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Formateur</span>
+                </a>
+                <div id="collapseFormateur" class="collapse">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'> Ajouter</a>
+                        <a class="js-scrollTo collapse-item sidebar_ajout_user"
+                            href="espace_admin.html#admin-formateur">
+                            Afficher</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministrateur">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Administrateur</span>
+                </a>
+                <div id="collapseAdministrateur" class="collapse">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'> Ajouter</a>
+                        <a class="js-scrollTo collapse-item sidebar_ajout_user" href="espace_admin.html#admin-admin">
+                            Afficher</a>
                     </div>
                 </div>
             </li>
 
+            <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -128,7 +146,12 @@
             </div>
 
         </ul>
-        <!-- End of Sidebar lg -->
+
+
+        <!-- Fade for scroll to ancre -->
+        <div id='fadeForScroll'
+            style="display: none; position: absolute; width: 100%; height: 100%; background-color: black; z-index: 2; opacity: 0.3; ">
+        </div>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -147,73 +170,122 @@
 
                     <div class="dropdown ml-1 d-sm-none ">
                         <button class="btn btn-link d-md-none rounded-circle mr-3 " type="button"
-                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            id="dropdownMenuButton" data-toggle="dropdown">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu animated--fade-in">
+                            <!-- Nav Item - Dashboard -->
+                            <hr class="sidebar-divider my-0">
+
+                            <!-- Nav Item - Dashboard -->
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">
+                                    <i class="fas fa-fw fa-sign-in-alt"></i>
+                                    <span>Espace Conection</span></a>
+                            </li>
+                            <hr class="sidebar-divider">
+                            <!-- Heading -->
+                            <div class="sidebar-heading h3">
+                                Interface
+                            </div>
                             <li class="nav-item">
-                                <a class="nav-link collapsed" href="#" aria-expanded="true"
-                                    aria-controls="collapseUtilities">
-                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
-                                    Espace conection
-                                </a>
-                                <hr class="sidebar-divider">
-                                <a class="nav-link collapsed" href="#" aria-expanded="true"
-                                    aria-controls="collapseUtilities">
-                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
-                                    Planning
-                                </a>
-                                <a class="nav-link collapsed" href="#" aria-expanded="true"
-                                    aria-controls="collapseUtilities">
-                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
-                                    Statut actuel
-                                </a>
-                                <a class="nav-link collapsed" href="#" aria-expanded="true"
-                                    aria-controls="collapseUtilities">
-                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
-                                    Abscences
-                                </a>
-                                <a class="nav-link collapsed" href="#" aria-expanded="true"
-                                    aria-controls="collapseUtilities">
-                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
-                                    Annonces
-                                </a>
-                                <a class="nav-link collapsed" href="#" aria-expanded="true"
-                                    aria-controls="collapseUtilities">
-                                    <i class="mr-3 fas fa-fw fa-wrench"></i>
-                                    Prévenir
+                                <a class="nav-link collapsed" href="espace_admin_justifications.html">
+                                    <i class="fas fa-fw fa-wrench"></i>
+                                    <span> Justifications </span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="espace_admin_cours.html">
+                                    <i class="fas fa-fw fa-wrench"></i>
+                                    <span>Cours</span>
+                                </a>
+                            </li>
+                            <!-- Divider -->
+                            <hr class="sidebar-divider">
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                    data-target="#collapseClassses">
+                                    <i class="fas fa-fw fa-wrench"></i>
+                                    <span>Classes</span>
+                                </a>
+                                <div id="collapseClassses" class="collapse">
+                                    <div class="bg-white py-2 collapse-inner rounded">
+                                        <a class="collapse-item" href="espace_admin_classeAdd.html"> Ajouter</a>
+                                        <a class="collapse-item sidebar_ajout_user"
+                                            href="espace_admin.html#admin-classes">
+                                            Afficher</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                    data-target="#collapseEleve">
+                                    <i class="fas fa-fw fa-wrench"></i>
+                                    <span>Élèves</span>
+                                </a>
+                                <div id="collapseEleve" class="collapse">
+                                    <div class="bg-white py-2 collapse-inner rounded">
+                                        <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
+                                        <a class="js-scrollTo collapse-item sidebar_ajout_user"
+                                            href="espace_admin.html#admin-eleve">
+                                            Afficher</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                    data-target="#collapseFormateur">
+                                    <i class="fas fa-fw fa-wrench"></i>
+                                    <span>Formateur</span>
+                                </a>
+                                <div id="collapseFormateur" class="collapse">
+                                    <div class="bg-white py-2 collapse-inner rounded">
+                                        <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
+                                        <a class="collapse-item sidebar_ajout_user"
+                                            href="espace_admin.html#admin-formateur">
+                                            Afficher</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                                    data-target="#collapseAdministrateur">
+                                    <i class="fas fa-fw fa-wrench"></i>
+                                    <span>Administrateur</span>
+                                </a>
+                                <div id="collapseAdministrateur" class="collapse">
+                                    <div class="bg-white py-2 collapse-inner rounded">
+                                        <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
+                                        <a class="collapse-item sidebar_ajout_user"
+                                            href="espace_admin.html#admin-admin">
+                                            Afficher</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Divider -->
+                            <hr class="sidebar-divider">
                         </div>
                     </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
                         <li class="nav-item ">
-                            <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown">
                                 <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
                                     Administrateur
                                 </span>
-
                             </a>
-
                         </li>
-
                         <div class="topbar-divider d-none d-sm-block"></div>
-
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown">
                                 <span class="mr-3 d-lg-nline  text-gray-600 lg-h2"
                                     style="font-size: calc(1.5vw + 1.5vh);">Bastien
                                     Chantrel</span>
-
                             </a>
                         </li>
-
                     </ul>
 
                 </nav>
@@ -242,23 +314,24 @@
                                             <div class="col-6">
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                     <b>Nom</b>
-                                                    <input type="password" class="mt-2 form-control form-control-user"
-                                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                                    <input type="text" id='user-nom'
+                                                        class="mt-2 form-control form-control-user">
                                                 </div>
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                     <b>Prenom</b>
-                                                    <input type="password" class="mt-2 form-control form-control-user"
-                                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                                    <input type="text" id='user-prenom'
+                                                        class="mt-2 form-control form-control-user"
+                                                        placeholder="Prenom">
                                                 </div>
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                     <b>Classe</b>
-                                                    <input type="password" class="mt-2 form-control form-control-user"
-                                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                                    <input type="text" id='user-classe'
+                                                        class="mt-2 form-control form-control-user" placeholder="">
                                                 </div>
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                     <b>Groupe</b>
-                                                    <input type="password" class="mt-2 form-control form-control-user"
-                                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                                    <input type="text" class="mt-2 form-control form-control-user"
+                                                        placeholder="">
                                                 </div>
                                             </div>
 
@@ -294,13 +367,13 @@
 
                                             <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                 <b class="ml-2">E-mail</b>
-                                                <input type="password" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Mot de passe">
+                                                <input type="text" id='user-mail'
+                                                    class="mt-2 ml-2 form-control form-control-user" placeholder="">
                                             </div>
                                             <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                 <b class="ml-2">Identifiant</b>
-                                                <input type="password" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Mot de passe">
+                                                <input type="text" id='user-identifiant'
+                                                    class="mt-2 ml-2 form-control form-control-user" placeholder="">
                                             </div>
                                         </div>
 
@@ -308,13 +381,14 @@
 
                                             <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                 <b class="ml-2">Poste</b>
-                                                <input type="password" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Mot de passe">
+                                                <input type="text" id='user-poste'
+                                                    class="mt-2 ml-2 form-control form-control-user" placeholder="">
                                             </div>
                                             <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                 <b class="ml-2">Mot de passe</b>
-                                                <input type="password" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Mot de passe">
+                                                <input type="text" id='user-password'
+                                                    class="mt-2 ml-2 form-control form-control-user"
+                                                    placeholder="Mot de passe">
                                             </div>
 
                                         </div>
@@ -375,6 +449,10 @@
     <!-- Core plugin JavaScript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
+    <!-- Firebase Cloud Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
@@ -388,6 +466,9 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="js/demo/datatables-demo.js"></script>
+    <script src='js/admin_show_user.js'></script>
+    <script src='js/admin_tools.js'></script>
+
 </body>
 
 </html>

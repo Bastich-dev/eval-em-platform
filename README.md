@@ -16,6 +16,19 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 3. Pour l’école, comment avoir accès à une synthèse permettant de connaître les étudiants présents, absents ou en retard par classe, par élève.
 
 
+# Connection Test
+
+- Élève : 
+Identifiant : robertTest
+Mot de passe : 123
+
+- Formateur : 
+Identifiant : michelTest
+Mot de passe : 456
+
+- Administrateur : 
+Identifiant : carlosTest
+Mot de passe : 789
 
 ## Technologies utilisées
 

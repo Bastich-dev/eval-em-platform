@@ -1,5 +1,8 @@
 
 $(document).ready(function () {
+
+
+    // SMOOTH SCROLL
     $('.js-scrollTo').on('click', function () { // Au clic sur un élément
 
         var page = $(this).attr('href'); // Page cible
@@ -13,8 +16,14 @@ $(document).ready(function () {
                 $(page).css('z-index', '1')
 
             }, 300)
-
         }); // Go
         return false;
     });
+
+
+
+    // AFFICHE NOM DE L'UTILISATEUR 
+
+    // localStorage.getItem()
+
 });

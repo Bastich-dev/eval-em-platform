@@ -43,12 +43,12 @@
       id="accordionSidebar" style="position: fixed;">
 
       <!-- Sidebar - Brand -->
-      <div class="sidebar-brand d-flex align-items-center justify-content-center">
+      <a href="espace_admin.html" class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon ">
           <i class="fas fa-user-cog"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Espace admin </div>
-      </div>
+      </a>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
@@ -60,28 +60,6 @@
           <span>Espace Conection</span></a>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-          aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span style="font-size:20px;">Ajouter</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Ajouter</h6>
-            <a class="collapse-item" href="404.html">Cours</a>
-            <a class="collapse-item sidebar_ajout_user" href="espace_admin_userAdd.html">Elève</a>
-            <a class="collapse-item sidebar_ajout_user" href="espace_admin_userAdd.html">Formateur</a>
-            <a class="collapse-item" href="404.html">Classe</a>
-            <a class="collapse-item sidebar_ajout_user" href="espace_admin_userAdd.html">Admin</a>
-
-          </div>
-        </div>
-      </li>
 
       <hr class="sidebar-divider">
 
@@ -92,69 +70,72 @@
       </div>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="404.html" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="espace_admin_justifications.html">
           <i class="fas fa-fw fa-wrench"></i>
-          Justifications
+          <span> Justifications </span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="404.html" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="espace_admin_cours.html">
           <i class="fas fa-fw fa-wrench"></i>
-          Cours
+          <span>Cours</span>
         </a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-
-      <!-- Heading -->
-      <div class="sidebar-heading h3">
-        Listes
-      </div>
-
       <li class="nav-item">
-        <a class="nav-link collapsed js-scrollTo" href="#admin-reste" aria-expanded="true"
-          aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
           <i class="fas fa-fw fa-wrench"></i>
-          Reste à justifier
+          <span>Classes</span>
         </a>
+        <div id="collapseClassses" class="collapse">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="espace_admin_classeAdd.html"> Ajouter</a>
+            <a class=" js-scrollTo collapse-item sidebar_ajout_user" href="#admin-classes"> Afficher</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed js-scrollTo" href="#admin-eleve" aria-expanded="true"
-          aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
           <i class="fas fa-fw fa-wrench"></i>
-          Elève
+          <span>Élèves</span>
         </a>
+        <div id="collapseEleve" class="collapse">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'> Ajouter</a>
+            <a class=" js-scrollTo collapse-item sidebar_ajout_user" href="#admin-eleve"> Afficher</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed js-scrollTo" href="#admin-formateur" aria-expanded="true"
-          aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFormateur">
           <i class="fas fa-fw fa-wrench"></i>
-          Formateur
+          <span>Formateur</span>
         </a>
+        <div id="collapseFormateur" class="collapse">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'> Ajouter</a>
+            <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-formateur">
+              Afficher</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed js-scrollTo" href="#admin-classes" aria-expanded="true"
-          aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministrateur">
           <i class="fas fa-fw fa-wrench"></i>
-          Classe
+          <span>Administrateur</span>
         </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed js-scrollTo" href="#admin-admin" aria-expanded="true"
-          aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          Admin
-        </a>
+        <div id="collapseAdministrateur" class="collapse">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'> Ajouter</a>
+            <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-admin"> Afficher</a>
+          </div>
+        </div>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-
-
-
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -162,14 +143,12 @@
       </div>
 
     </ul>
-    <!-- End of Sidebar lg -->
 
 
     <!-- Fade for scroll to ancre -->
     <div id='fadeForScroll'
       style="display: none; position: absolute; width: 100%; height: 100%; background-color: black; z-index: 2; opacity: 0.3; ">
     </div>
-
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -187,65 +166,111 @@
 
           <div class="dropdown ml-1 d-sm-none ">
             <button class="btn btn-link d-md-none rounded-circle mr-3 " type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              data-toggle="dropdown">
               <i class="fa fa-bars"></i>
             </button>
-            <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu animated--fade-in">
+              <!-- Nav Item - Dashboard -->
+              <hr class="sidebar-divider my-0">
+
+              <!-- Nav Item - Dashboard -->
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                  <i class="fas fa-fw fa-sign-in-alt"></i>
+                  <span>Espace Conection</span></a>
+              </li>
+              <hr class="sidebar-divider">
+              <!-- Heading -->
+              <div class="sidebar-heading h3">
+                Interface
+              </div>
               <li class="nav-item">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Espace conection
-                </a>
-                <hr class="sidebar-divider">
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Planning
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Statut actuel
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Abscences
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Annonces
-                </a>
-                <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Prévenir
+                <a class="nav-link collapsed" href="espace_admin_justifications.html">
+                  <i class="fas fa-fw fa-wrench"></i>
+                  <span> Justifications </span>
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="espace_admin_cours.html">
+                  <i class="fas fa-fw fa-wrench"></i>
+                  <span>Cours</span>
+                </a>
+              </li>
+              <!-- Divider -->
+              <hr class="sidebar-divider">
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
+                  <i class="fas fa-fw fa-wrench"></i>
+                  <span>Classes</span>
+                </a>
+                <div id="collapseClassses" class="collapse">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="espace_admin_classeAdd.html"> Ajouter</a>
+                    <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-classes">
+                      Afficher</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
+                  <i class="fas fa-fw fa-wrench"></i>
+                  <span>Élèves</span>
+                </a>
+                <div id="collapseEleve" class="collapse">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
+                    <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-eleve"> Afficher</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFormateur">
+                  <i class="fas fa-fw fa-wrench"></i>
+                  <span>Formateur</span>
+                </a>
+                <div id="collapseFormateur" class="collapse">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
+                    <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-formateur">
+                      Afficher</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministrateur">
+                  <i class="fas fa-fw fa-wrench"></i>
+                  <span>Administrateur</span>
+                </a>
+                <div id="collapseAdministrateur" class="collapse">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
+                    <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-admin">
+                      Afficher</a>
+                  </div>
+                </div>
+              </li>
+              <!-- Divider -->
+              <hr class="sidebar-divider">
             </div>
           </div>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
             <li class="nav-item ">
-              <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);"> Administrateur
+              <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
+                  Administrateur
                 </span>
-
               </a>
-
             </li>
-
             <div class="topbar-divider d-none d-sm-block"></div>
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
                 <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);">Bastien
                   Chantrel</span>
-
               </a>
             </li>
-
           </ul>
 
         </nav>
@@ -410,119 +435,16 @@
                       <th>Classe</th>
                       <th>Groupe</th>
                       <th>Abcences</th>
-                      <th>Age</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tfoot>
-
                   </tfoot>
-                  <tbody>
-                    <tr>
-                      <td> <a href=""> Djemmal Hojnou </a> </td>
-                      <td> exemple.exemple@clubinternet.fr</td>
-                      <td> <a href=""> DEV-2</a></td>
-                      <td>Formation Initiale</td>
-                      <td>
-                        <div class="d-flex">
+                  <tbody id='liste-eleves'>
 
-                          <div class="col-auto">
-                            <i class="fas fa-exclamation-triangle  text-300" style="color: #f6c23e;"></i>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-check-circle  text-300" style="color: #1cc88a;"></i>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-exclamation-triangle  text-300" style="color: #f6c23e;"></i>
-                          </div>
-
-                        </div>
-
-                      </td>
-                      <td> <b class='text-success'> Présent </b> </td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>63</td>
-                      <td>2011/07/25</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td>$86,000</td>
-                    </tr>
-                    <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>22</td>
-                      <td>2012/03/29</td>
-                      <td>$433,060</td>
-                    </tr>
-                    <tr>
-                      <td>Airi Satou</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>33</td>
-                      <td>2008/11/28</td>
-                      <td>$162,700</td>
-                    </tr>
-                    <tr>
-                      <td>Brielle Williamson</td>
-                      <td>Integration Specialist</td>
-                      <td>New York</td>
-                      <td>61</td>
-                      <td>2012/12/02</td>
-                      <td>$372,000</td>
-                    </tr>
-                    <tr>
-                      <td>Herrod Chandler</td>
-                      <td>Sales Assistant</td>
-                      <td>San Francisco</td>
-                      <td>59</td>
-                      <td>2012/08/06</td>
-                      <td>$137,500</td>
-                    </tr>
-                    <tr>
-                      <td>Rhona Davidson</td>
-                      <td>Integration Specialist</td>
-                      <td>Tokyo</td>
-                      <td>55</td>
-                      <td>2010/10/14</td>
-                      <td>$327,900</td>
-                    </tr>
-                    <tr>
-                      <td>Colleen Hurst</td>
-                      <td>Javascript Developer</td>
-                      <td>San Francisco</td>
-                      <td>39</td>
-                      <td>2009/09/15</td>
-                      <td>$205,500</td>
-                    </tr>
-                    <tr>
-                      <td>Sonya Frost</td>
-                      <td>Software Engineer</td>
-                      <td>Edinburgh</td>
-                      <td>23</td>
-                      <td>2008/12/13</td>
-                      <td>$103,600</td>
-                    </tr>
-                    <tr>
-                      <td>Jena Gaines</td>
-                      <td>Office Manager</td>
-                      <td>London</td>
-                      <td>30</td>
-                      <td>2008/12/19</td>
-                      <td>$90,560</td>
-                    </tr>
                   </tbody>
                 </table>
-                <a href="espace_admin_userAdd.html" class="btn btn-primary btn-icon-split m-3 " id='admin-add-eleve'>
+                <a href="espace_admin_userAdd.html" class="btn btn-primary btn-icon-split m-3 " id='admin-add-eleve2'>
                   <span class="icon text-white-50 d-flex align-items-center">
                     <i class="fas fa-plus "></i>
                   </span>
@@ -544,26 +466,16 @@
                   <thead>
                     <tr>
                       <th>Nom</th>
-                      <th>Heures à effectuer</th>
-                      <th>Heures totales</th>
-
+                      <th>e-mail</th>
+                      <th>Cours totaux</th>
                     </tr>
                   </thead>
                   <tfoot>
-
-
                     <tbody>
-
-                      <td><a href=""> DEV-2</a></td>
-                      <td>Formation Initiale</td>
-                      <td>30</td>
-
-                      </tr>
-
                     </tbody>
                 </table>
                 <a href="espace_admin_userAdd.html" class="btn btn-primary btn-icon-split m-3 "
-                  id='admin-add-formateur'>
+                  id='admin-add-formateur2'>
                   <span class="icon text-white-50 d-flex align-items-center">
                     <i class="fas fa-plus "></i>
                   </span>
@@ -591,18 +503,9 @@
                   </thead>
                   <tfoot>
 
-
-                    <tbody>
-
-                      <td><a href=""> DEV-2</a></td>
-                      <td>Formation Initiale</td>
-                      <td>30</td>
-
-                      </tr>
-
                     </tbody>
                 </table>
-                <a href="404.html" class="btn btn-primary btn-icon-split m-3 ">
+                <a href="espace_admin_classeAdd.html" class="btn btn-primary btn-icon-split m-3 ">
                   <span class="icon text-white-50 d-flex align-items-center">
                     <i class="fas fa-plus "></i>
                   </span>
@@ -624,25 +527,16 @@
                   <thead>
                     <tr>
                       <th>Nom</th>
-                      <th>Poste</th>
+                      <th>e-mail</th>
                       <th>Date d'ajout</th>
-
                     </tr>
                   </thead>
                   <tfoot>
-
-
                     <tbody>
-
-                      <td><a href=""> DEV-2</a></td>
-                      <td>Formation Initiale</td>
-                      <td>30</td>
-
-                      </tr>
 
                     </tbody>
                 </table>
-                <a href="espace_admin_userAdd.html" class="btn btn-primary btn-icon-split m-3 " id='admin-add-admin'>
+                <a href="espace_admin_userAdd.html" class="btn btn-primary btn-icon-split m-3 " id='admin-add-admin2'>
                   <span class="icon text-white-50 d-flex align-items-center">
                     <i class="fas fa-plus "></i>
                   </span>
@@ -687,46 +581,32 @@
   <!-- Core plugin JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
+  <!-- Firebase Cloud Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+
+  <script src='js/admin_show._data.js'></script>
+
 
   <!-- Page level plugins -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
+
   <!-- Page level plugins -->
   <script src="css/jquery.dataTables.js"></script>
   <script src="css/dataTables.bootstrap4.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
   <script src="js/demo/datatables-demo.js"></script>
-  <script src='js/smooth-scroll.js'></script>
 
-  <script>
+  <!-- Page level custom scripts -->
+  <script src='js/admin_tools.js'></script>
+  <script src='js/all_tools.js'></script>
 
-
-    $('#admin-add-eleve').on('click', function () {
-      localStorage.setItem('sidebar-ajout-user', 1)
-    })
-    $('#admin-add-formateur').on('click', function () {
-      localStorage.setItem('sidebar-ajout-user', 2)
-    })
-    $('#admin-add-admin').on('click', function () {
-      localStorage.setItem('sidebar-ajout-user', 3)
-    })
-
-
-    $(".sidebar_ajout_user").on('click', function () {
-
-      const sidebar_ajout = $(this).text()
-      let lol = 0
-      if (sidebar_ajout == 'Élève') lol = 1
-      else if (sidebar_ajout == 'Formateur') lol = 2
-      else if (sidebar_ajout == 'Admin') lol = 3
-      localStorage.setItem('sidebar-ajout-user', lol)
-    })
-
-  </script>
 
 </body>
 
