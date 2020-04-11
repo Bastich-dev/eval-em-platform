@@ -48,7 +48,6 @@
                 </div>
                 <div class="sidebar-brand-text mx-3">Espace admin </div>
             </a>
-
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
@@ -58,16 +57,11 @@
                     <i class="fas fa-fw fa-sign-in-alt"></i>
                     <span>Espace Conection</span></a>
             </li>
-
-
             <hr class="sidebar-divider">
-
-
             <!-- Heading -->
             <div class="sidebar-heading h3">
                 Interface
             </div>
-
             <li class="nav-item">
                 <a class="nav-link collapsed" href="espace_admin_justifications.html">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -80,63 +74,39 @@
                     <span>Cours</span>
                 </a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Classes</span>
+                    <span>Listes</span>
                 </a>
                 <div id="collapseClassses" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="espace_admin_classeAdd.html"> Ajouter</a>
-                        <a class=" collapse-item sidebar_ajout_user" href="espace_admin.html#admin-classes">
-                            Afficher</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Élèves</span>
-                </a>
-                <div id="collapseEleve" class="collapse">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'> Ajouter</a>
-                        <a class=" js-scrollTo collapse-item sidebar_ajout_user" href="espace_admin.html#admin-eleve">
-                            Afficher</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFormateur">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Formateur</span>
-                </a>
-                <div id="collapseFormateur" class="collapse">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'> Ajouter</a>
-                        <a class="js-scrollTo collapse-item sidebar_ajout_user"
-                            href="espace_admin.html#admin-formateur">
-                            Afficher</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministrateur">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Administrateur</span>
-                </a>
-                <div id="collapseAdministrateur" class="collapse">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'> Ajouter</a>
-                        <a class="js-scrollTo collapse-item sidebar_ajout_user" href="espace_admin.html#admin-admin">
-                            Afficher</a>
+                        <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-classes"> Classes</a>
+                        <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-eleve"> Élèves</a>
+                        <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-formateur"> Formateur</a>
+                        <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-admin"> Admins</a>
                     </div>
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Ajouter</span>
+                </a>
+                <div id="collapseEleve" class="collapse">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="espace_admin_classeAdd.html">une Classe</a>
+                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'>un Élève</a>
+                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'>un
+                            Formateur</a>
+                        <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'>un
+                            Administrateur</a>
+                    </div>
+                </div>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -161,111 +131,6 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (md sm & xs) -->
-                    <button id="sidebarToggleTop"
-                        class="btn btn-link d-none  d-sm,-flex d-lg-none  rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <div class="dropdown ml-1 d-sm-none ">
-                        <button class="btn btn-link d-md-none rounded-circle mr-3 " type="button"
-                            id="dropdownMenuButton" data-toggle="dropdown">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <div class="dropdown-menu animated--fade-in">
-                            <!-- Nav Item - Dashboard -->
-                            <hr class="sidebar-divider my-0">
-
-                            <!-- Nav Item - Dashboard -->
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">
-                                    <i class="fas fa-fw fa-sign-in-alt"></i>
-                                    <span>Espace Conection</span></a>
-                            </li>
-                            <hr class="sidebar-divider">
-                            <!-- Heading -->
-                            <div class="sidebar-heading h3">
-                                Interface
-                            </div>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="espace_admin_justifications.html">
-                                    <i class="fas fa-fw fa-wrench"></i>
-                                    <span> Justifications </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="espace_admin_cours.html">
-                                    <i class="fas fa-fw fa-wrench"></i>
-                                    <span>Cours</span>
-                                </a>
-                            </li>
-                            <!-- Divider -->
-                            <hr class="sidebar-divider">
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                    data-target="#collapseClassses">
-                                    <i class="fas fa-fw fa-wrench"></i>
-                                    <span>Classes</span>
-                                </a>
-                                <div id="collapseClassses" class="collapse">
-                                    <div class="bg-white py-2 collapse-inner rounded">
-                                        <a class="collapse-item" href="espace_admin_classeAdd.html"> Ajouter</a>
-                                        <a class="collapse-item sidebar_ajout_user"
-                                            href="espace_admin.html#admin-classes">
-                                            Afficher</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                    data-target="#collapseEleve">
-                                    <i class="fas fa-fw fa-wrench"></i>
-                                    <span>Élèves</span>
-                                </a>
-                                <div id="collapseEleve" class="collapse">
-                                    <div class="bg-white py-2 collapse-inner rounded">
-                                        <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
-                                        <a class="js-scrollTo collapse-item sidebar_ajout_user"
-                                            href="espace_admin.html#admin-eleve">
-                                            Afficher</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                    data-target="#collapseFormateur">
-                                    <i class="fas fa-fw fa-wrench"></i>
-                                    <span>Formateur</span>
-                                </a>
-                                <div id="collapseFormateur" class="collapse">
-                                    <div class="bg-white py-2 collapse-inner rounded">
-                                        <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
-                                        <a class="collapse-item sidebar_ajout_user"
-                                            href="espace_admin.html#admin-formateur">
-                                            Afficher</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                    data-target="#collapseAdministrateur">
-                                    <i class="fas fa-fw fa-wrench"></i>
-                                    <span>Administrateur</span>
-                                </a>
-                                <div id="collapseAdministrateur" class="collapse">
-                                    <div class="bg-white py-2 collapse-inner rounded">
-                                        <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
-                                        <a class="collapse-item sidebar_ajout_user"
-                                            href="espace_admin.html#admin-admin">
-                                            Afficher</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Divider -->
-                            <hr class="sidebar-divider">
-                        </div>
-                    </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -296,7 +161,6 @@
 
                     <div class="container ">
 
-
                         <div class="row">
                             <div class="col-12">
                                 <div class="card shadow mb-4">
@@ -310,28 +174,30 @@
                                     <!-- Card Body -->
                                     <div class="card-body">
                                         <div class="row ">
-
+                                            <input type="text" id='user-id' class="d-none" value=''>
                                             <div class="col-6">
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                     <b>Nom</b>
                                                     <input type="text" id='user-nom'
-                                                        class="mt-2 form-control form-control-user">
+                                                        class="mt-2 form-control form-control-user editMark">
                                                 </div>
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                     <b>Prenom</b>
                                                     <input type="text" id='user-prenom'
-                                                        class="mt-2 form-control form-control-user"
+                                                        class="mt-2 form-control form-control-user editMark"
                                                         placeholder="Prenom">
                                                 </div>
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                     <b>Classe</b>
                                                     <input type="text" id='user-classe'
-                                                        class="mt-2 form-control form-control-user" placeholder="">
+                                                        class="mt-2 form-control form-control-user editMark"
+                                                        placeholder="">
                                                 </div>
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                     <b>Groupe</b>
-                                                    <input type="text" class="mt-2 form-control form-control-user"
-                                                        placeholder="">
+                                                    <input type="text"
+                                                        class="mt-2 form-control form-control-user editMark"
+                                                        placeholder="" disabled>
                                                 </div>
                                             </div>
 
@@ -368,12 +234,14 @@
                                             <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                 <b class="ml-2">E-mail</b>
                                                 <input type="text" id='user-mail'
-                                                    class="mt-2 ml-2 form-control form-control-user" placeholder="">
+                                                    class="mt-2 ml-2 form-control form-control-user editMark"
+                                                    placeholder="">
                                             </div>
                                             <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                 <b class="ml-2">Identifiant</b>
                                                 <input type="text" id='user-identifiant'
-                                                    class="mt-2 ml-2 form-control form-control-user" placeholder="">
+                                                    class="mt-2 ml-2 form-control form-control-user editMark"
+                                                    placeholder="">
                                             </div>
                                         </div>
 
@@ -381,33 +249,32 @@
 
                                             <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                 <b class="ml-2">Poste</b>
-                                                <input type="text" id='user-poste'
-                                                    class="mt-2 ml-2 form-control form-control-user" placeholder="">
+
+                                                <select name="poste" id="user-poste"
+                                                    class="mt-2 ml-2 form-control form-control-user editMark" disabled>
+                                                    <option value=""></option>
+                                                    <option value="eleve">Élève</option>
+                                                    <option value="formateur">Formateur</option>
+                                                    <option value="admin">Administrateur</option>
+                                                </select>
                                             </div>
                                             <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                 <b class="ml-2">Mot de passe</b>
                                                 <input type="text" id='user-password'
-                                                    class="mt-2 ml-2 form-control form-control-user"
+                                                    class="mt-2 ml-2 form-control form-control-user editMark"
                                                     placeholder="Mot de passe">
                                             </div>
-
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <a class="btn btn-primary m-5 " href="">
-                                                <h3 class="m-2">Valider modifications</h3>
-                                            </a>
-                                            <a class="btn btn-danger m-5  " href="">
-                                                <h3 class="m-2">Supprimer élève</h3>
-                                            </a>
+                                            <input type="button" class="btn btn-primary m-5" id='edit_user'
+                                                style="font-size: calc( 1.5vw + 1.5vh );" value='Valider modifications'>
+                                            <input type="button" class="btn btn-danger m-5" id='delete_user'
+                                                style="font-size: calc( 1.5vw + 1.5vh );" value='Supprimer utilisateur'>
                                         </div>
                                     </div>
-
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

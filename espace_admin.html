@@ -49,7 +49,6 @@
         </div>
         <div class="sidebar-brand-text mx-3">Espace admin </div>
       </a>
-
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
@@ -59,16 +58,11 @@
           <i class="fas fa-fw fa-sign-in-alt"></i>
           <span>Espace Conection</span></a>
       </li>
-
-
       <hr class="sidebar-divider">
-
-
       <!-- Heading -->
       <div class="sidebar-heading h3">
         Interface
       </div>
-
       <li class="nav-item">
         <a class="nav-link collapsed" href="espace_admin_justifications.html">
           <i class="fas fa-fw fa-wrench"></i>
@@ -81,59 +75,37 @@
           <span>Cours</span>
         </a>
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Classes</span>
+          <span>Listes</span>
         </a>
         <div id="collapseClassses" class="collapse">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="espace_admin_classeAdd.html"> Ajouter</a>
-            <a class=" js-scrollTo collapse-item sidebar_ajout_user" href="#admin-classes"> Afficher</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Élèves</span>
-        </a>
-        <div id="collapseEleve" class="collapse">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'> Ajouter</a>
-            <a class=" js-scrollTo collapse-item sidebar_ajout_user" href="#admin-eleve"> Afficher</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFormateur">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Formateur</span>
-        </a>
-        <div id="collapseFormateur" class="collapse">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'> Ajouter</a>
-            <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-formateur">
-              Afficher</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministrateur">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Administrateur</span>
-        </a>
-        <div id="collapseAdministrateur" class="collapse">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'> Ajouter</a>
-            <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-admin"> Afficher</a>
+            <a class=" js-scrollTo collapse-item" href="#admin-classes"> Classes</a>
+            <a class=" js-scrollTo collapse-item" href="#admin-eleve"> Élèves</a>
+            <a class=" js-scrollTo collapse-item" href="#admin-formateur"> Formateur</a>
+            <a class=" js-scrollTo collapse-item" href="#admin-admin"> Admins</a>
           </div>
         </div>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Ajouter</span>
+        </a>
+        <div id="collapseEleve" class="collapse">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="espace_admin_classeAdd.html">une Classe</a>
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'>un Élève</a>
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'>un Formateur</a>
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'>un Administrateur</a>
+          </div>
+        </div>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -158,101 +130,6 @@
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-          <!-- Sidebar Toggle (md sm & xs) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-none  d-sm,-flex d-lg-none  rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-          <div class="dropdown ml-1 d-sm-none ">
-            <button class="btn btn-link d-md-none rounded-circle mr-3 " type="button" id="dropdownMenuButton"
-              data-toggle="dropdown">
-              <i class="fa fa-bars"></i>
-            </button>
-            <div class="dropdown-menu animated--fade-in">
-              <!-- Nav Item - Dashboard -->
-              <hr class="sidebar-divider my-0">
-
-              <!-- Nav Item - Dashboard -->
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                  <i class="fas fa-fw fa-sign-in-alt"></i>
-                  <span>Espace Conection</span></a>
-              </li>
-              <hr class="sidebar-divider">
-              <!-- Heading -->
-              <div class="sidebar-heading h3">
-                Interface
-              </div>
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="espace_admin_justifications.html">
-                  <i class="fas fa-fw fa-wrench"></i>
-                  <span> Justifications </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="espace_admin_cours.html">
-                  <i class="fas fa-fw fa-wrench"></i>
-                  <span>Cours</span>
-                </a>
-              </li>
-              <!-- Divider -->
-              <hr class="sidebar-divider">
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
-                  <i class="fas fa-fw fa-wrench"></i>
-                  <span>Classes</span>
-                </a>
-                <div id="collapseClassses" class="collapse">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="espace_admin_classeAdd.html"> Ajouter</a>
-                    <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-classes">
-                      Afficher</a>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
-                  <i class="fas fa-fw fa-wrench"></i>
-                  <span>Élèves</span>
-                </a>
-                <div id="collapseEleve" class="collapse">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
-                    <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-eleve"> Afficher</a>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFormateur">
-                  <i class="fas fa-fw fa-wrench"></i>
-                  <span>Formateur</span>
-                </a>
-                <div id="collapseFormateur" class="collapse">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
-                    <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-formateur">
-                      Afficher</a>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministrateur">
-                  <i class="fas fa-fw fa-wrench"></i>
-                  <span>Administrateur</span>
-                </a>
-                <div id="collapseAdministrateur" class="collapse">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="espace_admin_userAdd.html"> Ajouter</a>
-                    <a class="js-scrollTo collapse-item sidebar_ajout_user" href="#admin-admin">
-                      Afficher</a>
-                  </div>
-                </div>
-              </li>
-              <!-- Divider -->
-              <hr class="sidebar-divider">
-            </div>
-          </div>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -281,15 +158,14 @@
 
           <div class="container d-flex justify-content-center">
 
-            <a href="404.html" class="btn btn-primary m-4">
+            <a href="espace_admin_justifications.html" class="btn btn-primary m-4">
               <h1 class="m-3">Consulter les justifications reçues</h1>
             </a>
           </div>
-
           <!-- /.container-fluid -->
           <div class="card shadow mb-4" id='admin-reste'>
             <div class="card-header py-3">
-              <h5 class="m-0 font-weight-bold text-primary text-uppercase">Reste a justifier</h5>
+              <h3 class="m-0 font-weight-bold text-primary text-uppercase">Reste a justifier</h3>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -423,7 +299,7 @@
           <!-- /.container-fluid -->
           <div class="card shadow mb-4" id='admin-eleve'>
             <div class="card-header py-3">
-              <h5 class="m-0 font-weight-bold text-primary text-uppercase">élèves</h5>
+              <h3 class="m-0 font-weight-bold text-primary text-uppercase">élèves</h3>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -456,9 +332,9 @@
           <!-- /.container-fluid -->
 
 
-          <div class="card shadow mb-4 col-10" id='admin-formateur'>
+          <div class="card shadow mb-4 " id='admin-formateur'>
             <div class="card-header py-3">
-              <h5 class="m-0 font-weight-bold text-primary text-uppercase">Formateurs</h5>
+              <h3 class="m-0 font-weight-bold text-primary text-uppercase">Formateurs</h3>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -486,9 +362,9 @@
           </div>
 
           <!-- /.container-fluid -->
-          <div class="card shadow mb-4 col-10" id='admin-classes'>
+          <div class="card shadow mb-4 " id='admin-classes'>
             <div class="card-header py-3">
-              <h5 class="m-0 font-weight-bold text-primary text-uppercase">Classes</h5>
+              <h3 class="m-0 font-weight-bold text-primary text-uppercase">Classes</h3>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -517,9 +393,9 @@
 
 
           <!-- /.container-fluid -->
-          <div class="card shadow mb-4 col-10" id='admin-admin'>
+          <div class="card shadow mb-4 " id='admin-admin'>
             <div class="card-header py-3">
-              <h5 class="m-0 font-weight-bold text-primary text-uppercase">Administrateurs</h5>
+              <h3 class="m-0 font-weight-bold text-primary text-uppercase">Administrateurs</h3>
             </div>
             <div class="card-body">
               <div class="table-responsive">

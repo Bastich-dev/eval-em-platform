@@ -163,130 +163,78 @@
 
 
                         <div class="row">
-                            <div class="col-12">
-                                <form id='formulaire' action="">
-                                    <div class="card shadow mb-4">
-                                        <!-- Card Header - Dropdown -->
-                                        <div
-                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter
-                                                utilisateur
-                                            </h3>
 
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
+                            <div class="col-12" id='addClasse'>
 
-                                            <div class="row ">
-
-                                                <div class="col-6">
-                                                    <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
-                                                        <b>Nom</b>
-                                                        <input type="text" class="mt-2 form-control form-control-user"
-                                                            id="input-nom" name='nom'>
-                                                    </div>
-                                                    <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
-                                                        <b>Prenom</b>
-                                                        <input type="text" class="mt-2 form-control form-control-user"
-                                                            id="input-prenom" name='prenom'>
-                                                    </div>
-                                                    <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
-                                                        <b>Classe</b>
-
-                                                        <select name="classe" id="input-classe"
-                                                            class="mt-2 form-control form-control-user" disabled>
-                                                            <option value=""></option>
-                                                            <option value="DEV-2">DEV-2</option>
-                                                            <option value="COM-2">COM-2</option>
-                                                            <option value="Prépa A">Prépa A</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
-                                                        <b>Groupe</b>
-                                                        <input type="text" class="mt-2 form-control form-control-user"
-                                                            id="input-groupe" disabled name='groupe'>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-5 col-sm-12">
-                                                    <div class="d-flex">
-                                                        <div class="mt-4 ml-5 " style="height: 250px; width: 250px;   background: url('assets/anonymous-user.png');
-                                                            background-position: center;
-                                                            background-size: cover">
-                                                        </div>
-
-                                                        <div class="ml-2 mt-5 ">
-                                                            <a href="#" class="btn btn-primary btn-icon-split m-2">
-                                                                <span class="icon text-white-50">
-                                                                    <i class="fas fa-folder-open"></i>
-                                                                </span>
-                                                                <span class="text">Ajouter une image</span>
-                                                            </a>
-                                                            <br>
-                                                            <button href="#" class=" btn-dark btn-icon-split m-2"
-                                                                disabled>
-                                                                <span class="icon text-white-50">
-                                                                    <i class="fas fa-level-down-alt"></i>
-                                                                </span>
-                                                                <span class="text">C://</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </div>
-                                            </div>
-                                            <div class="row ">
-
-                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
-                                                    <b class="ml-2">E-mail</b>
-                                                    <input type="text" class="mt-2 ml-2 form-control form-control-user"
-                                                        id="input-mail" name='mail'>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="row ">
-
-                                                <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
-                                                    <b class="ml-2">Poste</b>
-
-                                                    <select name="poste" id="input-poste"
-                                                        class="mt-2 ml-2 form-control form-control-user" required>
-                                                        <option value=""></option>
-                                                        <option value="eleve">Élève</option>
-                                                        <option value="formateur">Formateur</option>
-                                                        <option value="admin">Administrateur</option>
-                                                    </select>
-                                                </div>
-
-
-
-                                            </div>
-
-
-
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-12 text-center">
-                                                <input type="submit" class="btn btn-primary m-5"
-                                                    style="font-size: calc( 1.5vw + 1.5vh );" id='input-ajouter'
-                                                    value='Ajouter utilisateur'>
-
-
-                                                <input type="button" class="btn btn-danger m-5"
-                                                    style="font-size: calc( 1.5vw + 1.5vh );" value='Vider champs'>
-
-                                            </div>
-                                        </div>
-
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter
+                                            une classe
+                                        </h3>
                                     </div>
+                                    <form id='formulaire_classe' action="">
+                                        <div class="row justify-content-around mb-3">
 
-                                </form>
+                                            <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
+                                                <b class="ml-2">Nom</b>
+                                                <input type="text" class="mt-2 ml-2 form-control form-control-user"
+                                                    id="" name='nom_classe'>
+                                            </div>
+                                            <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
+                                                <b class="ml-2">Groupe</b>
+
+                                                <select name="groupe" id="input-poste"
+                                                    class="mt-2 ml-2 form-control form-control-user" required>
+                                                    <option value=""></option>
+                                                    <option value="">Formation initiale</option>
+                                                    <option value="">VAE</option>
+                                                    <option value="">Formation continue</option>
+                                                </select>
+                                            </div>
+
+                                            <input type="submit"
+                                                class="form-group mt-4 col-lg-3 col-sm-8 m-3 btn btn-primary "
+                                                style="font-size: calc( 1vw + 1vh );" value='Ajouter Classe'>
+
+                                        </div>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
+
+                        <div class="card shadow mb-4 ">
+                            <div class="card-header py-3">
+                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Tableau des Classes</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="ClasseTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Groupe</th>
+                                                <th>NB_élèves</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            </tbody>
+                                    </table>
+                                    <a href="#addClasse" class="js-scrollTo btn btn-primary btn-icon-split m-3 ">
+                                        <span class="icon text-white-50 d-flex align-items-center">
+                                            <i class="fas fa-plus "></i>
+                                        </span>
+                                        <span class="text " style="font-size: calc(1vw + 1vh);">Ajouter une
+                                            classe</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </div>
 
                 </div>
@@ -347,7 +295,8 @@
     <script src="js/smooth-scroll.js"></script>
     <script src="js/sidebar-admin.js"></script>
     <script src='js/admin_tools.js'></script>
-
+    <script src="js/all_tools.js"></script>
+    <script src='js/addClasse.js'></script>
 
 
 </body>

@@ -11,19 +11,13 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
 
-
-
-
-
-$('#formulaire').on('submit', function (evt) {
+$('#formulaire_classe').on('submit', function (evt) {
 
     // Récupère infos formulaire
     let infos = $(this).serializeArray()
     evt.preventDefault();
 
-    console.log($('#input-poste').val())
-
-    if (confirm("Valider l'ajout de cet utilisateur ?") == true) {
+    if (confirm("Valider l'ajout de cette classe  ?") == true) {
 
         const identifiant = ((infos[0].value.slice(0, 2)).toUpperCase() + (infos[1].value).toLowerCase()) + getRandomInt(9) + getRandomInt(9) + getRandomInt(9) + getRandomInt(9)
         const mdp = generatePassword()
@@ -43,10 +37,7 @@ $('#formulaire').on('submit', function (evt) {
                 absences: []
             }).then(ref => {
                 console.log('élève ajouté , ID: ', ref.id);
-                localStorage.setItem("editUser", ref.id);
-                localStorage.setItem("editUserPoste", 'eleves');
-                self.location.href = 'espace_admin_user.html'
-
+                alert("L'élève à été ajouté avec succès")
             }).catch(ref => {
                 alert("Une erreur est survenue, réessayez ultérieurement")
             })
@@ -64,9 +55,7 @@ $('#formulaire').on('submit', function (evt) {
                 poste: 'Formateur',
             }).then(ref => {
                 console.log('formateur ajouté , ID: ', ref.id);
-                localStorage.setItem("editUser", ref.id);
-                localStorage.setItem("editUserPoste", 'formateurs');
-                self.location.href = 'espace_admin_user.html'
+                alert("Le formateure à été ajouté avec succès")
             }).catch(ref => {
                 alert("Une erreur est survenue, réessayez ultérieurement")
             })
@@ -87,9 +76,7 @@ $('#formulaire').on('submit', function (evt) {
                 date: date[0]
             }).then(ref => {
                 console.log('administrateur ajouté , ID: ', ref.id);
-                localStorage.setItem("editUser", ref.id);
-                localStorage.setItem("editUserPoste", 'admins');
-                self.location.href = 'espace_admin_user.html'
+                alert("L'administrateur à été ajouté avec succès")
             }).catch(ref => {
                 alert("Une erreur est survenue, réessayez ultérieurement")
             })
@@ -99,23 +86,3 @@ $('#formulaire').on('submit', function (evt) {
     else console.log('Validation refusée')
     console.log(infos)
 })
-
-
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-}
-
-function generatePassword() {
-    var length = 8,
-        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-        retVal = "";
-    for (var i = 0, n = charset.length; i < length; ++i) {
-        retVal += charset.charAt(Math.floor(Math.random() * n));
-    }
-    return retVal;
-}
-
-
-
-
