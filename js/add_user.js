@@ -119,3 +119,9 @@ function generatePassword() {
 
 
 
+$('#vider_champs').on('click', function () {
+    document.getElementById('input-nom').value = ''
+    document.getElementById('input-prenom').value = ''
+    document.getElementById('input-classe').value = ''
+    document.getElementById('input-mail').value = ''
+})
