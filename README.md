@@ -26,9 +26,6 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 > Identifiant : michelTest
 > Mot de passe : 456
 
-- Administrateur : 
-> Identifiant : carlosTest
-> Mot de passe : 789
 
 ## Technologies utilisées
 

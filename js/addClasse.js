@@ -12,7 +12,7 @@ $('#formulaire_classe').on('submit', function (evt) {
             groupe: infos[1].value,
             statut: 0,
             eleves: [],
-            cours: []
+            cours: ''
         }).then(ref => {
             console.log('classe ajouté , ID: ', ref.id);
             self.location.href = 'espace_admin_classeAdd.html'
@@ -75,7 +75,7 @@ db.collection('groupes').onSnapshot(() => {
 
                 let lol = ``
                 lol += `
-            <option value="${doc.id}">${doc.id}</option
+            <option value="${doc.id}">${doc.id}</option>
             `
                 $('#select-groupe').append(lol)
 

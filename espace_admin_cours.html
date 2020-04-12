@@ -69,7 +69,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="espace_admin_cours.html">
+                <a class="js-scrollTo  nav-link collapsed" href="espace_admin_cours.html">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Cours</span>
                 </a>
@@ -98,7 +98,7 @@
                 </a>
                 <div id="collapseEleve" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="js-scrollTo collapse-item" href="#addClasse">une Classe</a>
+                        <a class="collapse-item" href="espace_admin_classeAdd.html">une Classe</a>
                         <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'>un Élève</a>
                         <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'>un
                             Formateur</a>
@@ -164,104 +164,120 @@
 
                         <div class="row">
 
-                            <div class="col-12" id='addClasse'>
+                            <div class="col-12" id='addCours'>
 
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter
-                                            une classe
+                                            un cours
                                         </h3>
                                     </div>
-                                    <form id='formulaire_classe' action="">
+                                    <form id='formulaire_cours' action="">
                                         <div class="row justify-content-around mb-3">
 
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
-                                                <b class="ml-2">Nom</b>
-                                                <input type="text" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="" name='nom_classe' required>
+                                                <b class="ml-2">Classe</b>
+
+                                                <select name="classe" class="mt-2 ml-2 form-control form-control-user"
+                                                    id='select-classe'>
+                                                    <option value=""></option>
+
+                                                </select>
                                             </div>
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
-                                                <b class="ml-2">Groupe</b>
+                                                <b class="ml-2">Formateur</b>
 
-                                                <select name="groupe" class="mt-2 ml-2 form-control form-control-user"
-                                                    id='select-groupe' required>
+                                                <select name="formateur"
+                                                    class="mt-2 ml-2 form-control form-control-user"
+                                                    id='select-formateur'>
                                                     <option value=""></option>
 
                                                 </select>
                                             </div>
 
-                                            <input type="submit"
-                                                class="form-group mt-4 col-lg-3 col-sm-8 m-3 btn btn-primary "
-                                                style="font-size: calc( 1vw + 1vh );" value='Ajouter Classe'>
-
+                                            <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
+                                                <b class="ml-2">Module</b>
+                                                <input type="text" class="mt-2 ml-2 form-control form-control-user"
+                                                    id="" name='module'>
+                                            </div>
                                         </div>
-                                    </form>
-                                </div>
-
-                            </div>
-
-
-
-                        </div>
-
-                        <div class="card shadow mb-4 ">
-                            <div class="card-header py-3">
-                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Tableau des Classes</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="ClasseTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Nom</th>
-                                                <th>Groupe</th>
-                                                <th>NB_élèves</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tbody>
-
-                                            </tbody>
-                                    </table>
-                                    <a href="#addClasse" class="js-scrollTo btn btn-primary btn-icon-split m-3 ">
-                                        <span class="icon text-white-50 d-flex align-items-center">
-                                            <i class="fas fa-plus "></i>
-                                        </span>
-                                        <span class="text " style="font-size: calc(1vw + 1vh);">Ajouter une
-                                            classe</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-12" id='addGroupe'>
-
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter
-                                            un groupe
-                                        </h3>
-                                    </div>
-                                    <form id='formulaire_groupe' action="">
                                         <div class="row justify-content-around mb-3">
 
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
-                                                <b class="ml-2">Nom</b>
-                                                <input type="text" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="" name='nom_groupe' required>
+                                                <b class="ml-2">Date</b>
+                                                <input type="date" class="mt-2 ml-2 form-control form-control-user"
+                                                    id="" name='date'>
+                                            </div>
+
+                                            <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
+                                                <b class="ml-2">Horaire début</b>
+                                                <div class="row">
+                                                    <select name="hr1-debut"
+                                                        class="mt-2 ml-2 form-control form-control-user"
+                                                        style="width: 40%;">
+                                                        <option value="09">09</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+
+                                                    </select>
+                                                    <b class="m-2 d-flex align-items-center "> : </b>
+                                                    <select name="hr1-debut"
+                                                        class="mt-2 ml-2 form-control form-control-user"
+                                                        style="width: 40%;">
+                                                        <option value="00">00</option>
+                                                        <option value="15">15</option>
+                                                        <option value="30">30</option>
+                                                        <option value="45">45</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
+                                                <b class="ml-2">Horaire fin</b>
+                                                <div class="row">
+                                                    <select name="hr1-fin"
+                                                        class="mt-2 ml-2 form-control form-control-user"
+                                                        style="width: 40%;">
+                                                        <option value="09">09</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+
+                                                    </select>
+                                                    <b class="m-2 d-flex align-items-center "> : </b>
+                                                    <select name="hr1-fin"
+                                                        class="mt-2 ml-2 form-control form-control-user"
+                                                        style="width: 40%;">
+                                                        <option value="00">00</option>
+                                                        <option value="15">15</option>
+                                                        <option value="30">30</option>
+                                                        <option value="45">45</option>
+                                                    </select>
+                                                </div>
                                             </div>
 
 
+                                        </div>
+
+                                        <div class="row justify-content-center">
                                             <input type="submit"
                                                 class="form-group mt-4 col-lg-3 col-sm-8 m-3 btn btn-primary "
-                                                style="font-size: calc( 1vw + 1vh );" value='Ajouter Groupe'>
+                                                style="font-size: calc( 1vw + 1vh );" value='Ajouter Cours'>
 
                                         </div>
                                     </form>
@@ -275,16 +291,21 @@
 
                         <div class="card shadow mb-4 ">
                             <div class="card-header py-3">
-                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Tableau des Groupes</h3>
+                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Tableau des Cours à venir
+                                </h3>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="GroupeTable" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" id="CoursTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Nom</th>
-                                                <th>Classes</th>
-
+                                                <th>Date</th>
+                                                <th>Classe</th>
+                                                <th>Formateur</th>
+                                                <th>Module</th>
+                                                <th>Horaire début</th>
+                                                <th>Horaire fin</th>
+                                                <th>Supprimer</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -292,16 +313,17 @@
 
                                             </tbody>
                                     </table>
-                                    <a href="#addGroupe" class="js-scrollTo btn btn-primary btn-icon-split m-3 ">
+                                    <a href="#addCours" class="js-scrollTo btn btn-primary btn-icon-split m-3 ">
                                         <span class="icon text-white-50 d-flex align-items-center">
                                             <i class="fas fa-plus "></i>
                                         </span>
-                                        <span class="text " style="font-size: calc(1vw + 1vh);">Ajouter un
-                                            groupe</span>
+                                        <span class="text " style="font-size: calc(1vw + 1vh);">Ajouter un cours
+                                        </span>
                                     </a>
                                 </div>
                             </div>
                         </div>
+
 
 
                     </div>
@@ -361,12 +383,10 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script src="js/add_user.js"></script>
-
     <script src="js/sidebar-admin.js"></script>
     <script src='js/admin_tools.js'></script>
     <script src="js/all_tools.js"></script>
-    <script src='js/addClasse.js'></script>
-
+    <script src='js/addCours.js'></script>
 
 </body>
 
