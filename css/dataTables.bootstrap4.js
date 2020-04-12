@@ -239,3 +239,10 @@ $('#CoursFormateur').dataTable({
 		"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/French.json"
 	}
 });
+
+$('#GroupeTable').dataTable({
+	"lengthMenu": [5, 10, 15, 30, 50],
+	"language": {
+		"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/French.json"
+	}
+});

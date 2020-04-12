@@ -98,7 +98,7 @@
                 </a>
                 <div id="collapseEleve" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="espace_admin_classeAdd.html">une Classe</a>
+                        <a class="js-scrollTo collapse-item" href="#addClasse">une Classe</a>
                         <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'>un Élève</a>
                         <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'>un
                             Formateur</a>
@@ -180,17 +180,15 @@
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Nom</b>
                                                 <input type="text" class="mt-2 ml-2 form-control form-control-user"
-                                                    id="" name='nom_classe'>
+                                                    id="" name='nom_classe' required>
                                             </div>
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Groupe</b>
 
-                                                <select name="groupe" id="input-poste"
-                                                    class="mt-2 ml-2 form-control form-control-user" required>
+                                                <select name="groupe" class="mt-2 ml-2 form-control form-control-user"
+                                                    id='select-groupe' required>
                                                     <option value=""></option>
-                                                    <option value="">Formation initiale</option>
-                                                    <option value="">VAE</option>
-                                                    <option value="">Formation continue</option>
+
                                                 </select>
                                             </div>
 
@@ -203,6 +201,9 @@
                                 </div>
 
                             </div>
+
+
+
                         </div>
 
                         <div class="card shadow mb-4 ">
@@ -217,6 +218,7 @@
                                                 <th>Nom</th>
                                                 <th>Groupe</th>
                                                 <th>NB_élèves</th>
+
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -233,6 +235,69 @@
                             </div>
                         </div>
 
+                        <div class="row">
+
+                            <div class="col-12" id='addGroupe'>
+
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter
+                                            un groupe
+                                        </h3>
+                                    </div>
+                                    <form id='formulaire_groupe' action="">
+                                        <div class="row justify-content-around mb-3">
+
+                                            <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
+                                                <b class="ml-2">Nom</b>
+                                                <input type="text" class="mt-2 ml-2 form-control form-control-user"
+                                                    id="" name='nom_groupe' required>
+                                            </div>
+
+
+                                            <input type="submit"
+                                                class="form-group mt-4 col-lg-3 col-sm-8 m-3 btn btn-primary "
+                                                style="font-size: calc( 1vw + 1vh );" value='Ajouter Groupe'>
+
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="card shadow mb-4 ">
+                            <div class="card-header py-3">
+                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Tableau des Groupes</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="GroupeTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Classes</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            </tbody>
+                                    </table>
+                                    <a href="#addGroupe" class="js-scrollTo btn btn-primary btn-icon-split m-3 ">
+                                        <span class="icon text-white-50 d-flex align-items-center">
+                                            <i class="fas fa-plus "></i>
+                                        </span>
+                                        <span class="text " style="font-size: calc(1vw + 1vh);">Ajouter un
+                                            groupe</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
 
                     </div>
