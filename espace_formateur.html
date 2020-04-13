@@ -244,71 +244,7 @@
                                     <div class="chart-area"
                                         style="background-color: white; overflow: scroll; overflow-x: hidden; min-height: 500px;">
 
-                                        <div class="row">
-
-                                            <!-- CARD COURS -->
-                                            <div class="col-lg-4  col-md-12 ">
-                                                <div class="card shadow m-3 cours">
-                                                    <div
-                                                        class="card-header py-3 d-flex  align-items-center justify-content-between bg-success">
-                                                        <h6 class=" font-weight-bold text-white text-uppercase">
-                                                            Terminé
-                                                        </h6>
-                                                        <i class="fas fa-check-circle fa-2x text-300"
-                                                            style="color: white;"></i>
-                                                    </div>
-                                                    <div class="card-body text-white bg-primary">
-                                                        <h6>Module : Pico-8 </h6>
-                                                        <h6>Groupe : Formation initale</h6>
-                                                        <h6>Classe : DEV-2</h6>
-                                                        <h6>Horaire début : 3H</h6>
-                                                        <h6>Durée : 3H</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- CARD COURS -->
-                                            <div class="col-lg-4 col-md-12">
-                                                <div class="card shadow m-3 cours ">
-                                                    <div
-                                                        class="card-header py-3 d-flex  align-items-center justify-content-between bg-info">
-                                                        <h6 class=" font-weight-bold text-white text-uppercase">
-                                                            à faire
-                                                        </h6>
-                                                        <i class="fas fa-chevron-circle-down fa-2x text-300"
-                                                            style="color: white;"></i>
-                                                    </div>
-                                                    <div class="card-body text-white bg-primary">
-                                                        <h6>Module : Stencyl </h6>
-                                                        <h6>Groupe : Formation initale</h6>
-                                                        <h6>Classe : DEV-2</h6>
-                                                        <h6>Horaire début : 3H</h6>
-                                                        <h6>Durée : 3H</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- CARD COURS -->
-                                            <div class="col-lg-4 col-md-12">
-                                                <div class="card shadow m-3 cours ">
-                                                    <div
-                                                        class="card-header py-3 d-flex  align-items-center justify-content-between bg-info">
-                                                        <h6 class=" font-weight-bold text-white text-uppercase">
-                                                            à faire
-                                                        </h6>
-                                                        <i class="fas fa-chevron-circle-down fa-2x text-300"
-                                                            style="color: white;"></i>
-                                                    </div>
-                                                    <div class="card-body text-white bg-primary">
-                                                        <h6>Module : Stencyl </h6>
-                                                        <h6>Groupe : Formation initale</h6>
-                                                        <h6>Classe : DEV-2</h6>
-                                                        <h6>Horaire début : 3H</h6>
-                                                        <h6>Durée : 3H</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
+                                        <div class="row" id='cours_cards'>
                                         </div>
                                         <!-- End Row -->
 
@@ -342,129 +278,37 @@
                     </div>
 
                     <!-- Content Row -->
-                    <div class="row">
 
-                        <!-- /.container-fluid -->
-                        <div class="card shadow mb-4 col-12" id="formateur-allCours">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary text-uppercase">Tout vos cours</h6>
-                            </div>
-                            <div class="card-body">
-
-                                <div class="table-responsive" style="overflow-x: hidden;">
-                                    <table class="table table-bordered mt-2" id="CoursFormateur" width="100%"
-                                        cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Date</th>
-                                                <th>Module</th>
-                                                <th>Classe</th>
-                                                <th>Durée</th>
-                                                <th>Horaire début</th>
-                                                <th> Horaire Fin</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-
-                                        </tfoot>
+                    <div class="card shadow mb-4 " id='formateur-allCours'>
+                        <div class="card-header py-3">
+                            <h3 class="m-0 font-weight-bold text-primary text-uppercase">Tableau des Cours à venir
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="CoursTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Classe</th>
+                                            <th>Formateur</th>
+                                            <th>Module</th>
+                                            <th>Horaire début</th>
+                                            <th>Horaire fin</th>
+                                            <th>Supprimer</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
                                         <tbody>
-                                            <tr>
-                                                <td>11/02/2020</td>
-                                                <td>Pico-8</td>
-                                                <td>DEV-2</td>
-                                                <td>3H</td>
-                                                <td>11H</td>
-                                                <td>14H</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>66</td>
-                                                <td>2009/01/12</td>
-                                                <td>$86,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012/03/29</td>
-                                                <td>$433,060</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>$162,700</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Brielle Williamson</td>
-                                                <td>Integration Specialist</td>
-                                                <td>New York</td>
-                                                <td>61</td>
-                                                <td>2012/12/02</td>
-                                                <td>$372,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Herrod Chandler</td>
-                                                <td>Sales Assistant</td>
-                                                <td>San Francisco</td>
-                                                <td>59</td>
-                                                <td>2012/08/06</td>
-                                                <td>$137,500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Rhona Davidson</td>
-                                                <td>Integration Specialist</td>
-                                                <td>Tokyo</td>
-                                                <td>55</td>
-                                                <td>2010/10/14</td>
-                                                <td>$327,900</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Colleen Hurst</td>
-                                                <td>Javascript Developer</td>
-                                                <td>San Francisco</td>
-                                                <td>39</td>
-                                                <td>2009/09/15</td>
-                                                <td>$205,500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sonya Frost</td>
-                                                <td>Software Engineer</td>
-                                                <td>Edinburgh</td>
-                                                <td>23</td>
-                                                <td>2008/12/13</td>
-                                                <td>$103,600</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jena Gaines</td>
-                                                <td>Office Manager</td>
-                                                <td>London</td>
-                                                <td>30</td>
-                                                <td>2008/12/19</td>
-                                                <td>$90,560</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
 
-                                </div>
+                                        </tbody>
+                                </table>
+
                             </div>
                         </div>
-
-
                     </div>
+
+
 
 
 
@@ -511,19 +355,18 @@
         <!-- Page level plugins -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-        <!-- Page level custom scripts -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+
         <!-- Page level custom scripts -->
         <script src="css/jquery.dataTables.js"></script>
         <script src="css/dataTables.bootstrap4.js"></script>
         <script src="js/demo/chart-area-demo.js"></script>
         <script src="js/demo/chart-pie-demo.js"></script>
         <script src="js/demo/datatables-demo.js"></script>
+        <script src='js/afficheCours.js'></script>
 
-        <script>
-            $('.cours').on('click', function () {
-                self.location.href = 'espace_formateur_cours.html'
-            })
-        </script>
         <script src='js/all_tools.js'></script>
 
 </body>
