@@ -1,11 +1,23 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyB22w9CYMJV413plCv8yNYRgT0hr096qn8",
+    authDomain: "imperator-7e26a.firebaseapp.com",
+    databaseURL: "https://imperator-7e26a.firebaseio.com",
+    projectId: "imperator-7e26a",
+    storageBucket: "imperator-7e26a.appspot.com",
+    messagingSenderId: "59630211424",
+    appId: "1:59630211424:web:d9329b20431623aa230e05"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore()
 
+
+// FORMULAIRE AJOUTER COURS
 $('#formulaire_cours').on('submit', function (evt) {
-    // Récupère infos formulaire
-    let infos = $(this).serializeArray()
-    evt.preventDefault();
-    console.log(infos)
-    if (confirm("Valider l'ajout de ce cours  ?") == true) {
 
+    // [Start] Si le formulaire est validé ...
+    if (confirm("Valider l'ajout de ce cours  ?") == true) {
+        let infos = $(this).serializeArray()
+        evt.preventDefault();
 
         db.collection('cours').add({
             classe: infos[0].value,
@@ -17,105 +29,105 @@ $('#formulaire_cours').on('submit', function (evt) {
             actif: true
         }).then(ref => {
             console.log('cours ajouté , ID: ', ref.id);
-            self.location.href = '#'
         }).catch(ref => {
             alert("Une erreur est survenue, réessayez ultérieurement")
         })
-
-
     }
+    //  [End] Si le formulaire est validé ...
+    else console.log('Validation refusée')
 })
 
 
+// AFFICHAGE FORMATEUR
+
+// [Start] Récupère tous les formateurs ...  
 db.collection('formateurs').get()
-    .then(snapshot => {
-        snapshot.forEach(doc => {
-
-            const infos_classe = doc.data()
-            console.log(infos_classe)
-            let lol = ``
-            lol += `
-        <option value="${doc.id}">${infos_classe.nom}  ${infos_classe.prenom} </option
-        `
-            $('#select-formateur').append(lol)
-
+    .then(formateurs => {
+        formateurs.forEach(formateur => {
+            $('#select-formateur').append(`   <option value="${formateur.id}">${formateur.data().nom}  ${formateur.data().prenom} </option  `)
         });
     })
     .then(() => {
-
+        console.log('Affichage formateurs réussi');
     })
     .catch(err => {
         console.log('Error getting informations', err);
     });
+// [End] Récupère tous les formateurs ...  
 
 
 
+
+// AFFICHAGE CLASSES
+
+// [Start] Récupère toutes les classes ...  
 db.collection('classes').get()
-    .then(snapshot => {
-        snapshot.forEach(doc => {
-
-            const infos_classe = doc.data()
-            console.log(infos_classe)
-            let lol = ``
-            lol += `
-        <option value="${doc.id}">${infos_classe.nom} </option
-        `
-            $('#select-classe').append(lol)
-
+    .then(classes => {
+        classes.forEach(classe => {
+            $('#select-classe').append(`   <option value="${classe.id}">${classe.data().nom}   </option  `)
         });
     })
     .then(() => {
-
+        console.log('Affichage classes réussi');
     })
     .catch(err => {
         console.log('Error getting informations', err);
     });
+// [End] Récupère tous les classes ...  
 
+
+
+
+// AFFICHAGE COURS
+
+// [Start] Quand 'cours' est mofiifé... 
 db.collection('cours').onSnapshot(() => {
     $('#CoursTable').DataTable().clear()
-    db.collection('cours').where('actif', '==', true).get()
-        .then(snapshot => {
-            snapshot.forEach(doc => {
 
-                const infos_classe = doc.data()
-                let lul = ''
-                db.collection('classes').doc(infos_classe.classe).get()
-                    .then(snapshot => {
-                        db.collection('formateurs').doc(infos_classe.formateur).get()
-                            .then(doc => {
+    // [Start] Récupère tous les cours actifs ...  
+    db.collection('cours').where('actif', '==', true).get()
+        .then(cours_actifs => {
+
+            // [Start] Pour chaque cours actif ...
+            cours_actifs.forEach(cours => {
+
+                // [Start] Récupère les infos de la classe ...  
+                db.collection('classes').doc(cours.data().classe).get()
+                    .then(classe => {
+
+                        // [Start] Récupère  les infos du formateur ...  
+                        db.collection('formateurs').doc(cours.data().formateur).get()
+                            .then(formateur => {
 
                                 $('#CoursTable').DataTable().row.add([
-                                    `<td>  ${infos_classe.date}</td>`,
-                                    `<td> <a href="espace_admin_classe.html" class='goToClasse'  id ='${doc.id}'>   ${snapshot.data().nom}  </a> </td>`,
-                                    `<td> ${doc.data().prenom}  ${doc.data().nom} </td>`,
-                                    `<td>  ${infos_classe.module}</td>`,
-                                    `<td>   ${infos_classe.hr_debut}  </a> </td>`,
-                                    `<td> ${infos_classe.hr_fin} </td>`,
+                                    `<td>  ${cours.data().date}</td>`,
+                                    `<td>   ${classe.data().nom} </td>`,
+                                    `<td> ${formateur.data().prenom}  ${formateur.data().nom} </td>`,
+                                    `<td>  ${cours.data().module}</td>`,
+                                    `<td>   ${cours.data().hr_debut}  </a> </td>`,
+                                    `<td> ${cours.data().hr_fin} </td>`,
                                     `<td>  lol</td>`,
 
 
                                 ]).draw();
 
                             })
-                            .catch(err => {
-                                console.log('Error getting documents', err);
-                            });
-
+                        // [End] Récupère  les infos du formateur ...  
                     })
-                    .catch(err => {
-                        console.log('Error getting documents', err);
-                    });
-
-
-
+                // [End] Récupère les infos de la classe ...  
             });
+            // [End] Pour chaque cours actif ...
+
         })
         .then(() => {
-
+            console.log('Affichage cours réussi');
         })
         .catch(err => {
             console.log('Error getting informations', err);
         });
+    // [End] Récupère tous les cours actifs ...  
+
 });
+// [End] Quand 'cours' est mofiifé...
 
 

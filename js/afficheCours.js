@@ -11,115 +11,127 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
 
+
+
+// AFFICHAGE COURS FORMATEUR
+
+// [Start] Récupre touts les cours du formateur ...
 db.collection('cours').where('formateur', '==', localStorage.getItem('ID')).get()
-    .then(snapshot => {
-        snapshot.forEach(doc => {
+    .then(cours_formateur => {
 
+        // [Start] Pour chaque cours ...
+        cours_formateur.forEach(cours => {
 
-            if (doc.data().actif == true) {
-                const infos_classe = doc.data()
-                let lul = ''
-                db.collection('classes').doc(infos_classe.classe).get()
-                    .then(snapshot => {
-                        db.collection('formateurs').doc(infos_classe.formateur).get()
-                            .then(doc => {
+            // [Start] Si le cours est actif ...
+            if (cours.data().actif == true) {
+
+                // [Start] Récupère les infos de la classe ...  
+                db.collection('classes').doc(cours.data().classe).get()
+                    .then(classe => {
+
+                        // [Start] Récupère les infos  du formateur ...  
+                        db.collection('formateurs').doc(cours.data().formateur).get()
+                            .then(formateur => {
 
                                 $('#CoursTable').DataTable().row.add([
-                                    `<td>  ${infos_classe.date}</td>`,
-                                    `<td> <a href="espace_admin_classe.html" class='goToClasse'  id ='${doc.id}'>   ${snapshot.data().nom}  </a> </td>`,
-                                    `<td> ${doc.data().prenom}  ${doc.data().nom} </td>`,
-                                    `<td>  ${infos_classe.module}</td>`,
-                                    `<td>   ${infos_classe.hr_debut}  </a> </td>`,
-                                    `<td> ${infos_classe.hr_fin} </td>`,
+                                    `<td>  ${cours.data().date}</td>`,
+                                    `<td>   ${classe.data().nom}  </a> </td>`,
+                                    `<td> ${formateur.data().prenom}  ${formateur.data().nom} </td>`,
+                                    `<td>  ${cours.data().module}</td>`,
+                                    `<td>   ${cours.data().hr_debut}  </a> </td>`,
+                                    `<td> ${cours.data().hr_fin} </td>`,
                                     `<td>  lol</td>`,
                                 ]).draw();
+
                             })
                             .catch(err => {
                                 console.log('Error getting documents', err);
                             });
+                        // [End] Récupère les infos  du formateur ...  
                     })
                     .catch(err => {
                         console.log('Error getting documents', err);
                     });
+                // [End] Récupère les infos de la classe ...  
             }
+            // [End] Si le cours est actif ...
+
+
 
 
             const d = new Date()
             const dtf = new Intl.DateTimeFormat('fr', { year: 'numeric', month: '2-digit', day: '2-digit' })
             const [{ value: da }, , { value: mo }, , { value: ye }] = dtf.formatToParts(d)
-            if (doc.data().date == (ye + '-' + mo + '-' + da)) {
-                const infos_classe = doc.data()
-                let lul = ''
-                db.collection('classes').doc(infos_classe.classe).get()
-                    .then(snapshot => {
-                        db.collection('formateurs').doc(infos_classe.formateur).get()
-                            .then(doc => {
 
-                                let actif = ``
-                                if (infos_classe.actif == false) actif = `  <div
-                                class="card-header py-3 d-flex  align-items-center justify-content-between bg-success">
-                                <h6 class=" font-weight-bold text-white text-uppercase">
-                                    Terminé
-                                </h6>
-                                <i class="fas fa-check-circle fa-2x text-300"
-                                    style="color: white;"></i>
-                            </div>`
-                                else actif = `    <div
-class="card-header py-3 d-flex  align-items-center justify-content-between bg-info">
-<h6 class=" font-weight-bold text-white text-uppercase">
-    à faire
-</h6>
-<i class="fas fa-chevron-circle-down fa-2x text-300"
-    style="color: white;"></i>
-</div>`
+            // [Start] Si le cours est daté pour aujourd'hui ...
+            if (cours.data().date == (ye + '-' + mo + '-' + da)) {
 
+                // [Start] Récupère les infos de la classe ...  
+                db.collection('classes').doc(cours.data().classe).get()
+                    .then(classe => {
 
-                                let lul = ``
-                                lul += `
-                                <!-- CARD COURS -->
-                                <div class="col-lg-4  col-md-12 ">
-                                    <div class="card shadow m-3 cours">
-                                    ${actif}
-                                        <div class="card-body text-white bg-primary">
-                                            <h6>Module : ${infos_classe.module} </h6>
-                                            <h6>Groupe :  ${snapshot.data().groupe}</h6>
-                                            <h6>Classe : ${snapshot.data().nom}</h6>
-                                            <h6>Horaire début : ${infos_classe.hr_debut}</h6>
-                                            <h6>Horaire fin : ${infos_classe.hr_fin}</h6>
-                                        </div>
-                                    </div>
-                                </div>`
+                        // Cours términé ou non ...
+                        let actif = ``
+                        if (cours.data().actif == false) actif = ` 
+                         <div class="card-header py-3 d-flex  align-items-center justify-content-between bg-success">
+                         <h6 class=" font-weight-bold text-white text-uppercase">
+                         Terminé
+                         </h6>
+                         <i class="fas fa-check-circle fa-2x text-300 text-white"></i>
+                         </div>`
+                        else actif = `
+                        <div class="card-header py-3 d-flex  align-items-center justify-content-between bg-info">
+                        <h6 class=" font-weight-bold text-white text-uppercase">
+                        à faire
+                        </h6>
+                        <i class="fas fa-chevron-circle-down fa-2x text-300 text-white " ></i>
+                        </div>`
 
 
-                                $('#cours_cards').append(lul)
-                                $('.cours').on('click', function () {
-                                    self.location.href = 'espace_formateur_cours.html'
-                                })
+                        $('#cours_cards').append(`
+                        <!-- CARD COURS -->
+                        <div class="col-lg-4  col-md-12 ">
+                            <div class="card shadow m-3 cours">
+                            ${actif}
+                                <div class="card-body text-white bg-primary goToCours" id=${cours.id}>
+                                    <h6>Module : ${cours.data().module} </h6>
+                                    <h6>Groupe :  ${classe.data().groupe}</h6>
+                                    <h6>Classe : ${classe.data().nom}</h6>
+                                    <h6>Horaire début : ${cours.data().hr_debut}</h6>
+                                    <h6>Horaire fin : ${cours.data().hr_fin}</h6>
+                                </div>
+                            </div>
+                        </div>`)
 
-                            })
-                            .catch(err => {
-                                console.log('Error getting documents', err);
-                            });
+
+                    })
+                    .then(() => {
+                        // Affiche cours si cliqué
+                        $('.cours').on('click', function () {
+                            localStorage.setItem('ID_cours', $(this).find('.goToCours').attr('id'))
+                            self.location.href = 'espace_formateur_cours.html'
+                        })
                     })
                     .catch(err => {
                         console.log('Error getting documents', err);
                     });
+                // [End] Récupère les infos de la classe ...  
             }
-
-
-
+            // [End] Si le cours est daté pour aujourd'hui ...
 
 
 
         });
+        // [End] Pour chaque cours ...
+
     })
     .then(() => {
-
+        console.log('Affichage cours réussi')
     })
     .catch(err => {
         console.log('Error getting informations', err);
     });
-
+// [End] Récupre touts les cours du formateur ...
 
 
 

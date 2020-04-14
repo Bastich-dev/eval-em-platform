@@ -12,22 +12,19 @@ const db = firebase.firestore()
 
 
 
-
-
-
+// FORMULAIRE AJOUTER UTILISATEUR
 $('#formulaire').on('submit', function (evt) {
 
-    // Récupère infos formulaire
-    let infos = $(this).serializeArray()
-    evt.preventDefault();
-
-    console.log($('#input-poste').val())
-
+    // [Start] Si le formulaire est validé ...
     if (confirm("Valider l'ajout de cet utilisateur ?") == true) {
-
+        let infos = $(this).serializeArray()
+        evt.preventDefault();
         const identifiant = ((infos[0].value.slice(0, 2)).toUpperCase() + (infos[1].value).toLowerCase()) + getRandomInt(9) + getRandomInt(9) + getRandomInt(9) + getRandomInt(9)
         const mdp = generatePassword()
 
+
+
+        // [Start] Si on ajoute un élève ...
         if ($('#input-poste').val() == 'eleve') {
             db.collection('eleves').add({
                 nom: infos[0].value,
@@ -46,13 +43,15 @@ $('#formulaire').on('submit', function (evt) {
                 localStorage.setItem("editUser", ref.id);
                 localStorage.setItem("editUserPoste", 'eleves');
                 self.location.href = 'espace_admin_user.html'
-
-            }).catch(ref => {
-                alert("Une erreur est survenue, réessayez ultérieurement")
+            }).catch(() => {
+                alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement")
+                confirm('lol')
             })
         }
+        // [End] Si on ajoute un élève ...
 
 
+        // [Start] Si on ajoute un formateur ...
         else if ($('#input-poste').val() == 'formateur') {
             db.collection('formateurs').add({
                 nom: infos[0].value,
@@ -67,13 +66,12 @@ $('#formulaire').on('submit', function (evt) {
                 localStorage.setItem("editUser", ref.id);
                 localStorage.setItem("editUserPoste", 'formateurs');
                 self.location.href = 'espace_admin_user.html'
-            }).catch(ref => {
-                alert("Une erreur est survenue, réessayez ultérieurement")
-            })
+            }).catch(() => { alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement") })
         }
+        // [End] Si on ajoute un formateur ...
 
+        // [Start] Si on ajoute un administrateur ...
         else if ($('#input-poste').val() == 'admin') {
-
             let date = '' + new Date()
             date = date.split('GMT')
             console.log(date)
@@ -90,22 +88,63 @@ $('#formulaire').on('submit', function (evt) {
                 localStorage.setItem("editUser", ref.id);
                 localStorage.setItem("editUserPoste", 'admins');
                 self.location.href = 'espace_admin_user.html'
-            }).catch(ref => {
-                alert("Une erreur est survenue, réessayez ultérieurement")
-            })
+            }).catch(() => { alert("Une erreur est survenue, réessayez ultérieurement") })
         }
+        // [End] Si on ajoute un administrateur ...
 
     }
+    //  [End] Si le formulaire est validé ...
     else console.log('Validation refusée')
-    console.log(infos)
+})
+
+
+// CLICK VIDER CHAMPS
+$('#vider_champs').on('click', function () {
+    document.getElementById('input-nom').value = ''
+    document.getElementById('input-prenom').value = ''
+    document.getElementById('input-classe').value = ''
+    document.getElementById('input-mail').value = ''
 })
 
 
 
+
+// SELECT POSTE AUTO
+$("#input-poste").prop("selectedIndex", localStorage.getItem('sidebar-ajout-user'));
+
+// ENABLE INPUT CLASSE POUR ELEVE
+document.getElementById('input-poste').addEventListener('change', function () {
+    enableClasse()
+})
+// Première fois quand affichage de la page 
+enableClasse()
+
+
+
+
+///////////////////////     FONCTIONS //////////////////////////
+
+
+// ENABLE INPUT CLASSE POUR ELEVE
+function enableClasse() {
+    if (document.getElementById('input-poste').value != 'eleve') {
+        document.getElementById('input-classe').value = ''
+        document.getElementById('input-classe').disabled = true
+        document.getElementById('input-classe').required = false
+    }
+    else {
+        document.getElementById('input-classe').disabled = false
+        document.getElementById('input-classe').required = true
+    }
+}
+
+// RANDOM NUMBER
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
+
+// GENERATE PASSWORD
 function generatePassword() {
     var length = 8,
         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
@@ -118,10 +157,3 @@ function generatePassword() {
 
 
 
-
-$('#vider_champs').on('click', function () {
-    document.getElementById('input-nom').value = ''
-    document.getElementById('input-prenom').value = ''
-    document.getElementById('input-classe').value = ''
-    document.getElementById('input-mail').value = ''
-})

@@ -1,7 +1,6 @@
 # Lien de visualisation : [Lien](https://portfolio-bastien-chantrel.000webhostapp.com/index.html)
 
-
-# Présentation
+# ClassroomRegister - L'école multimédia
 
 Nous devions réaliser une application web qui permet de gérer au mieux la présence des étudiants en classe.
 
@@ -15,84 +14,53 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 3. Pour l’école, comment avoir accès à une synthèse permettant de connaître les étudiants présents, absents ou en retard par classe, par élève.
 
+## Commencer
 
-# Connection Test
+open index.html
 
-- Élève : 
-> Identifiant : robertTest
-> Mot de passe : 123
+## Créer avec
 
-- Formateur : 
-> Identifiant : michelTest
-> Mot de passe : 456
+* [jQuery](https://jquery.com/) - Library
+* [SSB - Admin 2 ](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2) - Template
 
 
-## Technologies utilisées
+## Tutoriel
 
-- ## Template de base 
+### Espace Connection
 
-> [SB Admin 2](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
+### Espace Eleve
+
+#### Pages : 
+-  Afficher élève
+
+### Espace Formateur
+
+#### Pages : 
+- Afficher formateur
+- Afficher cours du formateur
+
+### Espace Administrateur
+
+#### Pages : 
+- Afficher tableaux (  justifications , elèves, formateurs, admins, classes )
+
+- Afficher Justifications
+- Afficher / Ajouter Cours
+
+- Afficher utilisateur
+- Ajouter utilisateur
+
+- Afficher Classe / Ajouter Groupe
+- Ajouter Classe
+
+## Auteurs
+
+* **Bastien CHANTREL** - *Developpement work* - [BastosC](https://github.com/BastosC)
+* **Vincent PAPIN** - *Developpement work* - [Vincent-PAPIN](https://github.com/Vincent-PAPIN)
 
 
-- Jquery
-> [Smooth Scroll](https://www.design-fluide.com/17-11-2013/un-defilement-anime-smooth-scroll-en-jquery-sans-plugin/)
+## License
 
-## Gestion des données
-
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 
-
-# Wireframe
-
-## Espace Connection
-
-Aucunes données affichées 
-
-Données envoyées :
-
-- Identifiant
-- Mot de passe
-- Poste 
-
-Accèes à un espace "Mot de passe oublié" qui permet de récuperer son mot de passe avec son identifiant et son adresse mail .
-Si l'utilisateur à oublié son identifiant, il devra aller voir l'administration directement pour obtenir ses informations personelles .
-
-
-
-## Espace Etudiant
-
-
-<!-- L'élève aura accèes a toutes ses informations sur une seule page .
-Cete page est "Mobile Friendly" pour faciliter la visibilité auprès des élèves qui pourront consulter ses informations via leurs téléphones .
-
-Données affichées :
-
-- Eleve -> Nom
-- Eleve -> Prenom
-- Eleve -> Classe
-- Classe -> Statut
-
-Données envoyées :
-
-// Prévenir formateur
-- Eleve -> Nom
-- Eleve -> Prenom
-- Eleve -> Classe
-- Eleve -> Formateur
-- Eleve -> Justificatif
-
-// Justifier absence
-- Eleve -> Nom
-- Eleve -> Prenom
-- Eleve -> Classe
-- Eleve -> Abscence
-- Eleve -> Message
-- Eleve -> Justificatif -->
-
-## Espace Formateur
-
-Rien pour le moment
-
-## Espace Admin
-
-Rien pour le moment

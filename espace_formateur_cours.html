@@ -275,14 +275,27 @@
           </div>
 
 
+          <!-- Chart Statut -->
+          <div class="ml-3 col-11">
+            <div class="card shadow mb-4">
+              <!-- Card Header - Dropdown -->
+              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Détail du cours </h3>
+              </div>
+              <!-- Card Body -->
+              <div class="card-body" id='infos_cours'>
+
+              </div>
+            </div>
+          </div>
 
           <!-- Content Row -->
           <div class="row">
 
             <!-- /.container-fluid -->
-            <div class="card shadow mb-4 col-19">
+            <div class="card shadow mb-4 ml-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary text-uppercase">Présences</h6>
+                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Présences</h3>
               </div>
               <div class="card-body">
                 <div class="container text-center m-3 mb-5">
@@ -406,28 +419,7 @@
               </div>
             </div>
 
-            <!-- Chart Statut -->
-            <div class="ml-3" style="width: 22%;">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary text-uppercase">Statut actuel </h6>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class=" pt-1 pb-1 text-center">
-                    <p class="h1 m-4 font-weight-bold ">Détail du cours</p>
 
-                  </div>
-                  <p class="h4  mt-3 font-weight-bold text-center">Classe : DEV-2</p>
-                  <p class="h4  mt-3 font-weight-bold text-center">Module : Pico-8</p>
-                  <p class="h4  mt-3 font-weight-bold text-center">Date : 20/14/2020</p>
-                  <p class="h4  mt-3 font-weight-bold text-center">Heure Fin : 14h</p>
-
-
-                </div>
-              </div>
-            </div>
           </div>
 
 
@@ -488,6 +480,8 @@
     src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
   <!-- Page level plugins -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
@@ -499,6 +493,7 @@
   <script src="js/demo/chart-pie-demo.js"></script>
   <script src="js/demo/datatables-demo.js"></script>
   <script src="js/hover.js"></script>
+  <script src='js/Cours.js'></script>
 
 </body>
 
