@@ -221,13 +221,9 @@ $('#FormateurTable').dataTable({
 });
 
 $('#EleveFormateur').dataTable({
-	"lengthMenu": [30, 5, 10, 15, 20],
+	"lengthMenu": [40, 5, 10, 15, 20],
 	"language": {
 		"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/French.json",
-
-	},
-	"language": {
-		"lengthMenu": "Afficher _MENU_ ",
 	}
 });
 

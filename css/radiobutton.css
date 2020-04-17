@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,900);
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.button-wrap {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  margin-top: -2.5em;
+}
+@media (max-width: 40em) {
+  .button-wrap {
+    margin-top: -1.5em;
+  }
+}
+
+.button-label {
+  display: inline-block;
+  padding: 0.2em 1.5em;
+  margin: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+  cursor: pointer;
+  color: #292929;
+  border-radius: 0.25em;
+  background: #efefef;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.button-label h1 {
+  font-size: 0.9em;
+  font-family: "Lato", sans-serif;
+}
+.button-label:hover {
+  background: #d6d6d6;
+  color: #101010;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32);
+}
+.button-label:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.22);
+}
+@media (max-width: 40em) {
+  .button-label {
+    padding: 0em 1em 3px;
+    margin: 0.25em;
+  }
+}
+
+.present:checked + .button-label {
+  background: #2ECC71;
+  color: #efefef;
+}
+.present:checked + .button-label:hover {
+  background: #29b765;
+  color: #e2e2e2;
+}
+
+.retard:checked + .button-label {
+  background: #ffa500;
+  color: #efefef;
+}
+.retard:checked + .button-label:hover {
+  background: #e69500;
+  color: #e2e2e2;
+}
+
+.absent:checked + .button-label {
+  background: #D91E18;
+  color: #efefef;
+}
+.absent:checked + .button-label:hover {
+  background: #c21b15;
+  color: #e2e2e2;
+}
+
+.hidden {
+  display: none;
+}
+

@@ -25,6 +25,9 @@ $('#formulaire_classe').on('submit', function (evt) {
         }).then(ref => {
             $('#nom_classe')[0].value = ''
             $('#select-groupe')[0].value = ''
+            db.collection('groupes').doc(infos[1].value).update({
+                classes: firebase.firestore.FieldValue.arrayUnion(infos[0].value)
+            });
             console.log('classe ajouté , ID: ', ref.id);
         }).catch(() => { alert("Une erreur est survenue, réessayez ultérieurement") })
     }

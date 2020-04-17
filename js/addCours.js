@@ -28,6 +28,9 @@ $('#formulaire_cours').on('submit', function (evt) {
             hr_fin: infos[6].value + ':' + infos[7].value,
             actif: true
         }).then(ref => {
+            db.collection('formateurs').doc(infos[1].value).update({
+                cours: firebase.firestore.FieldValue.arrayUnion(ref.id)
+            });
             console.log('cours ajouté , ID: ', ref.id);
         }).catch(ref => {
             alert("Une erreur est survenue, réessayez ultérieurement")
@@ -91,6 +94,8 @@ db.collection('cours').onSnapshot(() => {
             // [Start] Pour chaque cours actif ...
             cours_actifs.forEach(cours => {
 
+
+
                 // [Start] Récupère les infos de la classe ...  
                 db.collection('classes').doc(cours.data().classe).get()
                     .then(classe => {
@@ -106,7 +111,7 @@ db.collection('cours').onSnapshot(() => {
                                     `<td>  ${cours.data().module}</td>`,
                                     `<td>   ${cours.data().hr_debut}  </a> </td>`,
                                     `<td> ${cours.data().hr_fin} </td>`,
-                                    `<td>  lol</td>`,
+                                    `<td>  </td>`,
 
 
                                 ]).draw();

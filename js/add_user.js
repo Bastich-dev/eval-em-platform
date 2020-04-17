@@ -15,13 +15,14 @@ const db = firebase.firestore()
 // FORMULAIRE AJOUTER UTILISATEUR
 $('#formulaire').on('submit', function (evt) {
 
+
+
     // [Start] Si le formulaire est validé ...
     if (confirm("Valider l'ajout de cet utilisateur ?") == true) {
         let infos = $(this).serializeArray()
         evt.preventDefault();
         const identifiant = ((infos[0].value.slice(0, 2)).toUpperCase() + (infos[1].value).toLowerCase()) + getRandomInt(9) + getRandomInt(9) + getRandomInt(9) + getRandomInt(9)
         const mdp = generatePassword()
-
 
 
         // [Start] Si on ajoute un élève ...
@@ -38,14 +39,19 @@ $('#formulaire').on('submit', function (evt) {
                 indicator_3: 1,
                 poste: 'Élève',
                 absences: []
-            }).then(ref => {
-                console.log('élève ajouté , ID: ', ref.id);
-                localStorage.setItem("editUser", ref.id);
+            }).then(user => {
+                console.log('élève ajouté , ID: ', user.id);
+
+                // Ajoute id eleve dans le tableau eleve de la  classe
+                db.collection('classes').doc(infos[2].value).update({
+                    eleves: firebase.firestore.FieldValue.arrayUnion(user.id)
+                });
+
+                localStorage.setItem("editUser", user.id);
                 localStorage.setItem("editUserPoste", 'eleves');
                 self.location.href = 'espace_admin_user.html'
             }).catch(() => {
                 alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement")
-                confirm('lol')
             })
         }
         // [End] Si on ajoute un élève ...
@@ -96,6 +102,18 @@ $('#formulaire').on('submit', function (evt) {
     //  [End] Si le formulaire est validé ...
     else console.log('Validation refusée')
 })
+
+
+db.collection('classes').get()
+    .then(classes => {
+        // [Start] Pour chaque formateur ...
+        classes.forEach(classe => {
+            $('#input-classe').append(`
+            <option value="${classe.id}">${classe.data().nom}</option>
+            `)
+        })
+    })
+
 
 
 // CLICK VIDER CHAMPS

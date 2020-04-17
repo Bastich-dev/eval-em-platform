@@ -33,6 +33,8 @@ db.collection('cours').where('formateur', '==', localStorage.getItem('ID')).get(
                         db.collection('formateurs').doc(cours.data().formateur).get()
                             .then(formateur => {
 
+
+
                                 $('#CoursTable').DataTable().row.add([
                                     `<td>  ${cours.data().date}</td>`,
                                     `<td>   ${classe.data().nom}  </a> </td>`,
@@ -40,7 +42,7 @@ db.collection('cours').where('formateur', '==', localStorage.getItem('ID')).get(
                                     `<td>  ${cours.data().module}</td>`,
                                     `<td>   ${cours.data().hr_debut}  </a> </td>`,
                                     `<td> ${cours.data().hr_fin} </td>`,
-                                    `<td>  lol</td>`,
+                                    `<td> </td>`,
                                 ]).draw();
 
                             })

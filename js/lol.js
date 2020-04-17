@@ -42,7 +42,7 @@ db.collection(localStorage.getItem("editUserPoste")).doc(localStorage.getItem("e
             document.getElementById('user-id').value = localStorage.getItem("editUser")
 
 
-            if (localStorage.getItem("editUserPoste") == 'eleves') {
+            if (poste == 'eleves') {
                 // AFFICHAGE SELECT CLASSE
                 db.collection('classes').get()
                     .then(classes => {
@@ -54,11 +54,6 @@ db.collection(localStorage.getItem("editUserPoste")).doc(localStorage.getItem("e
                         })
                     }).then(() => {
                         document.getElementById('user-classe').value = user.data().classe
-                        db.collection('classes').doc(user.data().classe).get()
-                            .then(groupe => {
-                                document.getElementById('user-groupe').value = groupe.data().groupe
-                            })
-
                     })
             }
             else {
@@ -187,6 +182,8 @@ $('.editMark').on('change', function () {
     $(this).css('background-color', 'orange')
 })
 // [End] Si un changement est détécté
+
+
 
 
 

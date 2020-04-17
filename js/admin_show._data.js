@@ -28,12 +28,15 @@ db.collection('eleves').get()
     // [Start] Pour chaque élève ...
     eleves.forEach(eleve => {
 
-      $('#EleveTable').DataTable().row.add([
-        `<td> <a href="espace_admin_user.html" class='goToUser eleves'  id ='${eleve.id}'>  ${eleve.data().nom}  ${eleve.data().prenom}  </a> </td>`,
-        `<td> ${eleve.data().mail} </td>`,
-        `<td> <a href=""> ${eleve.data().classe}</a></td>`,
-        ` <td>Groupe</td>`,
-        `     <td>
+      db.collection('classes').doc(eleve.data().classe).get()
+        .then(classe => {
+
+          $('#EleveTable').DataTable().row.add([
+            `<td> <a href="espace_admin_user.html" class='goToUser eleves'  id ='${eleve.id}'>  ${eleve.data().nom}  ${eleve.data().prenom}  </a> </td>`,
+            `<td> ${eleve.data().mail} </td>`,
+            `<td> <a href=""> ${classe.data().nom}</a></td>`,
+            ` <td>${classe.data().groupe}</td>`,
+            `     <td>
                 <div class="d-flex">
                   <div class="col-auto">
                     <i class="  ${ colorIndicator(eleve.data().indicator_1)} text-300" ></i>
@@ -46,19 +49,24 @@ db.collection('eleves').get()
                   </div>
                 </div>
               </td>`,
-        `      <td>  Modifier </td>`
-      ]).draw();
+            `      <td>  Modifier </td>`
+          ]).draw();
+
+          $('.goToUser').on('click', function () {
+            const goToPoste = $(this).attr('class').split(' ')
+            localStorage.setItem("editUser", $(this).attr('id'));
+            localStorage.setItem("editUserPoste", goToPoste[1]);
+          })
+
+        })
 
     });
+
     // [End] Pour chaque élève ...
   })
   .then(() => {
     // [Start] Récupère ID élèves quand click ...  
-    $('.goToUser').on('click', function () {
-      const goToPoste = $(this).attr('class').split(' ')
-      localStorage.setItem("editUser", $(this).attr('id'));
-      localStorage.setItem("editUserPoste", goToPoste[1]);
-    })
+
     // [End] Récupère ID élèves quand click ...  
 
   })
@@ -68,6 +76,35 @@ db.collection('eleves').get()
 // [End] Récupère tous les élèves ...  
 
 
+
+
+//  AFFICHAGE FORMATEUR 
+
+// [Start] Récupère tous les formateurs ... 
+db.collection('classes').get()
+  .then(classes => {
+
+    // [Start] Pour chaque formateur ...
+    classes.forEach(classe => {
+
+      $('#ClasseTable').DataTable().row.add([
+        `<td> <a href="espace_admin_user.html" id ='${classe.id}'>  ${classe.data().nom}    </a> </td>`,
+        `<td> ${classe.data().groupe} </td>`,
+        ` <td> ${classe.data().eleves.length} </td>`,
+      ]).draw();
+
+    });
+    // [End] Pour chaque formateur ...
+  })
+  .then(() => {
+    // [Start] Récupère ID formateur quand click ...  
+
+    // [End] Récupère ID formateur quand click ...  
+  })
+  .catch(err => {
+    console.log('Error getting informations', err);
+  });
+// [End] Récupère tous les classes ... 
 
 
 
