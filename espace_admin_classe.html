@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CR - Espace administrateur</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
+    type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+  <!-- Custom styles for this page -->
+  <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Prevent Fixed position -->
+    <ul class="d-none d-md-flex d-sm-flex d-lg-flex sidebar sidebar-dark" style="visibility: hidden;">
+      <li class="nav-item">
+        <div class="nav-link">
+        </div>
+      </li>
+    </ul>
+    <!-- Sidebar lg -->
+    <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
+      id="accordionSidebar" style="position: fixed;">
+
+      <!-- Sidebar - Brand -->
+      <a href="espace_admin.html" class="sidebar-brand d-flex align-items-center justify-content-center">
+        <div class="sidebar-brand-icon ">
+          <i class="fas fa-user-cog"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Espace admin </div>
+      </a>
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-sign-in-alt"></i>
+          <span>Espace Conection</span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <!-- Heading -->
+      <div class="sidebar-heading h3">
+        Interface
+      </div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="espace_admin_justifications.html">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span> Justifications </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="espace_admin_cours.html">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Cours</span>
+        </a>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Listes</span>
+        </a>
+        <div id="collapseClassses" class="collapse">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-classes"> Classes</a>
+            <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-eleve"> Élèves</a>
+            <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-formateur"> Formateur</a>
+            <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-admin"> Admins</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Ajouter</span>
+        </a>
+        <div id="collapseEleve" class="collapse">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="espace_admin_classeAdd.html">une Classe</a>
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'>un Élève</a>
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'>un
+              Formateur</a>
+            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'>un
+              Administrateur</a>
+          </div>
+        </div>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+
+
+    <!-- Fade for scroll to ancre -->
+    <div id='fadeForScroll'
+      style="display: none; position: absolute; width: 100%; height: 100%; background-color: black; z-index: 2; opacity: 0.3; ">
+    </div>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
+                  Administrateur
+                </span>
+              </a>
+            </li>
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);">Bastien
+                  Chantrel</span>
+              </a>
+            </li>
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h3 class="m-0 font-weight-bold text-primary text-uppercase">Données Classe
+                  </h3>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+
+                  <div class="row">
+                    <div class="col-12 text-center">
+                      <input type="button" class="btn btn-primary ml-5 mr-5 mt-2 mb-2" id='edit'
+                        style="font-size: calc( 1.5vw + 1.5vh );" value='Valider modifications'>
+                      <input type="button" class="btn btn-danger ml-5 mr-5 mt-2 mb-2" id='delete'
+                        style="font-size: calc( 1.5vw + 1.5vh );" value='Supprimer classe'>
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+
+                    <div class="col-lg-6 col-sm-12">
+                      <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
+                        <b>Nom</b>
+                        <input type="text" id='classe-nom' class="mt-2 form-control form-control-user editMark">
+                      </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12">
+                      <div class="form-group m-2 mt-3  ml-5  " style="width: 80%;">
+                        <b>Groupe</b>
+
+                        <select name="classe" id="classe-groupe" class="mt-2 form-control form-control-user editMark">
+                          <option value=""></option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+
+            <div class="col-lg-6 col-sm-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h3 class="m-0 font-weight-bold text-primary text-uppercase">Eleves
+                  </h3>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <table class="table table-bordered" id="EleveClasse" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Nom</th>
+                        <th>e-mail</th>
+                        <th>Nombres absences</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tbody>
+
+                      </tbody>
+                  </table>
+
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-lg-6 col-sm-12">
+
+
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter message
+                  </h3>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <form action="" id='ajout-message'>
+
+                    <input type="text" class="mb-3 pl-1" placeholder="Titre" name='titre' required>
+                    <textarea wrap="soft" name="message" rows='5' id="" style="width: 100%;" class="pl-1"
+                      placeholder="Message ..."></textarea>
+
+                    <input type="submit" class="btn btn-primary mt-2" value='Ajouter mesage'>
+
+                  </form>
+
+                </div>
+              </div>
+
+
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h3 class="m-0 font-weight-bold text-primary text-uppercase">Messages Classe
+                  </h3>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div id='affiche_message' style="max-height: 500px; overflow: scroll; overflow-x: hidden;">
+
+
+
+
+
+
+                  </div>
+
+
+                </div>
+              </div>
+
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Bascent 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+  <!-- Bootstrap core JavaScript-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+  <!-- Firebase Cloud Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <!-- Page level plugins -->
+  <script src="css/jquery.dataTables.js"></script>
+  <script src="css/dataTables.bootstrap4.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="js/demo/datatables-demo.js"></script>
+
+  <script src='js/admin_tools.js'></script>
+  <script src='js/afficheClasse.js'></script>
+
+</body>
+
+</html>

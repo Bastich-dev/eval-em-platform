@@ -288,16 +288,8 @@
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Statut du cours </h6>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
-                  <div class=" pt-1 pb-1 text-center">
-                    <p class="h1 m-4 font-weight-bold ">Cours commencé</p>
-                    <i class="fas fa-check-circle text-300 fa-4x text-success"></i>
-                  </div>
-                  <p class="h4  mt-3 font-weight-bold text-center">La porte est fermée </p>
-                  <a class="btn btn-primary col-12 p-3 mt-4  text-center small text-uppercase text-white js-scrollTo"
-                    href="#eleve-prevenir">
-                    Contacter Formateur
-                  </a>
+                <div class="card-body" id='statut_cours'>
+
                 </div>
               </div>
             </div>
@@ -352,33 +344,10 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Messages Importants</h6>
                 </div>
-                <div style="max-height: 500px; overflow: scroll; overflow-x: hidden;">
-                  <div class="card m-4  border-bottom-secondary">
-                    <div class="card-body">
-                      <b>COVID-19</b> <br>
-                      Grâce à notre plateforme e-Learning développée depuis 4 ans, à une équipe pédagogique qui assiste
-                      chaque étudiant, grâce à nos enseignants experts en classes virtuelles, nous assurons à distance
-                      un
-                      enseignement de qualité.
-                    </div>
-                  </div>
-                  <div class="card m-4  border-bottom-secondary">
-                    <div class="card-body">
-                      <b>Job Dating</b> <br>
-                      Participez à notre prochain Job Dating, le mercredi 13 mai 2020 de 9h30 à 13h30.
-                      Sous forme de speed-dating, des professionnels et nos étudiants se rencontrent avec l'ambition de
-                      trouver un futur collaborateur pour les uns et une expérience enrichissante pour les autres.
-                    </div>
-                  </div>
-                  <div class="card m-4  border-bottom-secondary">
-                    <div class="card-body">
-                      <b>Titre</b> <br>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quam illo distinctio omnis
-                      esse
-                      reprehenderit perferendis? Aliquid voluptatibus quod cumque. Laboriosam nostrum aspernatur placeat
-                      autem ipsa repudiandae provident totam consectetur!
-                    </div>
-                  </div>
+                <div style="max-height: 500px; overflow: scroll; overflow-x: hidden;" id='eleve-messages'>
+
+
+
                 </div>
               </div>
             </div>
@@ -481,9 +450,15 @@
     <!-- Core plugin JavaScript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script src='js/afficheEleve.js'></script>
     <script src='js/all_tools.js'></script>
+
 
 
 </body>

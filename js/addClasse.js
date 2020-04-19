@@ -20,13 +20,15 @@ $('#formulaire_classe').on('submit', function (evt) {
             nom: infos[0].value,
             groupe: infos[1].value,
             statut: 0,
+            timer: 0,
             eleves: [],
-            cours: ''
+            cours: '',
+            messages: []
         }).then(ref => {
             $('#nom_classe')[0].value = ''
             $('#select-groupe')[0].value = ''
             db.collection('groupes').doc(infos[1].value).update({
-                classes: firebase.firestore.FieldValue.arrayUnion(infos[0].value)
+                classes: firebase.firestore.FieldValue.arrayUnion(ref.id)
             });
             console.log('classe ajouté , ID: ', ref.id);
         }).catch(() => { alert("Une erreur est survenue, réessayez ultérieurement") })
@@ -51,13 +53,13 @@ $('#formulaire_groupe').on('submit', function (evt) {
 
 // [Start] Quand 'classes' est modifié...   
 db.collection('classes').onSnapshot(() => {
-    $('#ClasseTable').DataTable().clear()
+
 
 
     // [Start] Récupère toutes les classes ...  
     db.collection('classes').get()
         .then(classes => {
-
+            $('#ClasseTable').DataTable().clear()
             // [Start] Pour chaque classe ...
             classes.forEach(classe => {
                 $('#ClasseTable').DataTable().row.add([
@@ -68,6 +70,11 @@ db.collection('classes').onSnapshot(() => {
             // [End] Pour chaque classe ...
 
         }).then(() => {
+            $('.goToClasse').on('click', function () {
+
+                localStorage.setItem("editClasse", $(this).attr('id'));
+
+            })
             console.log('Affichage classes réussi');
         })
         .catch(err => {
@@ -85,14 +92,14 @@ db.collection('classes').onSnapshot(() => {
 
 // [Start] Quand 'groupes' est modifié...   
 db.collection('groupes').onSnapshot(() => {
-    $('#GroupeTable').DataTable().clear()
-    $('#select-groupe').empty()
-    $('#select-groupe').append(` <option value=""></option> `)
 
 
     // [Start] Récupère tous les groupes ...  
     db.collection('groupes').get()
         .then(groupes => {
+            $('#GroupeTable').DataTable().clear()
+            $('#select-groupe').empty()
+            $('#select-groupe').append(` <option value=""></option> `)
 
             // [Start] Pour chaque groupe ...
             groupes.forEach(groupe => {

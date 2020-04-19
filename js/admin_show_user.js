@@ -128,7 +128,7 @@ $('#edit_user').on('click', function () {
 
     // Animation modifs
     $('.editMark').css('background-color', '#28a745')
-
+    $('.editMark').css('color', 'white')
     db.collection('eleves').doc(document.getElementById('user-id').value).get()
         .then(user => {
             if (!user.exists) {
@@ -162,7 +162,7 @@ $('#edit_user').on('click', function () {
 
 
                             // Animation modifs
-                            setTimeout(function () { $('.editMark').css('background-color', 'white') }, 1000)
+                            setTimeout(function () { $('.editMark').css('background-color', 'white'); $('.editMark').css('color', 'black') }, 1000)
                         });
                     // [End] Update TOUTES les infos user entrés...  
 
@@ -180,14 +180,21 @@ $('#edit_user').on('click', function () {
 // [End] Si un changement est détécté
 $('.editMark').on('change', function () {
 
-    db.collection('classes').doc(document.getElementById('user-classe').value).update({
-        eleves: firebase.firestore.FieldValue.arrayRemove(document.getElementById('user-id').value)
-    })
+
+
+    db.collection('classes').doc(document.getElementById('user-classe').value).get()
+        .then(classe => {
+
+            document.getElementById('user-groupe').value = classe.data().groupe
+
+        })
+
     // Animation modifs
     $(this).css('background-color', 'orange')
-})
-// [End] Si un changement est détécté
+    // [End] Si un changement est détécté
 
+
+})
 
 
 

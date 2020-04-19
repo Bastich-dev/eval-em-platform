@@ -249,3 +249,10 @@ $('#CoursTable').dataTable({
 		"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/French.json"
 	}
 });
+
+$('#EleveClasse').dataTable({
+	"lengthMenu": [20, 5, 10, 30, 50],
+	"language": {
+		"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/French.json"
+	}
+});

@@ -78,33 +78,37 @@ db.collection('eleves').get()
 
 
 
-//  AFFICHAGE FORMATEUR 
+//  AFFICHAGE CLASSE 
 
-// [Start] Récupère tous les formateurs ... 
+// [Start] Récupère toutes les classes ... 
 db.collection('classes').get()
   .then(classes => {
 
-    // [Start] Pour chaque formateur ...
+    // [Start] Pour chaque classe ...
     classes.forEach(classe => {
 
       $('#ClasseTable').DataTable().row.add([
-        `<td> <a href="espace_admin_user.html" id ='${classe.id}'>  ${classe.data().nom}    </a> </td>`,
+        `<td> <a href="espace_admin_classe.html" class='goToClasse' id ='${classe.id}'>  ${classe.data().nom}    </a> </td>`,
         `<td> ${classe.data().groupe} </td>`,
         ` <td> ${classe.data().eleves.length} </td>`,
       ]).draw();
 
     });
-    // [End] Pour chaque formateur ...
+    // [End] Pour chaque classe ...
   })
   .then(() => {
-    // [Start] Récupère ID formateur quand click ...  
+    // [Start] Récupère ID classe quand click ...  
+    $('.goToClasse').on('click', function () {
 
-    // [End] Récupère ID formateur quand click ...  
+      localStorage.setItem("editClasse", $(this).attr('id'));
+
+    })
+    // [End] Récupère ID classe quand click ...  
   })
   .catch(err => {
     console.log('Error getting informations', err);
   });
-// [End] Récupère tous les classes ... 
+// [End] Récupère toutes les classes ... 
 
 
 

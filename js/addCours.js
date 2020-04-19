@@ -26,7 +26,8 @@ $('#formulaire_cours').on('submit', function (evt) {
             date: infos[3].value,
             hr_debut: infos[4].value + ':' + infos[5].value,
             hr_fin: infos[6].value + ':' + infos[7].value,
-            actif: true
+            salle: infos[8].value,
+            actif: true,
         }).then(ref => {
             db.collection('formateurs').doc(infos[1].value).update({
                 cours: firebase.firestore.FieldValue.arrayUnion(ref.id)
@@ -37,7 +38,7 @@ $('#formulaire_cours').on('submit', function (evt) {
         })
     }
     //  [End] Si le formulaire est validé ...
-    else console.log('Validation refusée')
+    else evt.preventDefault();
 })
 
 
@@ -106,16 +107,28 @@ db.collection('cours').onSnapshot(() => {
 
                                 $('#CoursTable').DataTable().row.add([
                                     `<td>  ${cours.data().date}</td>`,
-                                    `<td>   ${classe.data().nom} </td>`,
-                                    `<td> ${formateur.data().prenom}  ${formateur.data().nom} </td>`,
+                                    `<td> <a href="espace_admin_classe.html" class='goToClasse' id ='${classe.id}'>  ${classe.data().nom}    </a> </td>`,
+                                    `<td> <a href="espace_admin_user.html" class='goToUser formateurs'  id ='${formateur.id}'>  ${formateur.data().nom}  ${formateur.data().prenom}  </a> </td>`,
                                     `<td>  ${cours.data().module}</td>`,
                                     `<td>   ${cours.data().hr_debut}  </a> </td>`,
                                     `<td> ${cours.data().hr_fin} </td>`,
+                                    `<td> ${cours.data().salle} </td>`,
                                     `<td>  </td>`,
 
 
                                 ]).draw();
 
+
+                                $('.goToUser').on('click', function () {
+                                    const goToPoste = $(this).attr('class').split(' ')
+                                    localStorage.setItem("editUser", $(this).attr('id'));
+                                    localStorage.setItem("editUserPoste", goToPoste[1]);
+                                })
+                                $('.goToClasse').on('click', function () {
+
+                                    localStorage.setItem("editClasse", $(this).attr('id'));
+
+                                })
                             })
                         // [End] Récupère  les infos du formateur ...  
                     })
@@ -123,9 +136,6 @@ db.collection('cours').onSnapshot(() => {
             });
             // [End] Pour chaque cours actif ...
 
-        })
-        .then(() => {
-            console.log('Affichage cours réussi');
         })
         .catch(err => {
             console.log('Error getting informations', err);

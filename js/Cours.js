@@ -26,20 +26,19 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
             db.collection('classes').doc(doc.data().classe).get()
                 .then(classe => {
 
-                    // Récupère les du formateur liée au cours
-                    db.collection('formateurs').doc(doc.data().formateur).get()
-                        .then((formateur) => {
-                            $('#infos_cours').append(`
+
+                    $('#infos_cours').append(`
                             <div class="row justify-content-around">
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center">  Classe :  <span class='font-weight-light'> ${classe.data().nom}</span> </p>
-                            <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center">  Formateur :  <span class='font-weight-light'> ${formateur.data().nom}  ${formateur.data().prenom}</span> </p>
+                            <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center"> Salle :  <span class='font-weight-light'> ${doc.data().salle}</span> </p>
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center">  Module :  <span class='font-weight-light'> ${doc.data().module}</span> </p>
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center">  Date :  <span class='font-weight-light'> ${doc.data().date}</span> </p>
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center">  Horaire Début :  <span class='font-weight-light'> ${doc.data().hr_debut}</span> </p>
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center"> Horaire Fin :  <span class='font-weight-light'> ${doc.data().hr_fin}</span> </p>
+                         
                             </div>
                             `)
-                        })
+
 
 
 
@@ -112,13 +111,106 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
 
 
 
+                    db.collection('classes').doc(classe.id).onSnapshot((classse) => {
+
+
+                        if (classse.data().statut == 1) {
+                            $('#cours-commencer').find('.hide_card').show('slow')
+                            $('#cours-timer').find('.hide_card').hide('slow')
+                            $('#cours-cours').find('.hide_card').show('slow')
+                            $('#cours-fin').find('.hide_card').show('slow')
+                        }
+                        else if (classse.data().statut == 2) {
+
+                            $("#cours-timer_titre").replaceWith("<h6 class='text-center'>?? minutes ?? secondes </h6>");
+                            $("#btn-timer").remove()
+
+                            let timerInterval = setInterval(() => {
+                                console.log('lol')
+                                db.collection('classes').doc(classe.id).update({
+                                    timer: classse.data().timer - 1,
+                                })
+
+                            }, 1000);
+
+
+                            if (classe.data().timer <= 0) {
+                                $('#cours-commencer').find('.hide_card').show('slow')
+                                $('#cours-timer').find('.hide_card').show('slow')
+                                $('#cours-cours').find('.hide_card').hide('slow')
+                                $('#cours-fin').find('.hide_card').hide('slow')
+                                clearInterval(timerInterval)
+                            }
+
+                        }
+                        else if (classse.data().statut == 3) {
+                            $('#cours-commencer').find('.hide_card').show('slow')
+                            $('#cours-timer').find('.hide_card').show('slow')
+                            $('#cours-cours').find('.hide_card').show('slow')
+                            $('#cours-fin').find('.hide_card').hide('slow')
+
+                            $("#btn-fin").replaceWith("<h2 class='text-center'>Cours clos</h2>");
+                            $("input[type=radio]").attr('disabled', true);
+                            $('#message-appel').replaceWith("<b id='message-appel' class='text-primary h5'> La feuille d'appel a été envoyée !</b>")
+                            db.collection('cours').doc(localStorage.getItem("ID_cours")).update({
+                                actif: false
+                            }).then(() => {
+                                db.collection('classes').doc(classe.id).update({
+                                    statut: 0,
+                                })
+                            })
+
+                        }
+
+
+                    });
+
+
+                    $('#btn-commencer').on('click', function () {
+
+                        db.collection('classes').doc(classe.id).update({
+                            statut: 1
+                        })
+                    })
+
+
+
+                    $('#btn-timer').on('click', function () {
+
+                        db.collection('classes').doc(classe.id).update({
+                            statut: 2,
+                            timer: 2
+                        })
+
+                    })
+
+                    $('#btn-cours').on('click', function () {
+
+                        db.collection('classes').doc(classe.id).update({
+                            statut: 1
+                        })
+                    })
+
+
+                    $('#btn-fin').on('click', function () {
+                        db.collection('classes').doc(classe.id).update({
+                            statut: 3,
+
+                        })
+                    })
+
+
+
 
                 })
 
+
+
+
+
+
         }
     })
-
-
 
 
 

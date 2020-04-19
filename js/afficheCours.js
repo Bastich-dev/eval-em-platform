@@ -42,7 +42,7 @@ db.collection('cours').where('formateur', '==', localStorage.getItem('ID')).get(
                                     `<td>  ${cours.data().module}</td>`,
                                     `<td>   ${cours.data().hr_debut}  </a> </td>`,
                                     `<td> ${cours.data().hr_fin} </td>`,
-                                    `<td> </td>`,
+                                    `<td> ${cours.data().salle}  </td>`,
                                 ]).draw();
 
                             })
@@ -101,6 +101,7 @@ db.collection('cours').where('formateur', '==', localStorage.getItem('ID')).get(
                                     <h6>Classe : ${classe.data().nom}</h6>
                                     <h6>Horaire début : ${cours.data().hr_debut}</h6>
                                     <h6>Horaire fin : ${cours.data().hr_fin}</h6>
+                                    <h6>Salle : ${cours.data().salle}</h6>
                                 </div>
                             </div>
                         </div>`)
