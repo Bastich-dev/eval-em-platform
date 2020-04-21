@@ -1,16 +1,3 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyB22w9CYMJV413plCv8yNYRgT0hr096qn8",
-    authDomain: "imperator-7e26a.firebaseapp.com",
-    databaseURL: "https://imperator-7e26a.firebaseio.com",
-    projectId: "imperator-7e26a",
-    storageBucket: "imperator-7e26a.appspot.com",
-    messagingSenderId: "59630211424",
-    appId: "1:59630211424:web:d9329b20431623aa230e05"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore()
-
-
 
 
 // Récupère le cours sélectionné au clic de la page espace_formateur.html
@@ -111,80 +98,183 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
 
 
 
+
+
+
+
                     db.collection('classes').doc(classe.id).onSnapshot((classse) => {
 
 
-                        if (classse.data().statut == 1) {
-                            $('#cours-commencer').find('.hide_card').show('slow')
-                            $('#cours-timer').find('.hide_card').hide('slow')
-                            $('#cours-cours').find('.hide_card').show('slow')
-                            $('#cours-fin').find('.hide_card').show('slow')
-                        }
-                        else if (classse.data().statut == 2) {
-
-                            $("#cours-timer_titre").replaceWith("<h6 class='text-center'>?? minutes ?? secondes </h6>");
-                            $("#btn-timer").remove()
-
-                            let timerInterval = setInterval(() => {
-                                console.log('lol')
-                                db.collection('classes').doc(classe.id).update({
-                                    timer: classse.data().timer - 1,
-                                })
-
-                            }, 1000);
 
 
-                            if (classe.data().timer <= 0) {
-                                $('#cours-commencer').find('.hide_card').show('slow')
-                                $('#cours-timer').find('.hide_card').show('slow')
-                                $('#cours-cours').find('.hide_card').hide('slow')
-                                $('#cours-fin').find('.hide_card').hide('slow')
-                                clearInterval(timerInterval)
-                            }
 
-                        }
-                        else if (classse.data().statut == 3) {
-                            $('#cours-commencer').find('.hide_card').show('slow')
-                            $('#cours-timer').find('.hide_card').show('slow')
-                            $('#cours-cours').find('.hide_card').show('slow')
-                            $('#cours-fin').find('.hide_card').hide('slow')
 
-                            $("#btn-fin").replaceWith("<h2 class='text-center'>Cours clos</h2>");
-                            $("input[type=radio]").attr('disabled', true);
-                            $('#message-appel').replaceWith("<b id='message-appel' class='text-primary h5'> La feuille d'appel a été envoyée !</b>")
-                            db.collection('cours').doc(localStorage.getItem("ID_cours")).update({
-                                actif: false
-                            }).then(() => {
-                                db.collection('classes').doc(classe.id).update({
-                                    statut: 0,
-                                })
+                        db.collection('cours').doc(localStorage.getItem("ID_cours"))
+                            .get()
+                            .then(doc => {
+
+                                if ((classse.data().statut == 0) && (doc.data().actif == true)) {
+                                    $('#cours-commencer').find('.hide_card').hide('slow')
+                                    $('#cours-timer').find('.hide_card').show('slow')
+                                    $('#cours-cours').find('.hide_card').show('slow')
+                                    $('#cours-fin').find('.hide_card').show('slow')
+                                }
+                                else if ((classse.data().statut == 0) && (doc.data().actif == false)) {
+                                    $('#cours-commencer').find('.hide_card').show('slow')
+                                    $('#cours-timer').find('.hide_card').show('slow')
+                                    $('#cours-cours').find('.hide_card').show('slow')
+                                    $('#cours-fin').find('.hide_card').hide('slow')
+
+                                    $("#btn-fin").replaceWith("<h2 class='text-center'>Cours clos</h2>");
+                                    $("input[type=radio]").attr('disabled', true);
+                                    $('#message-appel').replaceWith("<b id='message-appel' class='text-primary h5'> La feuille d'appel a été envoyée !</b>")
+                                }
+                                else if (classse.data().statut == 1) {
+                                    $('#cours-commencer').find('.hide_card').show('slow')
+                                    $('#cours-timer').find('.hide_card').hide('slow')
+                                    $('#cours-cours').find('.hide_card').show('slow')
+                                    $('#cours-fin').find('.hide_card').show('slow')
+                                }
+                                else if (classse.data().statut == 2) {
+
+                                    $("#cours-timer_titre").replaceWith(`<h6 class='text-center' id='timer_count'> Timer lancé ! </h6>`);
+                                    $("#btn-timer").css({ 'display': 'none' })
+
+
+
+                                    console.log(classse.data().timer)
+                                    if (classse.data().timer <= 0) {
+                                        $('#cours-commencer').find('.hide_card').show('slow')
+                                        $('#cours-timer').find('.hide_card').show('slow')
+                                        $('#cours-cours').find('.hide_card').hide('slow')
+                                        $('#cours-fin').find('.hide_card').hide('slow')
+                                        $('#timer_count').text('')
+                                        document.getElementById('sound-success').play()
+                                        new Notyf().success({
+                                            message: 'Le cours a démarré',
+                                            duration: 4000,
+
+                                            position: {
+                                                x: 'center',
+                                                y: 'bottom',
+                                            }
+                                        });
+
+                                    } else {
+
+                                        $('#cours-commencer').find('.hide_card').show('slow')
+                                        $('#cours-timer').find('.hide_card').hide('slow')
+                                        $('#cours-cours').find('.hide_card').show('slow')
+                                        $('#cours-fin').find('.hide_card').show('slow')
+
+
+                                        setTimeout(() => {
+                                            $('#timer_count').text(Math.floor((classse.data().timer / 60) % 60) + ' minutes ' + Math.floor(classse.data().timer % 60) + ' secondes ')
+                                            console.log(Math.floor(8) % 60)
+                                            db.collection('classes').doc(classe.id).update({
+                                                timer: classse.data().timer - 1,
+                                            })
+                                        }, 1000)
+                                    }
+
+
+
+
+                                }
+                                else if (classse.data().statut == 3) {
+                                    $('#cours-commencer').find('.hide_card').show('slow')
+                                    $('#cours-timer').find('.hide_card').show('slow')
+                                    $('#cours-cours').find('.hide_card').show('slow')
+                                    $('#cours-fin').find('.hide_card').hide('slow')
+
+                                    $("#btn-fin").replaceWith("<h2 class='text-center'>Cours clos</h2>");
+                                    $("input[type=radio]").attr('disabled', true);
+                                    $('#message-appel').replaceWith("<b id='message-appel' class='text-primary h5'> La feuille d'appel a été envoyée !</b>")
+                                    db.collection('cours').doc(localStorage.getItem("ID_cours")).update({
+                                        actif: false
+                                    }).then(() => {
+                                        db.collection('classes').doc(classe.id).update({
+                                            statut: 0,
+                                        })
+                                    })
+
+                                }
+
+
                             })
 
-                        }
+
+
+
+
 
 
                     });
 
 
                     $('#btn-commencer').on('click', function () {
-
+                        document.getElementById('sound-success').play()
+                        new Notyf().success({
+                            message: 'Vous avez commencer la session',
+                            duration: 4000,
+                            position: {
+                                x: 'center',
+                                y: 'bottom',
+                            }
+                        });
                         db.collection('classes').doc(classe.id).update({
                             statut: 1
                         })
                     })
 
-
-
                     $('#btn-timer').on('click', function () {
-
+                        document.getElementById('sound-success').play()
+                        new Notyf().success({
+                            message: 'Vous commencerez le cours dans ' + document.getElementById('timer-count').value + ' minutes',
+                            duration: 4000,
+                            position: {
+                                x: 'center',
+                                y: 'bottom',
+                            }
+                        });
                         db.collection('classes').doc(classe.id).update({
                             statut: 2,
-                            timer: 2
+                            timer: document.getElementById('timer-count').value * 60
                         })
+
+
 
                     })
 
                     $('#btn-cours').on('click', function () {
+                        document.getElementById('sound-success').play()
+                        new Notyf().success({
+                            message: 'Vous avez mis le cours en pause',
+                            duration: 4000,
+                            position: {
+                                x: 'center',
+                                y: 'bottom',
+                            }
+                        });
+                        $("#btn-timer").css({ 'display': 'flex' })
+                        $("#timer_count").replaceWith(`  <div class="row" id='cours-timer_titre'>
+                        <select id='timer-count' name="hr1-debut" class="mt-2 ml-2 form-control form-control-user"
+                          style="width: 40%;">
+                          <option value="02">2</option>
+                          <option value="03">3</option>
+                          <option value="04">4</option>
+                          <option value="05">5</option>
+                          <option value="08">8</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">25</option>
+                          <option value="30">30</option>
+
+                        </select>
+                        <b class="m-2 d-flex align-items-center "> minutes </b>
+
+                      </div>`);
 
                         db.collection('classes').doc(classe.id).update({
                             statut: 1
@@ -193,6 +283,15 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
 
 
                     $('#btn-fin').on('click', function () {
+                        document.getElementById('sound-success').play()
+                        new Notyf().success({
+                            message: "Vous avez mis fin au cours, la feuille d'apel à bien été envoyée ",
+                            duration: 4000,
+                            position: {
+                                x: 'center',
+                                y: 'bottom',
+                            }
+                        });
                         db.collection('classes').doc(classe.id).update({
                             statut: 3,
 

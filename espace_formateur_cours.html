@@ -19,7 +19,7 @@
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"
     rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
@@ -59,9 +59,10 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.html" id='logout'>
           <i class="fas fa-fw fa-sign-in-alt"></i>
           <span>Espace Conection</span></a>
+        <input type="text" value='formateurs' class="d-none" id='poste_id'>
       </li>
 
       <!-- Divider -->
@@ -118,43 +119,6 @@
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- Sidebar Toggle (md sm & xs) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-none  d-sm,-flex d-lg-none  rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-          <div class="dropdown ml-1 d-sm-none ">
-            <button class="btn btn-link d-md-none rounded-circle mr-3 " type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-bars"></i>
-            </button>
-            <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="index.html" aria-expanded="true" aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Espace conection
-                </a>
-                <hr class="sidebar-divider">
-                <a class="nav-link collapsed" href="espace_formateur.html#formateur-cours" aria-expanded="true"
-                  aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Cours du jour
-                </a>
-                <a class="nav-link collapsed" href="espace_formateur.html#formateur-planning" aria-expanded="true"
-                  aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Planning semaine
-                </a>
-                <a class="nav-link collapsed" href="espace_formateur.html#formateur-allCours" aria-expanded="true"
-                  aria-controls="collapseUtilities">
-                  <i class="mr-3 fas fa-fw fa-wrench"></i>
-                  Tout mes cours
-                </a>
-
-              </li>
-            </div>
-          </div>
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -175,8 +139,9 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);">Bastien
-                  Chantrel</span>
+                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                  id='id_nom_user'>
+                </span>
 
               </a>
             </li>
@@ -200,7 +165,7 @@
 
             <div class="col-xl-3 col-md-6 mb-4" id='cours-commencer'>
               <div class="card shadow h-100 py-2 hide_card"
-                style="position: absolute; background-color: black; z-index:5; width: 96%; opacity: 0.6; display:none;">
+                style="position: absolute; background-color: black; z-index:5; width: 96%; opacity: 0.6; display:flex;">
               </div>
               <div class="card border-left-success  shadow h-100 py-2">
                 <div class="card-body">
@@ -232,7 +197,8 @@
                       <div class="h5 font-weight-bold text-warning text-uppercase mb-1">Début du cours dans</div>
                       <div class="h6 mb-0 font-weight-bold text-gray-800">
                         <div class="row" id='cours-timer_titre'>
-                          <select name="hr1-debut" class="mt-2 ml-2 form-control form-control-user" style="width: 40%;">
+                          <select id='timer-count' name="hr1-debut" class="mt-2 ml-2 form-control form-control-user"
+                            style="width: 40%;">
                             <option value="02">2</option>
                             <option value="03">3</option>
                             <option value="04">4</option>
@@ -412,31 +378,33 @@
 
 
 
+  <!-- Audio files for notify -->
+  <audio id='sound-success'>
+    <source src="Sounds/success.mp3" />
+  </audio>
+  <audio id='sound-error'>
+    <source src="Sounds/error.mp3" />
+  </audio>
+
   <!-- Bootstrap core JavaScript-->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Firebase Cloud Firestore -->
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/all_tools.js"></script>
+
   <!-- Page level plugins -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="css/jquery.dataTables.js"></script>
-  <script src="css/dataTables.bootstrap4.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="js/demo/datatables-demo.js"></script>
-
+  <!-- Page  custom scripts -->
   <script src='js/Cours.js'></script>
   <script
     src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>

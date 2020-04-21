@@ -51,9 +51,10 @@
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.html" id='logout'>
           <i class="fas fa-fw fa-sign-in-alt"></i>
           <span>Espace Conection</span></a>
+        <input type="text" value='eleves' class="d-none" id='poste_id'>
       </li>
 
       <!-- Divider -->
@@ -167,8 +168,9 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item">
               <div class="nav-link ">
-                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);">Bastien
-                  Chantrel</span>
+                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                  id='id_nom_user'>
+                </span>
               </div>
             </li>
           </ul>
@@ -443,21 +445,35 @@
     </a>
 
 
+    <!-- Audio files for notify -->
+    <audio id='sound-success'>
+      <source src="Sounds/success.mp3" />
+    </audio>
+    <audio id='sound-error'>
+      <source src="Sounds/error.mp3" />
+    </audio>
+
     <!-- Bootstrap core JavaScript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
+    <!-- Firebase Cloud Firestore -->
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/all_tools.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="js/jquery.dataTables.js"></script>
+    <script src="js/dataTables.bootstrap4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
+
+    <!-- Page  custom scripts -->
     <script src='js/afficheEleve.js'></script>
-    <script src='js/all_tools.js'></script>
+
 
 
 

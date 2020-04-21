@@ -10,8 +10,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
-console.log(localStorage.getItem('errIdentification'))
 
+localStorage.setItem('ID', null)
+localStorage.setItem('ID_poste', null)
 
 $('#formLogin').on('submit', function (e) {
     e.preventDefault()
@@ -33,6 +34,7 @@ $('#formLogin').on('submit', function (e) {
                                 snapshot.forEach(doc => {
                                     console.log(doc.id);
                                     localStorage.setItem('ID', doc.id)
+                                    localStorage.setItem('ID_poste', 'eleves')
                                     $('#errId').css('visibility', 'hidden')
                                     self.location.href = 'espace_eleve.html'
                                 });
@@ -66,6 +68,7 @@ $('#formLogin').on('submit', function (e) {
                                 snapshot.forEach(doc => {
                                     console.log(doc.id);
                                     localStorage.setItem('ID', doc.id)
+                                    localStorage.setItem('ID_poste', 'formateurs')
                                     $('#errId').css('visibility', 'hidden')
                                     self.location.href = 'espace_formateur.html'
                                 });
@@ -97,7 +100,7 @@ $('#formLogin').on('submit', function (e) {
                                 snapshot.forEach(doc => {
                                     console.log(doc.id);
                                     localStorage.setItem('ID', doc.id)
-
+                                    localStorage.setItem('ID_poste', 'admins')
                                     $('#errId').css('visibility', 'hidden')
                                     self.location.href = 'espace_admin.html'
                                 });

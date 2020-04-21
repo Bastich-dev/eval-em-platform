@@ -1,15 +1,3 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyB22w9CYMJV413plCv8yNYRgT0hr096qn8",
-    authDomain: "imperator-7e26a.firebaseapp.com",
-    databaseURL: "https://imperator-7e26a.firebaseio.com",
-    projectId: "imperator-7e26a",
-    storageBucket: "imperator-7e26a.appspot.com",
-    messagingSenderId: "59630211424",
-    appId: "1:59630211424:web:d9329b20431623aa230e05"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore()
-
 
 
 

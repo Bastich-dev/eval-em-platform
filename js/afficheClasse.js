@@ -1,14 +1,3 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyB22w9CYMJV413plCv8yNYRgT0hr096qn8",
-    authDomain: "imperator-7e26a.firebaseapp.com",
-    databaseURL: "https://imperator-7e26a.firebaseio.com",
-    projectId: "imperator-7e26a",
-    storageBucket: "imperator-7e26a.appspot.com",
-    messagingSenderId: "59630211424",
-    appId: "1:59630211424:web:d9329b20431623aa230e05"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore()
 
 db.collection('classes').doc(localStorage.getItem('editClasse')).get()
     .then(classe => {
@@ -103,8 +92,25 @@ $('#delete').on('click', function () {
                             // Delete id eleve dans le tableau eleve de la  classe
                             db.collection('groupes').doc(doc.data().groupe).update({
                                 classes: firebase.firestore.FieldValue.arrayRemove(doc.id)
-                            });
-                            self.location.href = 'espace_admin.html'
+                            })
+
+
+                            db.collection('eleves').where("classe", "==", doc.id)
+                                .get()
+                                .then(dddd => {
+                                    dddd.forEach((dooc) => {
+
+                                        dooc.ref.delete().then(() => {
+                                            self.location.href = 'espace_admin.html'
+                                        })
+
+                                    })
+                                    self.location.href = 'espace_admin.html'
+                                })
+
+
+
+
 
                         })
                         .catch(function (error) {
@@ -160,22 +166,32 @@ db.collection('classes').doc(localStorage.getItem('editClasse')).get()
 
 
 $('#ajout-message').on('submit', function (evt) {
-    if (confirm("Valider l'ajout de cette classe  ?") == true) {
-        let infos = $(this).serializeArray()
-        evt.preventDefault();
 
-        console.log(infos)
+    let infos = $(this).serializeArray()
+    evt.preventDefault();
 
-        let titre = infos[0].value
-        let message = infos[1].value
-        message = message.replace(/ /g, '£')
-        message = message.replace(/\n/g, '</br>')
-        message = titre + 'ZYX' + message
+    console.log(infos)
 
-        db.collection('classes').doc(localStorage.getItem('editClasse')).update({
-            messages: firebase.firestore.FieldValue.arrayUnion(message)
-        });
-    }
+    let titre = infos[0].value
+    let message = infos[1].value
+    message = message.replace(/ /g, '£')
+    message = message.replace(/\n/g, '</br>')
+    message = titre + 'ZYX' + message
+
+    db.collection('classes').doc(localStorage.getItem('editClasse')).update({
+        messages: firebase.firestore.FieldValue.arrayUnion(message)
+    });
+    document.getElementById('sound-success').play()
+    new Notyf().success({
+        message: 'Le message a été ajouté avec succès',
+        duration: 4000,
+
+        position: {
+            x: 'center',
+            y: 'bottom',
+        }
+    });
+
 })
 
 
@@ -185,39 +201,50 @@ db.collection('classes').doc(localStorage.getItem('editClasse')).onSnapshot(() =
 
     db.collection('classes').doc(localStorage.getItem('editClasse')).get()
         .then(classe => {
+            if (!classe.exists) {
+                console.log('Utilisateur non trouvé');
+            }
+            else {
 
-            // [Start] Pour chaque formateur ...
-            classe.data().messages.forEach(message => {
+                // [Start] Pour chaque formateur ...
+                classe.data().messages.forEach(message => {
 
-                let infos_message = message.replace(/£/g, ' ')
+                    let infos_message = message.replace(/£/g, ' ')
 
-                $('#affiche_message').append(`
+                    $('#affiche_message').append(`
 <div class="card m-4  border-bottom-secondary">
 <div class="card-body">
-  <b> ${infos_message.split('ZYX')[0]}</b>
+  <b>${infos_message.split('ZYX')[0]}</b>
   <input type="button" class="btn btn-primary delete_message" value="Supprimer" style="float: right;"> <br><br>
   
-<div class='mess'> ${infos_message.split('ZYX')[1]}
-               </div >
+<div class='mess'>${infos_message.split('ZYX')[1]}</div >
 
 </div >
 </div >
                 `)
+                    $('.delete_message').on('click', function () {
 
+                        db.collection('classes').doc(localStorage.getItem('editClasse')).update({
+                            messages: firebase.firestore.FieldValue.arrayRemove(infos_message.replace(/ /g, '£'))
+                        });
+                        document.getElementById('sound-success').play()
+                        new Notyf().success({
+                            message: 'Le message a été supprimé avec succès',
+                            duration: 4000,
 
+                            position: {
+                                x: 'center',
+                                y: 'bottom',
+                            }
+                        });
 
-
-                $('.delete_message').on('click', function () {
-
-
-                    db.collection('classes').doc(localStorage.getItem('editClasse')).update({
-                        messages: firebase.firestore.FieldValue.arrayRemove(message)
-                    });
-                    console.log(localStorage.getItem('editClasse'))
+                    })
+                    // [End] Pour chaque formateur ...
                 })
-                // [End] Pour chaque formateur ...
-            })
 
+
+
+            }
 
 
         })

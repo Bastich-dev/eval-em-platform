@@ -1,14 +1,3 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyB22w9CYMJV413plCv8yNYRgT0hr096qn8",
-    authDomain: "imperator-7e26a.firebaseapp.com",
-    databaseURL: "https://imperator-7e26a.firebaseio.com",
-    projectId: "imperator-7e26a",
-    storageBucket: "imperator-7e26a.appspot.com",
-    messagingSenderId: "59630211424",
-    appId: "1:59630211424:web:d9329b20431623aa230e05"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore()
 
 
 db.collection('eleves').doc(localStorage.getItem('ID')).get()
@@ -57,14 +46,22 @@ db.collection('eleves').doc(localStorage.getItem('ID')).get()
                         statut_cours_icone = '<i class="fas fa-check-circle text-300 fa-4x text-success"></i>'
                     }
                     if (classse.data().statut == 1) {
-                        statut_cours_titre = 'Le cours va commencer !'
-                        statut_cours_message = 'Début du cours dans 00:00'
+                        statut_cours_titre = 'Le cours est en pause !'
+                        statut_cours_message = 'Le cours va bientot commencer, tiens tois prêt '
                         statut_cours_icone = '<i class="fas fa-exclamation-triangle text-300 fa-4x text-warning"></i>'
                     }
                     if (classse.data().statut == 2) {
-                        statut_cours_titre = 'Le cours a commencer'
-                        statut_cours_message = "L'accès au cours est bloqué"
-                        statut_cours_icone = '<i class="fas fa-hand-paper text-300 fa-4x text-danger"></i>'
+                        if (classse.data().timer > 0) {
+                            statut_cours_titre = 'Le cours va commencer !'
+                            statut_cours_message = 'Début du cours dans ' + Math.floor((classse.data().timer / 60) % 60) + ' minutes ' + Math.floor(classse.data().timer % 60) + ' secondes '
+                            statut_cours_icone = '<i class="fas fa-exclamation-triangle text-300 fa-4x text-warning"></i>'
+                        }
+                        else {
+                            statut_cours_titre = 'Le cours a commencer'
+                            statut_cours_message = "L'accès au cours est bloqué"
+                            statut_cours_icone = '<i class="fas fa-hand-paper text-300 fa-4x text-danger"></i>'
+                        }
+
                     }
 
 

@@ -6,8 +6,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="CR-Ecole multimédia">
+  <meta name="author" content="BASCENT">
 
   <title>CR - Espace administrateur</title>
 
@@ -17,11 +17,15 @@
   <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
-  <!-- Custom styles for this page -->
+
+  <!-- Plugin styles for this page -->
   <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
+
+  <!-- Custom styles for this page-->
+
 
 </head>
 
@@ -54,9 +58,10 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.html" id='logout'>
           <i class="fas fa-fw fa-sign-in-alt"></i>
           <span>Espace Conection</span></a>
+        <input type="text" value='admins' class="d-none" id='poste_id'>
       </li>
       <hr class="sidebar-divider">
       <!-- Heading -->
@@ -144,14 +149,23 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
-                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);">Bastien
-                  Chantrel</span>
+                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                  id='id_nom_user'>
+                </span>
               </a>
             </li>
           </ul>
 
         </nav>
         <!-- End of Topbar -->
+
+
+
+
+
+
+
+
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -162,6 +176,7 @@
               <h1 class="m-3">Consulter les justifications reçues</h1>
             </a>
           </div>
+
           <!-- /.container-fluid -->
           <div class="card shadow mb-4" id='admin-reste'>
             <div class="card-header py-3">
@@ -181,115 +196,10 @@
                     </tr>
                   </thead>
                   <tfoot>
-
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td> <a href=""> Djemmal Hojnou </a> </td>
-                      <td> exemple.exemple@clubinternet.fr</td>
-                      <td> <a href=""> DEV-2</a></td>
-                      <td>Formation Initiale</td>
-                      <td>
-                        <div class="d-flex">
-
-                          <div class="col-auto">
-                            <i class="fas fa-exclamation-triangle  text-300" style="color: #f6c23e;"></i>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-check-circle  text-300" style="color: #1cc88a;"></i>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-exclamation-triangle  text-300" style="color: #f6c23e;"></i>
-                          </div>
-
-                        </div>
-
-                      </td>
-                      <td> <b class='text-success'> Présent </b> </td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>63</td>
-                      <td>2011/07/25</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td>$86,000</td>
-                    </tr>
-                    <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>22</td>
-                      <td>2012/03/29</td>
-                      <td>$433,060</td>
-                    </tr>
-                    <tr>
-                      <td>Airi Satou</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>33</td>
-                      <td>2008/11/28</td>
-                      <td>$162,700</td>
-                    </tr>
-                    <tr>
-                      <td>Brielle Williamson</td>
-                      <td>Integration Specialist</td>
-                      <td>New York</td>
-                      <td>61</td>
-                      <td>2012/12/02</td>
-                      <td>$372,000</td>
-                    </tr>
-                    <tr>
-                      <td>Herrod Chandler</td>
-                      <td>Sales Assistant</td>
-                      <td>San Francisco</td>
-                      <td>59</td>
-                      <td>2012/08/06</td>
-                      <td>$137,500</td>
-                    </tr>
-                    <tr>
-                      <td>Rhona Davidson</td>
-                      <td>Integration Specialist</td>
-                      <td>Tokyo</td>
-                      <td>55</td>
-                      <td>2010/10/14</td>
-                      <td>$327,900</td>
-                    </tr>
-                    <tr>
-                      <td>Colleen Hurst</td>
-                      <td>Javascript Developer</td>
-                      <td>San Francisco</td>
-                      <td>39</td>
-                      <td>2009/09/15</td>
-                      <td>$205,500</td>
-                    </tr>
-                    <tr>
-                      <td>Sonya Frost</td>
-                      <td>Software Engineer</td>
-                      <td>Edinburgh</td>
-                      <td>23</td>
-                      <td>2008/12/13</td>
-                      <td>$103,600</td>
-                    </tr>
-                    <tr>
-                      <td>Jena Gaines</td>
-                      <td>Office Manager</td>
-                      <td>London</td>
-                      <td>30</td>
-                      <td>2008/12/19</td>
-                      <td>$90,560</td>
-                    </tr>
                   </tbody>
                 </table>
-
               </div>
             </div>
           </div>
@@ -449,12 +359,8 @@
 
 
   <!-- Bootstrap core JavaScript-->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
   <!-- Firebase Cloud Firestore -->
@@ -463,26 +369,18 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
-
-
-
-
-  <!-- Page level plugins -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="js/all_tools.js"></script>
 
 
   <!-- Page level plugins -->
-  <script src="css/jquery.dataTables.js"></script>
-  <script src="css/dataTables.bootstrap4.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script>
+
 
   <!-- Page level custom scripts -->
   <script src='js/admin_tools.js'></script>
-  <script src='js/all_tools.js'></script>
   <script src='js/admin_show._data.js'></script>
+
 
 </body>
 

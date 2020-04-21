@@ -6,8 +6,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="CR-Ecole multimédia">
+  <meta name="author" content="BASCENT">
 
   <title>CR - Espace administrateur</title>
 
@@ -17,11 +17,17 @@
   <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
-  <!-- Custom styles for this page -->
+
+
+  <!-- Plugin styles for this page -->
   <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
+
+  <!-- Custom styles for this page-->
+
 
 </head>
 
@@ -29,6 +35,12 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
+
+
+
+
+
+
 
     <!-- Prevent Fixed position -->
     <ul class="d-none d-md-flex d-sm-flex d-lg-flex sidebar sidebar-dark" style="visibility: hidden;">
@@ -53,9 +65,10 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.html" id='logout'>
           <i class="fas fa-fw fa-sign-in-alt"></i>
           <span>Espace Conection</span></a>
+        <input type="text" value='admins' class="d-none" id='poste_id'>
       </li>
       <hr class="sidebar-divider">
       <!-- Heading -->
@@ -114,14 +127,19 @@
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
     </ul>
-
 
     <!-- Fade for scroll to ancre -->
     <div id='fadeForScroll'
       style="display: none; position: absolute; width: 100%; height: 100%; background-color: black; z-index: 2; opacity: 0.3; ">
     </div>
+
+
+
+
+
+
+
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -145,8 +163,9 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
-                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);">Bastien
-                  Chantrel</span>
+                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                  id='id_nom_user'>
+                </span>
               </a>
             </li>
           </ul>
@@ -154,21 +173,26 @@
         </nav>
         <!-- End of Topbar -->
 
+
+
+
+
+
+
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <div class="row ">
 
-
-          <div class="row">
+            <!-- ////////  CARD DONNEES CLASSE -->
             <div class="col-12">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h3 class="m-0 font-weight-bold text-primary text-uppercase">Données Classe
-                  </h3>
+                <div class="card-header py-3 d-flex  ">
+                  <h3 class="m-0 font-weight-bold text-primary text-uppercase">Données Classe</h3>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-
+                  <!-- buttons -->
                   <div class="row">
                     <div class="col-12 text-center">
                       <input type="button" class="btn btn-primary ml-5 mr-5 mt-2 mb-2" id='edit'
@@ -177,49 +201,34 @@
                         style="font-size: calc( 1.5vw + 1.5vh );" value='Supprimer classe'>
                     </div>
                   </div>
-
-
+                  <!-- inputs -->
                   <div class="row">
-
                     <div class="col-lg-6 col-sm-12">
                       <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                         <b>Nom</b>
                         <input type="text" id='classe-nom' class="mt-2 form-control form-control-user editMark">
                       </div>
-
                     </div>
-
                     <div class="col-lg-6 col-sm-12">
                       <div class="form-group m-2 mt-3  ml-5  " style="width: 80%;">
                         <b>Groupe</b>
-
                         <select name="classe" id="classe-groupe" class="mt-2 form-control form-control-user editMark">
-                          <option value=""></option>
                         </select>
                       </div>
                     </div>
-
                   </div>
-
-
-
-
-
-
 
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="row">
 
 
+            <!-- ////////  CARD ELEVES  -->
             <div class="col-lg-6 col-sm-12">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h3 class="m-0 font-weight-bold text-primary text-uppercase">Eleves
+                <div class="card-header py-3 d-flex   ">
+                  <h3 class="m-0 font-weight-bold text-primary text-uppercase">élèves
                   </h3>
                 </div>
                 <!-- Card Body -->
@@ -228,78 +237,62 @@
                     <thead>
                       <tr>
                         <th>Nom</th>
-                        <th>e-mail</th>
+                        <th>E-mail</th>
                         <th>Nombres absences</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tbody>
-
                       </tbody>
                   </table>
-
-
                 </div>
-              </div>
 
+              </div>
             </div>
+
+
+
 
             <div class="col-lg-6 col-sm-12">
 
-
+              <!-- ////////  CARD AJOUT MESSAGE  -->
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <div class="card-header py-3 d-flex ">
                   <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter message
                   </h3>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                   <form action="" id='ajout-message'>
-
                     <input type="text" class="mb-3 pl-1" placeholder="Titre" name='titre' required>
                     <textarea wrap="soft" name="message" rows='5' id="" style="width: 100%;" class="pl-1"
                       placeholder="Message ..."></textarea>
-
                     <input type="submit" class="btn btn-primary mt-2" value='Ajouter mesage'>
-
                   </form>
-
                 </div>
               </div>
 
-
+              <!-- ////////  CARD MESSAGES CLASSES  -->
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <div class="card-header py-3 d-flex ">
                   <h3 class="m-0 font-weight-bold text-primary text-uppercase">Messages Classe
                   </h3>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                   <div id='affiche_message' style="max-height: 500px; overflow: scroll; overflow-x: hidden;">
-
-
-
-
-
-
                   </div>
-
-
                 </div>
               </div>
-
-
 
             </div>
 
 
+
           </div>
-
         </div>
-
-
       </div>
       <!-- End of Main Content -->
 
@@ -325,13 +318,18 @@
   </a>
 
 
+  <!-- Audio files for notify -->
+
+  <audio id='sound-success'>
+    <source src="Sounds/success.mp3" />
+  </audio>
+  <audio id='sound-error'>
+    <source src="Sounds/error.mp3" />
+  </audio>
+
   <!-- Bootstrap core JavaScript-->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
   <!-- Firebase Cloud Firestore -->
@@ -340,20 +338,17 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/all_tools.js"></script>
 
   <!-- Page level plugins -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <!-- Page level plugins -->
-  <script src="css/jquery.dataTables.js"></script>
-  <script src="css/dataTables.bootstrap4.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="js/demo/datatables-demo.js"></script>
-
+  <!-- Page  custom scripts -->
   <script src='js/admin_tools.js'></script>
   <script src='js/afficheClasse.js'></script>
+
 
 </body>
 
