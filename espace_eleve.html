@@ -41,19 +41,19 @@
     <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
       id="accordionSidebar" style="position: fixed;">
       <!-- Sidebar - Brand -->
-      <div class="sidebar-brand d-flex align-items-center justify-content-center">
+      <a href="espace_eleve.html" class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon ">
-          <i class="fas fa-user-graduate"></i>
+          <i class="fas fa-user-cog"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Espace étudiant </div>
-      </div>
+      </a>
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="index.html" id='logout'>
           <i class="fas fa-fw fa-sign-in-alt"></i>
-          <span>Espace Conection</span></a>
+          <span>Déconnexion</span></a>
         <input type="text" value='eleves' class="d-none" id='poste_id'>
       </li>
 
@@ -158,7 +158,8 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item ">
               <div class="nav-link ">
-                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);"> FI DEV-2
+                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);"
+                  id='classe_eleve'>
                 </span>
               </div>
             </li>
@@ -185,80 +186,22 @@
           <div class="row">
 
             <!-- Card abscences hebdomadaire -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-sm font-weight-bold text-success text-uppercase mb-1">Abscences /Semaines
-                      </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">5h30 </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-check-circle fa-2x text-300 text-success"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="col-xl-3 col-md-6 mb-4" id='absences-semaine'>
             </div>
 
             <!-- Card abscences mensuel -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">Abscences /Mois</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">25 h 30 min</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-exclamation-triangle fa-2x text-300 text-warning"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="col-xl-3 col-md-6 mb-4" id='absences-mois'>
+
             </div>
 
 
 
             <!-- Card abscences trimestre -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-sm font-weight-bold text-danger text-uppercase mb-1">Abscences /Trimestre</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-exclamation-circle fa-2x text-300 text-danger"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="col-xl-3 col-md-6 mb-4" id='absences-trimestre'>
             </div>
 
             <!-- Card abscences à justifier -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-sm font-weight-bold text-danger text-uppercase mb-1">Abcences à justifier</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">12</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-exclamation-circle fa-2x text-300 text-danger"></i>
-                    </div>
-                  </div>
-                </div>
-                <a class="btn btn-primary m-2 ml-4 mr-4 text-uppercase js-scrollTo" href="#eleve-absences">Justifier
-                </a>
-              </div>
+            <div class="col-xl-3 col-md-6 mb-4" id='absences-justifier'>
             </div>
 
           </div>
@@ -290,9 +233,14 @@
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Statut du cours </h6>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body" id='statut_cours'>
-
+                <div class="card-body">
+                  <div id='statut_cours'></div>
+                  <a class="btn btn-primary col-12 p-3 mt-4  text-center small text-uppercase text-white js-scrollTo"
+                    href="#eleve-prevenir">
+                    Contacter Formateur
+                  </a>
                 </div>
+
               </div>
             </div>
 
@@ -310,32 +258,15 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-uppercase">Relevé d'abscences</h6>
                 </div>
-                <div class="card-body" style="max-height: 500px; overflow: scroll; overflow-x: hidden;">
-                  <div class="card mb-2  pl-5 border-left-success">
-                    <div class="card-body">
-                      <i class="fas fa-check-circle text-300 fa-1x" style="color: #1cc88a; "></i>
-                      <b class="m-2 text-uppercase"> justifiée</b>
-                      <span class="float-right">Stencyl</span>
-                      <br>
-                      <a href="#" class="m-2 text-uppercase"> Justificatif</a>
-                      <span class="float-right">11/04/2020 - 14h30 à 17h</span>
-                    </div>
-                  </div>
-                  <div class="card mb-2  pl-5 border-left-danger">
-                    <div class="card-body">
-                      <i class="fas fa-exclamation-circle text-300 fa-1x" style="color: #e74a3b; "></i>
-                      <b class="m-2 text-uppercase"> à justifier</b>
-                      <span class="float-right">DataVizualisation </span>
-                      <br>
-                      <a href="#" class="btn btn-primary mt-2 btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-arrow-right"></i>
-                        </span>
-                        <span class="text">Justifier</span>
-                      </a>
-                      <span class=" mt-2 float-right">11/04/2020 - 14h30 à 17h</span>
-                    </div>
-                  </div>
+                <div class="card-body" style="max-height: 500px; overflow: scroll; overflow-x: hidden;"
+                  id='releve_absences'>
+
+
+
+
+
+
+
                 </div>
               </div>
             </div>
@@ -419,60 +350,87 @@
           <!-- End Row -->
 
 
+          <!-- End of Main Content -->
+
+          <!-- Footer -->
+          <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Bascent 2020</span>
+              </div>
+            </div>
+          </footer>
+          <!-- End of Footer -->
 
         </div>
-        <!-- End of Main Content -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Bascent 2020</span>
-            </div>
-          </div>
-        </footer>
-        <!-- End of Footer -->
 
       </div>
-      <!-- End of Content Wrapper -->
+      <!-- End of Page Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form name="sentJustification" id="justifier-envoi">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="text-left ml-5 mt-3" id='data-absence'>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top" style="z-index: 4;">
-      <i class="fas fa-angle-up"></i>
-    </a>
+              </div>
+              <div class="modal-body" id='text-justification'>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                <div id='btn-envoyer'>
+                  <button type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top" style="z-index: 4;">
+        <i class="fas fa-angle-up"></i>
+      </a>
 
 
-    <!-- Audio files for notify -->
-    <audio id='sound-success'>
-      <source src="Sounds/success.mp3" />
-    </audio>
-    <audio id='sound-error'>
-      <source src="Sounds/error.mp3" />
-    </audio>
+      <audio id='sound-success'>
+        <source src="Sounds/success.mp3" />
+      </audio>
+      <audio id='sound-error'>
+        <source src="Sounds/error.mp3" />
+      </audio>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-    <!-- Firebase Cloud Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+      <!-- Firebase Cloud Firestore -->
+      <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="js/all_tools.js"></script>
+      <!-- Page level plugins -->
+      <script src="js/jquery.dataTables.js"></script>
+      <script src="js/dataTables.bootstrap4.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="js/jquery.dataTables.js"></script>
-    <script src="js/dataTables.bootstrap4.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin-2.min.js"></script>
+      <script src="js/all_tools.js"></script>
 
-    <!-- Page  custom scripts -->
-    <script src='js/afficheEleve.js'></script>
+
+      <!-- Page  custom scripts -->
+      <script src='js/eleve.js'></script>
 
 
 

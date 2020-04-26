@@ -1,4 +1,3 @@
-b = firebase.firestore()
 
 
 // FORMULAIRE AJOUTER CLASSE
@@ -73,14 +72,16 @@ db.collection('classes').onSnapshot(() => {
             // [Start] Pour chaque classe ...
             classes.forEach(classe => {
                 $('#ClasseTable').DataTable().row.add([
-                    `<td> <a href="espace_admin_classe.html" class='goToClasse'  id ='${classe.id}'>   ${classe.data().nom}  </a> </td>`,
+                    `<td> <a href="espace_admin_classe_modifier.html" class='goToClasse'  id ='${classe.id}'>   ${classe.data().nom}  </a> </td>`,
                     `<td> ${classe.data().groupe} </td>`,
                     `<td>  ${classe.data().eleves.length}</td>`,]).draw();
             });
             // [End] Pour chaque classe ...
 
         }).then(() => {
-            $('.goToClasse').on('click', function () {
+
+            $('.goToClasse').unbind()
+            $('.goToClasse').bind('click', function () {
                 localStorage.setItem("editClasse", $(this).attr('id'));
             })
             console.log('Affichage classes réussi');

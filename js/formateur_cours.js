@@ -14,6 +14,7 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                 .then(classe => {
 
 
+
                     $('#infos_cours').append(`
                             <div class="row justify-content-around">
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center">  Classe :  <span class='font-weight-light'> ${classe.data().nom}</span> </p>
@@ -22,6 +23,7 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center">  Date :  <span class='font-weight-light'> ${doc.data().date}</span> </p>
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center">  Horaire Début :  <span class='font-weight-light'> ${doc.data().hr_debut}</span> </p>
                             <p class="h4 col-lg-4 col-sm-12 mt-3 font-weight-bold text-center"> Horaire Fin :  <span class='font-weight-light'> ${doc.data().hr_fin}</span> </p>
+                            <p class="h4  mt-3 font-weight-bold text-center d-none"> Formateur  :  <span class='font-weight-light'> ${doc.data().formateur}</span> </p>
                          
                             </div>
                             `)
@@ -37,7 +39,7 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
 
 
                                 $('#EleveFormateur').DataTable().row.add([
-                                    `   <td>  <b> ${eleve_infos.data().nom} ${eleve_infos.data().prenom} </b>  </td>`,
+                                    `   <td>  <b class='ideleve' id='${eleve_infos.id}'> ${eleve_infos.data().nom} ${eleve_infos.data().prenom} </b>  </td>`,
                                     ` <td> ${eleve_infos.data().mail}  </td>`,
                                     ` <td>  ${classe.data().nom}</td>`,
                                     ` ${classe.data().groupe}`,
@@ -45,34 +47,33 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                     <div class="button-wrap d-flex">
                                       <input class="hidden radio-label radio present" id="present-${eleve_infos.id}" type="radio" name="${eleve_infos.id}" checked="checked"/>
                                       <label class="button-label" for="present-${eleve_infos.id}">
-                                        <h1>Présent</h1>
+                                    Présent
                                       </label>
                                       <input class="hidden radio-label retard" id="retard-${eleve_infos.id}" type="radio" name="${eleve_infos.id}"/>
                                       <label class="button-label" for="retard-${eleve_infos.id}">
-                                        <h1>Retard</h1>
-                                            <h1>  <select disabled
-                                            style="left:-60px; width: 120%;">
-                                            <option value="09">5 min</option>
+                                    Retard
+                                          <select disabled class='retard_eleve'
+                                            style="left:-60px; width: 70%;">
+                                            <option value="05">5 min</option>
                                             <option value="10">10 min</option>
-                                            <option value="11">15 min</option>
-                                            <option value="12">20 min</option>
-                                            <option value="13">30 min</option>
-                                            <option value="14">45 min</option>
-                                            <option value="15">1h</option>
-                                            <option value="16">1h30</option>
-                                            <option value="17">2h</option>
-                                        </select> </h1>
+                                            <option value="15">15 min</option>
+                                            <option value="20">20 min</option>
+                                            <option value="30">30 min</option>
+                                            <option value="45">45 min</option>
+                                            <option value="100">1h</option>
+                                            <option value="130">1h30</option>
+                                            <option value="200">2h</option>
+                                        </select> 
                                       </label>
                                       <input class="hidden radio-label radio absent" id="absent-${eleve_infos.id}" type="radio" name="${eleve_infos.id}"/>
                                       <label class="button-label" for="absent-${eleve_infos.id}">
-                                        <h1>Absent</h1>
+                                    Absent
                                       </label>
                                     </div>
                                   </div>  `,
-                                    `  
-                                    <i id="trigger" class="fas fa-comment-dots fa-2x btn btn-warning"></i>
-                                `
+
                                 ]).draw();
+
 
                                 $('.retard').on('click', function () {
                                     $(this).parent().find('select').prop("disabled", false);
@@ -89,10 +90,19 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                 $('.closebtn').click(function () {
                                     $('#overlay').fadeOut(300);
                                 });
+                                $('.button-wrap').on('change', function () {
+
+
+                                })
+
 
 
                             })
                     })
+
+
+
+
 
 
 
@@ -118,6 +128,10 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                     $('#cours-timer').find('.hide_card').show('slow')
                                     $('#cours-cours').find('.hide_card').show('slow')
                                     $('#cours-fin').find('.hide_card').show('slow')
+
+
+
+
                                 }
                                 else if ((classse.data().statut == 0) && (doc.data().actif == false)) {
                                     $('#cours-commencer').find('.hide_card').show('slow')
@@ -128,6 +142,8 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                     $("#btn-fin").replaceWith("<h2 class='text-center'>Cours clos</h2>");
                                     $("input[type=radio]").attr('disabled', true);
                                     $('#message-appel').replaceWith("<b id='message-appel' class='text-primary h5'> La feuille d'appel a été envoyée !</b>")
+
+
                                 }
                                 else if (classse.data().statut == 1) {
                                     $('#cours-commencer').find('.hide_card').show('slow')
@@ -193,9 +209,42 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                     db.collection('cours').doc(localStorage.getItem("ID_cours")).update({
                                         actif: false
                                     }).then(() => {
+                                        $(".container").each(function (index) {
+
+
+
+                                            db.collection('cours').doc(localStorage.getItem("ID_cours"))
+                                                .get()
+                                                .then(cours => {
+
+
+                                                    let div_eleve = $(this).parent().parent()
+                                                    if (div_eleve.find('.present').is(':checked') != true) {
+
+
+
+                                                        db.collection('absences').add({
+                                                            eleve: div_eleve.find('.ideleve').attr('id'),
+                                                            classe: cours.data().classe,
+                                                            formateur: cours.data().formateur,
+                                                            module: cours.data().module,
+                                                            date: cours.data().date,
+                                                            hr_debut: cours.data().hr_debut,
+                                                            hr_fin: cours.data().hr_fin,
+                                                            salle: cours.data().salle,
+                                                            justifiee: false,
+                                                            retard: (div_eleve.find('.absent').is(':checked') == true) ? false : div_eleve.find('.retard_eleve').val()
+                                                        })
+                                                    }
+
+
+                                                })
+
+                                        })
                                         db.collection('classes').doc(classe.id).update({
                                             statut: 0,
                                         })
+
                                     })
 
                                 }
@@ -296,13 +345,14 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                             statut: 3,
 
                         })
+
+
                     })
 
 
 
 
                 })
-
 
 
 
@@ -315,3 +365,7 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
 
 
 
+document.addEventListener('keydown', function () {
+    console.log('lol')
+
+})

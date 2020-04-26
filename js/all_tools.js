@@ -9,6 +9,8 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
+const annee = '2019-2020'
+
 
 
 
@@ -61,3 +63,17 @@ $('.js-scrollTo').on('click', function () { // Au clic sur un élément
 
 
 
+if (localStorage.getItem('Notif') != 'null') {
+    document.getElementById('sound-success').play()
+    new Notyf().success({
+        message: localStorage.getItem('Notif'),
+        duration: 4000,
+
+        position: {
+            x: 'center',
+            y: 'bottom',
+        }
+    });
+    localStorage.setItem('Notif', null)
+
+}

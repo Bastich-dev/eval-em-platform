@@ -83,12 +83,12 @@
             id="accordionSidebar" style="position: fixed;">
 
             <!-- Sidebar - Brand -->
-            <div class="sidebar-brand d-flex align-items-center justify-content-center">
+            <a href="espace_formateur.html" class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon ">
-                    <i class="fas fa-user-graduate"></i>
+                    <i class="fas fa-user-cog"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Espace Formateur </div>
-            </div>
+                <div class="sidebar-brand-text mx-3">Espace formateur </div>
+            </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -97,7 +97,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.html" id='logout'>
                     <i class="fas fa-fw fa-sign-in-alt"></i>
-                    <span>Espace Conection</span></a>
+                    <span>Déconnexion</span></a>
                 <input type="text" value='formateurs' class="d-none" id='poste_id'>
             </li>
 
@@ -162,12 +162,11 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item ">
-                            <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown">
-                                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
-                                    Formateur
-                                </span>
 
-                            </a>
+                            <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
+                                Formateur
+                            </span>
+
 
                         </li>
 
@@ -175,13 +174,12 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown">
-                                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2"
-                                    style="font-size: calc(1.5vw + 1.5vh);" id='id_nom_user'>
-                                </span>
 
-                            </a>
+                            <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                                id='id_nom_user'>
+                            </span>
+
+
                         </li>
 
                     </ul>
@@ -308,7 +306,6 @@
 
 
 
-        <!-- Audio files for notify -->
         <audio id='sound-success'>
             <source src="Sounds/success.mp3" />
         </audio>
@@ -326,17 +323,19 @@
         <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
-        <script src="js/all_tools.js"></script>
-
         <!-- Page level plugins -->
         <script src="js/jquery.dataTables.js"></script>
         <script src="js/dataTables.bootstrap4.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
 
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+        <script src="js/all_tools.js"></script>
+
+
         <!-- Page  custom scripts -->
-        <script src='js/afficheCours.js'></script>
+        <script src='js/formateur.js'></script>
+
 
 
 </body>

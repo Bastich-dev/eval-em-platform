@@ -102,7 +102,7 @@ $('#formLogin').on('submit', function (e) {
                                     localStorage.setItem('ID', doc.id)
                                     localStorage.setItem('ID_poste', 'admins')
                                     $('#errId').css('visibility', 'hidden')
-                                    self.location.href = 'espace_admin.html'
+                                    self.location.href = 'espace_admin_utilisateurs.html'
                                 });
                             }
                         })

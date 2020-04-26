@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CR - Espace administrateur</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
+        type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Prevent Fixed position -->
+        <ul class="d-none d-md-flex d-sm-flex d-lg-flex sidebar sidebar-dark" style="visibility: hidden;">
+            <li class="nav-item">
+                <div class="nav-link">
+                </div>
+            </li>
+        </ul>
+        <!-- Sidebar lg -->
+        <ul class="navbar-nav d-none d-md-flex d-sm-flex  d-lg-flex bg-gradient-primary sidebar sidebar-dark accordion"
+            id="accordionSidebar" style="position: fixed;">
+
+            <!-- Sidebar - Brand -->
+            <a href="espace_admin_utilisateurs.html"
+                class="sidebar-brand d-flex align-items-center justify-content-center">
+                <div class="sidebar-brand-icon ">
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Espace admin </div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html" id='logout'>
+                    <i class="fas fa-fw fa-sign-in-alt"></i>
+                    <span>Déconnexion</span></a>
+                <input type="text" value='admins' class="d-none" id='poste_id'>
+            </li>
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading h3">
+                Interface
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="espace_admin_justifications.html">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span> Justifications </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="espace_admin_cours.html">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Cours</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="espace_admin_classes.html">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Classes</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilisateurs</span>
+                </a>
+                <div id="collapseClassses" class="collapse">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class=" js-scrollTo collapse-item" href="espace_admin_utilisateurs.html#admin-eleve">
+                            Élèves</a>
+                        <a class=" js-scrollTo collapse-item" href="espace_admin_utilisateurs.html#admin-formateur">
+                            Formateur</a>
+                        <a class=" js-scrollTo collapse-item" href="espace_admin_utilisateurs.html#admin-admin">
+                            Admins</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Ajouter utilisateur</span>
+                </a>
+                <div id="collapseEleve" class="collapse">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html"
+                            id='admin-add-eleve'>Élève</a>
+                        <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html"
+                            id='admin-add-formateur'>Formateur</a>
+                        <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html"
+                            id='admin-add-admin'>Administrateur</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+
+        <!-- Fade for scroll to ancre -->
+        <div id='fadeForScroll'
+            style="display: none; position: absolute; width: 100%; height: 100%; background-color: black; z-index: 2; opacity: 0.3; ">
+        </div>
+
+
+
+
+
+
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
+                                Administrateur
+                            </span>
+                        </li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                                id='id_nom_user'>
+                            </span>
+                        </li>
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <div class="container ">
+
+                        <!-- /.container-fluid -->
+                        <div class="card shadow mb-4" id='admin-reste'>
+                            <div class="card-header py-3">
+                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Justifications reçues</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="VerifierTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Vérifier</th>
+                                                <th>élève</th>
+                                                <th>Contact</th>
+                                                <th>Classe</th>
+                                                <th>Date</th>
+                                                <th>Module</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                        </tfoot>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- /.container-fluid -->
+                        <div class="card shadow mb-4" id='admin-reste'>
+                            <div class="card-header py-3">
+                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Absences a justifier</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="AbsTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>élève</th>
+                                                <th>Contact</th>
+                                                <th>Classe</th>
+                                                <th>Date</th>
+                                                <th>Module</th>
+                                                <th>Horaire début</th>
+                                                <th>Horaire Fin</th>
+                                                <th>Supprimer</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                        </tfoot>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- /.container-fluid -->
+                        <div class="card shadow mb-4" id='admin-reste'>
+                            <div class="card-header py-3">
+                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Justifications validées
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="JustificationsTable" width="100%"
+                                        cellspacing="0">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Vérifier</th>
+                                                <th>élève</th>
+                                                <th>Contact</th>
+                                                <th>Classe</th>
+                                                <th>Date</th>
+                                                <th>Module</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                        </tfoot>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Bascent 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form name="sentJustification" id="justifier-envoi">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Justification reçue</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="text-left ml-5 mt-3" id='data-absence'>
+
+                    </div>
+
+                    <div class="modal-body" id='text-justification'>
+                    </div>
+                    <div class="modal-footer">
+
+                        <div id='btn-valider'>
+                            <button type="submit" id='aucun' class="btn btn-success btn_valider">Valider</button>
+                        </div>
+                        <div id='btn-rejeter'>
+                            <button type="button" class="btn btn-danger">Rejeter</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <audio id='sound-success'>
+        <source src="Sounds/success.mp3" />
+    </audio>
+    <audio id='sound-error'>
+        <source src="Sounds/error.mp3" />
+    </audio>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!-- Firebase Cloud Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="js/jquery.dataTables.js"></script>
+    <script src="js/dataTables.bootstrap4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/all_tools.js"></script>
+
+
+    <!-- Page  custom scripts -->
+    <script src='js/admin_tools.js'></script>
+    <script src='js/admin_justifications.js'></script>
+
+</body>
+
+</html>

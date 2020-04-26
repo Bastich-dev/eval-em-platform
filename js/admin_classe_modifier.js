@@ -27,6 +27,7 @@ db.collection('classes').doc(localStorage.getItem('editClasse')).get()
 
 $('#edit').on('click', function () {
 
+
     // Animation modifs
     $('.editMark').css('background-color', '#28a745')
     $('.editMark').css('color', 'white')
@@ -53,12 +54,20 @@ $('#edit').on('click', function () {
                             groupe: document.getElementById('classe-groupe').value
                         })
                         .then(() => {
-
+                            document.getElementById('sound-success').play()
+                            new Notyf().success({
+                                message: "La classe a été modifié avec succès",
+                                duration: 2000,
+                                position: {
+                                    x: 'center',
+                                    y: 'bottom',
+                                }
+                            });
                             // Animation modifs
                             setTimeout(function () {
                                 $('.editMark').css('background-color', 'white');
                                 $('.editMark').css('color', 'black')
-                            }, 1000)
+                            }, 1500)
                         });
 
                 })
@@ -79,7 +88,7 @@ $('.editMark').on('change', function () {
 $('#delete').on('click', function () {
 
     // [Start] Si le click est validé ...
-    if (confirm('Voulez vous définivement supprimer cette classe ? \n Cela supprimera aussi toutes les données des élèves assignés à cette classe ')) {
+    if (confirm('Voulez vous définivement supprimer cette classe ?\nCela supprimera aussi toutes les données des élèves assignés à cette classe ')) {
 
 
         // [Start] Récupère le user en fonction de l'utilisateur entré...  
@@ -95,17 +104,32 @@ $('#delete').on('click', function () {
                             })
 
 
-                            db.collection('eleves').where("classe", "==", doc.id)
+                            db.collection('eleves').where("classe", "==", localStorage.getItem('editClasse'))
                                 .get()
-                                .then(dddd => {
-                                    dddd.forEach((dooc) => {
+                                .then(eleves => {
+                                    eleves.forEach((eleve) => {
 
-                                        dooc.ref.delete().then(() => {
-                                            self.location.href = 'espace_admin.html'
+                                        eleve.ref.delete().then(() => {
+
+                                            db.collection('absences').where("eleve", "==", eleve.id).get().then((absences) => {
+                                                absences.ref.delete().then(() => {
+                                                    db.collection('justifications').where("absence", "==", absences.id).get().then((justifs) => {
+                                                        justifs.ref.delete().then(() => {
+                                                            self.location.href = 'espace_admin_classes.html'
+                                                            localStorage.setItem('Notif', 'La classe et tous ses élèves ont été supprimées')
+                                                        })
+                                                    })
+                                                    self.location.href = 'espace_admin_classes.html'
+                                                    localStorage.setItem('Notif', 'La classe et tous ses élèves ont été supprimées')
+                                                })
+                                            })
+                                            self.location.href = 'espace_admin_classes.html'
+                                            localStorage.setItem('Notif', 'La classe et tous ses élèves ont été supprimées')
                                         })
 
                                     })
-                                    self.location.href = 'espace_admin.html'
+                                    self.location.href = 'espace_admin_classes.html'
+                                    localStorage.setItem('Notif', 'La classe et tous ses élèves ont été supprimées')
                                 })
 
 
@@ -140,13 +164,13 @@ db.collection('classes').doc(localStorage.getItem('editClasse')).get()
                 .then(eleve => {
 
                     $('#EleveClasse').DataTable().row.add([
-                        `<td> <a href="espace_admin_user.html" class='goToUser eleves'  id ='${eleve.id}'>  ${eleve.data().nom}  ${eleve.data().prenom}  </a> </td>`,
+                        `<td> <a href="espace_admin_utilisateur_modifier.html" class='goToUser eleves'  id ='${eleve.id}'>  ${eleve.data().nom}  ${eleve.data().prenom}  </a> </td>`,
                         `<td> ${eleve.data().mail} </td>`,
                         ` <td> ${eleve.data().absences.length} </td>`,
                     ]).draw();
 
-
-                    $('.goToUser').on('click', function () {
+                    $('.goToUser').unbind()
+                    $('.goToUser').bind('click', function () {
                         const goToPoste = $(this).attr('class').split(' ')
                         localStorage.setItem("editUser", $(this).attr('id'));
                         localStorage.setItem("editUserPoste", goToPoste[1]);
@@ -222,7 +246,9 @@ db.collection('classes').doc(localStorage.getItem('editClasse')).onSnapshot(() =
 </div >
 </div >
                 `)
-                    $('.delete_message').on('click', function () {
+
+                    $('.delete_message').unbind()
+                    $('.delete_message').bind('click', function () {
 
                         db.collection('classes').doc(localStorage.getItem('editClasse')).update({
                             messages: firebase.firestore.FieldValue.arrayRemove(infos_message.replace(/ /g, '£'))

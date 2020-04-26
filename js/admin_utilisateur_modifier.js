@@ -89,28 +89,32 @@ $('#delete_user').on('click', function () {
                                 db.collection('classes').doc(doc.data().classe).update({
                                     eleves: firebase.firestore.FieldValue.arrayRemove(doc.id)
                                 }).then(() => {
-                                    self.location.href = 'espace_admin.html'
+                                    localStorage.setItem('Notif', "L'utlisateur a été supprimé avec succès")
+                                    self.location.href = 'espace_admin_utilisateurs.html'
                                 })
                             }
                             else if (document.getElementById('user-poste').value + 's' == 'formateurs') {
-                                alert(document.getElementById('user-id').value)
+
                                 db.collection('cours').where("formateur", "==", document.getElementById('user-id').value)
                                     .get()
                                     .then(querySnapshot => {
 
-                                        alert('lol')
+
                                         querySnapshot.forEach((doc) => {
                                             console.log(doc.data())
                                             doc.ref.delete().then(() => {
-                                                self.location.href = 'espace_admin.html'
+                                                localStorage.setItem('Notif', "L'utlisateur a été supprimé avec succès")
+                                                self.location.href = 'espace_admin_utilisateurs.html'
                                             })
 
                                         }).then(() => {
-                                            self.location.href = 'espace_admin.html'
+                                            localStorage.setItem('Notif', "L'utlisateur a été supprimé avec succès")
+                                            self.location.href = 'espace_admin_utilisateurs.html'
                                         })
                                     })
                             }
-
+                            self.location.href = 'espace_admin_utilisateurs.html'
+                            localStorage.setItem('Notif', "L'utlisateur a été supprimé avec succès")
 
 
 
@@ -171,6 +175,7 @@ $('#edit_user').on('click', function () {
 
 
                                 // Ajoute id eleve dans le tableau eleve de la  classe
+                                console.log(document.getElementById('user-classe').value)
                                 db.collection('classes').doc(document.getElementById('user-classe').value).update({
                                     eleves: firebase.firestore.FieldValue.arrayUnion(document.getElementById('user-id').value)
                                 });

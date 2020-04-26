@@ -23,6 +23,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page-->
 
@@ -47,7 +48,7 @@
       id="accordionSidebar" style="position: fixed;">
 
       <!-- Sidebar - Brand -->
-      <a href="espace_admin.html" class="sidebar-brand d-flex align-items-center justify-content-center">
+      <a href="espace_admin_utilisateurs.html" class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon ">
           <i class="fas fa-user-cog"></i>
         </div>
@@ -60,7 +61,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html" id='logout'>
           <i class="fas fa-fw fa-sign-in-alt"></i>
-          <span>Espace Conection</span></a>
+          <span>Déconnexion</span></a>
         <input type="text" value='admins' class="d-none" id='poste_id'>
       </li>
       <hr class="sidebar-divider">
@@ -80,19 +81,27 @@
           <span>Cours</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="espace_admin_classes.html">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Classes</span>
+        </a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Listes</span>
+          <span>Utilisateurs</span>
         </a>
         <div id="collapseClassses" class="collapse">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class=" js-scrollTo collapse-item" href="#admin-classes"> Classes</a>
-            <a class=" js-scrollTo collapse-item" href="#admin-eleve"> Élèves</a>
-            <a class=" js-scrollTo collapse-item" href="#admin-formateur"> Formateur</a>
-            <a class=" js-scrollTo collapse-item" href="#admin-admin"> Admins</a>
+            <a class=" js-scrollTo collapse-item" href="#admin-eleve">
+              Élèves</a>
+            <a class=" js-scrollTo collapse-item" href="#admin-formateur">
+              Formateur</a>
+            <a class=" js-scrollTo collapse-item" href="#admin-admin">
+              Admins</a>
           </div>
         </div>
       </li>
@@ -100,14 +109,14 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Ajouter</span>
+          <span>Ajouter utilisateur</span>
         </a>
         <div id="collapseEleve" class="collapse">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="espace_admin_classeAdd.html">une Classe</a>
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'>un Élève</a>
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'>un Formateur</a>
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'>un Administrateur</a>
+            <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html" id='admin-add-eleve'>Élève</a>
+            <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html" id='admin-add-formateur'>Formateur</a>
+            <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html"
+              id='admin-add-admin'>Administrateur</a>
           </div>
         </div>
       </li>
@@ -118,14 +127,19 @@
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
     </ul>
-
 
     <!-- Fade for scroll to ancre -->
     <div id='fadeForScroll'
       style="display: none; position: absolute; width: 100%; height: 100%; background-color: black; z-index: 2; opacity: 0.3; ">
     </div>
+
+
+
+
+
+
+
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -139,20 +153,16 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item ">
-              <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown">
-                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
-                  Administrateur
-                </span>
-              </a>
+              <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
+                Administrateur
+              </span>
             </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
-                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
-                  id='id_nom_user'>
-                </span>
-              </a>
+              <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                id='id_nom_user'>
+              </span>
             </li>
           </ul>
 
@@ -167,42 +177,18 @@
 
 
 
+
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <div class="container d-flex justify-content-center">
+          <div class="container d-flex justify-content-center mt-5 mb-5">
 
             <a href="espace_admin_justifications.html" class="btn btn-primary m-4">
               <h1 class="m-3">Consulter les justifications reçues</h1>
             </a>
           </div>
 
-          <!-- /.container-fluid -->
-          <div class="card shadow mb-4" id='admin-reste'>
-            <div class="card-header py-3">
-              <h3 class="m-0 font-weight-bold text-primary text-uppercase">Reste a justifier</h3>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="AbsTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>élève</th>
-                      <th>Contact</th>
-                      <th>Classe</th>
-                      <th>Date</th>
-                      <th>Module</th>
-                      <th>Durée</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                  </tfoot>
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+
 
 
 
@@ -230,7 +216,8 @@
 
                   </tbody>
                 </table>
-                <a href="espace_admin_userAdd.html" class="btn btn-primary btn-icon-split m-3 " id='admin-add-eleve2'>
+                <a href="espace_admin_utilisateur_ajouter.html" class="btn btn-primary btn-icon-split m-3 "
+                  id='admin-add-eleve2'>
                   <span class="icon text-white-50 d-flex align-items-center">
                     <i class="fas fa-plus "></i>
                   </span>
@@ -260,7 +247,7 @@
                     <tbody>
                     </tbody>
                 </table>
-                <a href="espace_admin_userAdd.html" class="btn btn-primary btn-icon-split m-3 "
+                <a href="espace_admin_utilisateur_ajouter.html" class="btn btn-primary btn-icon-split m-3 "
                   id='admin-add-formateur2'>
                   <span class="icon text-white-50 d-flex align-items-center">
                     <i class="fas fa-plus "></i>
@@ -271,35 +258,7 @@
             </div>
           </div>
 
-          <!-- /.container-fluid -->
-          <div class="card shadow mb-4 " id='admin-classes'>
-            <div class="card-header py-3">
-              <h3 class="m-0 font-weight-bold text-primary text-uppercase">Classes</h3>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="ClasseTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Nom</th>
-                      <th>Groupe</th>
-                      <th>NB_élèves</th>
 
-                    </tr>
-                  </thead>
-                  <tfoot>
-
-                    </tbody>
-                </table>
-                <a href="espace_admin_classeAdd.html" class="btn btn-primary btn-icon-split m-3 ">
-                  <span class="icon text-white-50 d-flex align-items-center">
-                    <i class="fas fa-plus "></i>
-                  </span>
-                  <span class="text " style="font-size: calc(1vw + 1vh);">Ajouter une classe</span>
-                </a>
-              </div>
-            </div>
-          </div>
 
 
           <!-- /.container-fluid -->
@@ -322,7 +281,8 @@
 
                     </tbody>
                 </table>
-                <a href="espace_admin_userAdd.html" class="btn btn-primary btn-icon-split m-3 " id='admin-add-admin2'>
+                <a href="espace_admin_utilisateur_ajouter.html" class="btn btn-primary btn-icon-split m-3 "
+                  id='admin-add-admin2'>
                   <span class="icon text-white-50 d-flex align-items-center">
                     <i class="fas fa-plus "></i>
                   </span>
@@ -331,6 +291,10 @@
               </div>
             </div>
           </div>
+
+
+
+
 
         </div>
       </div>
@@ -352,11 +316,12 @@
   </div>
   <!-- End of Page Wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
+  <audio id='sound-success'>
+    <source src="Sounds/success.mp3" />
+  </audio>
+  <audio id='sound-error'>
+    <source src="Sounds/error.mp3" />
+  </audio>
 
   <!-- Bootstrap core JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -367,19 +332,20 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
+  <!-- Page level plugins -->
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
+
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
   <script src="js/all_tools.js"></script>
 
 
-  <!-- Page level plugins -->
-  <script src="js/jquery.dataTables.js"></script>
-  <script src="js/dataTables.bootstrap4.js"></script>
-
-
-  <!-- Page level custom scripts -->
+  <!-- Page  custom scripts -->
   <script src='js/admin_tools.js'></script>
-  <script src='js/admin_show._data.js'></script>
+  <script src='js/admin_utilisateurs.js'></script>
+
 
 
 </body>

@@ -21,11 +21,7 @@ $('#formulaire').on('submit', function (evt) {
             mail: infos[3].value,
             identifiant: identifiant,
             password: mdp,
-            indicator_1: 1,
-            indicator_2: 1,
-            indicator_3: 1,
             poste: 'Élève',
-            absences: []
         }).then(user => {
             console.log('élève ajouté , ID: ', user.id);
 
@@ -33,10 +29,10 @@ $('#formulaire').on('submit', function (evt) {
             db.collection('classes').doc(infos[2].value).update({
                 eleves: firebase.firestore.FieldValue.arrayUnion(user.id)
             });
-
+            localStorage.setItem('Notif', "L'élève a bien été ajouté")
             localStorage.setItem("editUser", user.id);
             localStorage.setItem("editUserPoste", 'eleves');
-            self.location.href = 'espace_admin_user.html'
+            self.location.href = 'espace_admin_utilisateur_modifier.html'
         }).catch(() => {
             alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement")
         })
@@ -52,13 +48,13 @@ $('#formulaire').on('submit', function (evt) {
             mail: infos[2].value,
             identifiant: identifiant,
             password: mdp,
-            cours: [],
             poste: 'Formateur',
         }).then(ref => {
             console.log('formateur ajouté , ID: ', ref.id);
+            localStorage.setItem('Notif', "Le formateur a bien été ajouté")
             localStorage.setItem("editUser", ref.id);
             localStorage.setItem("editUserPoste", 'formateurs');
-            self.location.href = 'espace_admin_user.html'
+            self.location.href = 'espace_admin_utilisateur_modifier.html'
         }).catch(() => { alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement") })
     }
     // [End] Si on ajoute un formateur ...
@@ -78,9 +74,10 @@ $('#formulaire').on('submit', function (evt) {
             date: date[0]
         }).then(ref => {
             console.log('administrateur ajouté , ID: ', ref.id);
+            localStorage.setItem('Notif', "L'administrateur a bien été ajouté")
             localStorage.setItem("editUser", ref.id);
             localStorage.setItem("editUserPoste", 'admins');
-            self.location.href = 'espace_admin_user.html'
+            self.location.href = 'espace_admin_utilisateur_modifier.html'
         }).catch(() => { alert("Une erreur est survenue, réessayez ultérieurement") })
     }
     // [End] Si on ajoute un administrateur ...
@@ -107,6 +104,9 @@ $('#vider_champs').on('click', function () {
     document.getElementById('input-prenom').value = ''
     document.getElementById('input-classe').value = ''
     document.getElementById('input-mail').value = ''
+    document.getElementById('sound-success').play()
+    new Notyf({ duration: 4000, position: { x: 'center', y: 'bottom', } }).success('Les champs ont été vidés');
+    console.log('lol')
 })
 
 

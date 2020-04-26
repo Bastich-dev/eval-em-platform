@@ -47,12 +47,13 @@
       id="accordionSidebar" style="position: fixed;">
 
       <!-- Sidebar - Brand -->
-      <div class="sidebar-brand d-flex align-items-center justify-content-center">
+      <a href="espace_formateur.html" class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon ">
-          <i class="fas fa-user-graduate"></i>
+          <i class="fas fa-user-cog"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Espace Formateur </div>
-      </div>
+        <div class="sidebar-brand-text mx-3">Espace formateur </div>
+      </a>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
@@ -61,7 +62,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html" id='logout'>
           <i class="fas fa-fw fa-sign-in-alt"></i>
-          <span>Espace Conection</span></a>
+          <span>Déconnexion</span></a>
         <input type="text" value='formateurs' class="d-none" id='poste_id'>
       </li>
 
@@ -123,13 +124,11 @@
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item ">
-              <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
-                  Formateur
-                </span>
 
-              </a>
+              <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
+                Formateur
+              </span>
+
 
             </li>
 
@@ -137,13 +136,12 @@
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
-                  id='id_nom_user'>
-                </span>
 
-              </a>
+              <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                id='id_nom_user'>
+              </span>
+
+
             </li>
 
           </ul>
@@ -315,7 +313,7 @@
                         <th>Classe</th>
                         <th>Groupe</th>
                         <th>Statut</th>
-                        <th></th>
+
                       </tr>
                     </thead>
                     <tfoot>
@@ -336,21 +334,7 @@
         </div>
 
 
-        <div id="overlay">
-          <div id="popup">
-            <div class="closebtn close">X</div>
-            <h2>Émettre un commentaire</h2>
-            <h5>Nom : </h5>
-            <h5>Module : </h5>
-            <h5>Date : 12/04/2020 - 12h à 13h</h5>
-            <textarea name="" id="" cols="60" rows="6"></textarea>
-            <div class="d-flex"></div>
-            <div style="float: right; border: 1px solid black;" class="btn btn-white m-2 closebtn"> Annuler</div>
-            <span>
-              <div style="float: right;" class="btn btn-primary m-2"> Envoyer</div>
-            </span>
-          </div>
-        </div>
+
 
       </div>
       <!-- End of Main Content -->
@@ -378,7 +362,6 @@
 
 
 
-  <!-- Audio files for notify -->
   <audio id='sound-success'>
     <source src="Sounds/success.mp3" />
   </audio>
@@ -395,17 +378,19 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="js/all_tools.js"></script>
-
   <!-- Page level plugins -->
   <script src="js/jquery.dataTables.js"></script>
   <script src="js/dataTables.bootstrap4.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
 
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/all_tools.js"></script>
+
+
   <!-- Page  custom scripts -->
-  <script src='js/Cours.js'></script>
+  <script src='js/formateur_cours.js'></script>
+
   <script
     src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 </body>

@@ -36,12 +36,6 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-
-
-
-
-
-
     <!-- Prevent Fixed position -->
     <ul class="d-none d-md-flex d-sm-flex d-lg-flex sidebar sidebar-dark" style="visibility: hidden;">
       <li class="nav-item">
@@ -54,7 +48,7 @@
       id="accordionSidebar" style="position: fixed;">
 
       <!-- Sidebar - Brand -->
-      <a href="espace_admin.html" class="sidebar-brand d-flex align-items-center justify-content-center">
+      <a href="espace_admin_utilisateurs.html" class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon ">
           <i class="fas fa-user-cog"></i>
         </div>
@@ -67,7 +61,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html" id='logout'>
           <i class="fas fa-fw fa-sign-in-alt"></i>
-          <span>Espace Conection</span></a>
+          <span>Déconnexion</span></a>
         <input type="text" value='admins' class="d-none" id='poste_id'>
       </li>
       <hr class="sidebar-divider">
@@ -87,19 +81,24 @@
           <span>Cours</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="espace_admin_classes.html">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Classes</span>
+        </a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClassses">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Listes</span>
+          <span>Utilisateurs</span>
         </a>
         <div id="collapseClassses" class="collapse">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-classes"> Classes</a>
-            <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-eleve"> Élèves</a>
-            <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-formateur"> Formateur</a>
-            <a class=" js-scrollTo collapse-item" href="espace_admin.html#admin-admin"> Admins</a>
+            <a class=" js-scrollTo collapse-item" href="espace_admin_utilisateurs.html#admin-eleve"> Élèves</a>
+            <a class=" js-scrollTo collapse-item" href="espace_admin_utilisateurs.html#admin-formateur"> Formateur</a>
+            <a class=" js-scrollTo collapse-item" href="espace_admin_utilisateurs.html#admin-admin"> Admins</a>
           </div>
         </div>
       </li>
@@ -107,16 +106,14 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEleve">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Ajouter</span>
+          <span>Ajouter utilisateur</span>
         </a>
         <div id="collapseEleve" class="collapse">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="espace_admin_classeAdd.html">une Classe</a>
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-eleve'>un Élève</a>
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-formateur'>un
-              Formateur</a>
-            <a class="collapse-item" href="espace_admin_userAdd.html" id='admin-add-admin'>un
-              Administrateur</a>
+            <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html" id='admin-add-eleve'>Élève</a>
+            <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html" id='admin-add-formateur'>Formateur</a>
+            <a class="collapse-item" href="espace_admin_utilisateur_ajouter.html"
+              id='admin-add-admin'>Administrateur</a>
           </div>
         </div>
       </li>
@@ -153,20 +150,16 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item ">
-              <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown">
-                <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
-                  Administrateur
-                </span>
-              </a>
+              <span class="mr-2  d-lg-inline text-gray-600 " style="font-size: calc(1.5vw + 1.5vh);">
+                Administrateur
+              </span>
             </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
-                <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
-                  id='id_nom_user'>
-                </span>
-              </a>
+              <span class="mr-3 d-lg-nline  text-gray-600 lg-h2" style="font-size: calc(1.5vw + 1.5vh);"
+                id='id_nom_user'>
+              </span>
             </li>
           </ul>
 
@@ -185,9 +178,11 @@
 
             <!-- ////////  CARD DONNEES CLASSE -->
             <div class="col-12">
+
+
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex  ">
+                <div class="card-header py-3   ">
                   <h3 class="m-0 font-weight-bold text-primary text-uppercase">Données Classe</h3>
                 </div>
                 <!-- Card Body -->
@@ -221,7 +216,6 @@
                 </div>
               </div>
             </div>
-
 
             <!-- ////////  CARD ELEVES  -->
             <div class="col-lg-6 col-sm-12">
@@ -336,18 +330,19 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="js/all_tools.js"></script>
-
   <!-- Page level plugins -->
   <script src="js/jquery.dataTables.js"></script>
   <script src="js/dataTables.bootstrap4.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/notyf@3.6.0/notyf.min.js"></script>
 
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/all_tools.js"></script>
+
+
   <!-- Page  custom scripts -->
   <script src='js/admin_tools.js'></script>
-  <script src='js/afficheClasse.js'></script>
+  <script src='js/admin_classe_modifier.js'></script>
 
 
 </body>

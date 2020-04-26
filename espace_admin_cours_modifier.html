@@ -3,7 +3,6 @@
 
 <head>
 
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -184,8 +183,7 @@
                                     <!-- Card Header - Dropdown -->
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h3 class="m-0 font-weight-bold text-primary text-uppercase">Ajouter
-                                            un cours
+                                        <h3 class="m-0 font-weight-bold text-primary text-uppercase">Modifier un cours
                                         </h3>
                                     </div>
                                     <form id='formulaire_cours' action="">
@@ -194,18 +192,18 @@
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Classe</b>
 
-                                                <select name="classe" class="mt-2 ml-2 form-control form-control-user"
-                                                    id='select-classe' required>
+                                                <select name="classe"
+                                                    class="mt-2 ml-2 form-control form-control-user editMark"
+                                                    id='select-classe'>
                                                     <option value=""></option>
-
                                                 </select>
                                             </div>
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Formateur</b>
 
                                                 <select name="formateur"
-                                                    class="mt-2 ml-2 form-control form-control-user"
-                                                    id='select-formateur' required>
+                                                    class="mt-2 ml-2 form-control form-control-user editMark"
+                                                    id='select-formateur'>
                                                     <option value=""></option>
 
                                                 </select>
@@ -213,25 +211,26 @@
 
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Module</b>
-                                                <input type="text" class="mt-2 ml-2 form-control form-control-user"
-                                                    name='module' required>
+                                                <input type="text"
+                                                    class="mt-2 ml-2 form-control form-control-user editMark"
+                                                    id="module" name='module'>
                                             </div>
                                         </div>
                                         <div class="row justify-content-around mb-3">
 
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Date</b>
-                                                <input type="date" class="mt-2 ml-2 form-control form-control-user"
-                                                    name='date' required>
+                                                <input type="date"
+                                                    class="mt-2 ml-2 form-control form-control-user editMark" id="date"
+                                                    name='date'>
                                             </div>
 
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Horaire début</b>
                                                 <div class="row">
-                                                    <select name="hr1-debut"
-                                                        class="mt-2 ml-2 form-control form-control-user"
-                                                        style="width: 40%;" required>
-                                                        <option value=""></option>
+                                                    <select name="hr1-debut" id='hr1_debut'
+                                                        class="mt-2 ml-2 form-control form-control-user editMark"
+                                                        style="width: 40%;">
                                                         <option value="09">09</option>
                                                         <option value="10">10</option>
                                                         <option value="11">11</option>
@@ -245,10 +244,9 @@
 
                                                     </select>
                                                     <b class="m-2 d-flex align-items-center "> : </b>
-                                                    <select name="hr1-debut"
-                                                        class="mt-2 ml-2 form-control form-control-user"
-                                                        style="width: 40%;" required>
-
+                                                    <select name="hr1-debut" id='hr2_debut'
+                                                        class="mt-2 ml-2 form-control form-control-user editMark"
+                                                        style="width: 40%;">
                                                         <option value="00">00</option>
                                                         <option value="15">15</option>
                                                         <option value="30">30</option>
@@ -260,10 +258,9 @@
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Horaire fin</b>
                                                 <div class="row">
-                                                    <select name="hr1-fin"
-                                                        class="mt-2 ml-2 form-control form-control-user"
-                                                        style="width: 40%;" required>
-                                                        <option value=""></option>
+                                                    <select name="hr1-fin" id='hr1_fin'
+                                                        class="mt-2 ml-2 form-control form-control-user editMark"
+                                                        style="width: 40%;">
                                                         <option value="09">09</option>
                                                         <option value="10">10</option>
                                                         <option value="11">11</option>
@@ -277,10 +274,9 @@
 
                                                     </select>
                                                     <b class="m-2 d-flex align-items-center "> : </b>
-                                                    <select name="hr1-fin"
-                                                        class="mt-2 ml-2 form-control form-control-user"
-                                                        style="width: 40%;" required>
-
+                                                    <select name="hr1-fin" id='hr2_fin'
+                                                        class="mt-2 ml-2 form-control form-control-user editMark"
+                                                        style="width: 40%;">
                                                         <option value="00">00</option>
                                                         <option value="15">15</option>
                                                         <option value="30">30</option>
@@ -296,17 +292,17 @@
 
                                             <div class="form-group mb-3 col-lg-3 col-sm-8 m-3 " style="width: 39%;">
                                                 <b class="ml-2">Salle</b>
-                                                <input type="text" class="mt-2 ml-2 form-control form-control-user"
-                                                    name='salle' required>
+                                                <input type="text"
+                                                    class="mt-2 ml-2 form-control form-control-user editMark" id="salle"
+                                                    name='salle'>
                                             </div>
 
-                                            <input type="submit"
+                                            <input type="button" id='modifs'
                                                 class="form-group mt-4 col-lg-3 col-sm-8 m-3 btn btn-primary "
-                                                style="font-size: calc( 1vw + 1vh );" value='Ajouter Cours'>
-                                            <input type="button"
+                                                style="font-size: calc( 1vw + 1vh );" value='Valider Modicification '>
+                                            <input type="button" id='delete'
                                                 class="form-group mt-4 col-lg-3 col-sm-8 m-3 btn btn-danger "
-                                                style="font-size: calc( 1vw + 1vh );" value='Vider champs'
-                                                id='viderchamps'>
+                                                style="font-size: calc( 1vw + 1vh );" value='Supprimer cours'>
 
                                         </div>
                                     </form>
@@ -318,42 +314,6 @@
 
                         </div>
 
-                        <div class="card shadow mb-4 ">
-                            <div class="card-header py-3">
-                                <h3 class="m-0 font-weight-bold text-primary text-uppercase">Tableau des Cours à venir
-                                </h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="CoursTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Date</th>
-                                                <th>Classe</th>
-                                                <th>Formateur</th>
-                                                <th>Module</th>
-                                                <th>Horaire début</th>
-                                                <th>Horaire fin</th>
-                                                <th>Salle</th>
-                                                <th>Statut</th>
-                                                <th>Modifier</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tbody>
-
-                                            </tbody>
-                                    </table>
-                                    <a href="#addCours" class="js-scrollTo btn btn-primary btn-icon-split m-3 ">
-                                        <span class="icon text-white-50 d-flex align-items-center">
-                                            <i class="fas fa-plus "></i>
-                                        </span>
-                                        <span class="text " style="font-size: calc(1vw + 1vh);">Ajouter un cours
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
 
 
 
@@ -417,7 +377,7 @@
 
     <!-- Page  custom scripts -->
     <script src='js/admin_tools.js'></script>
-    <script src='js/admin_cours.js'></script>
+    <script src='js/admin_cours_modifier.js'></script>
 
 
 </body>
