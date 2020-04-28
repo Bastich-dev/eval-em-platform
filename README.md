@@ -62,7 +62,7 @@ const annee = '2019-2020'
 
 # Présentation :
 
-#### [Espace Connexion](#espace-connexion)
+#### [Espace Connexion](#Espace Connexion)
 #### [Espace Élève](#espace-eleve)
 #### [Espace Formateur](#espace-formateur)
 #### [Espace Administrateur](#espace-administrateur)
@@ -72,7 +72,7 @@ const annee = '2019-2020'
 <hr>
 
 
-# Espace connexion {#espace-connexion}
+# Espace connexion
 <h1><a name="espace-connexion">Espace Connexion :</a></h1>
 
 ![alt text](markdown-assets/Capture-espace-connexion.JPG "Logo Title Text 1")
