@@ -180,7 +180,7 @@ let calendar = new FullCalendar.Calendar(calendarEl, {
                           <br>
                           Salle : ${cours.data().salle}
                           <br>
-                          Passé : ${cours.data().actif == false ? 'Prévu' : 'Passé'}
+                          Statut : ${cours.data().actif == false ? 'Prévu' : 'Passé'}
                                 `)
 
             })

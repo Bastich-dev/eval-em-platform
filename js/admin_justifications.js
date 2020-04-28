@@ -94,10 +94,9 @@ db.collection('justifications').onSnapshot((justifs) => {
                                     .then(formateur => {
 
 
-
-                                        $('#' + (justification.data().valid == true) ? 'JustificationsTable' : 'VerifierTable').DataTable().row.add([
-                                            ` <td  class='justif_id' id='${justification.id}'>
-                <button type="button" id='${absence.id}'
+                                        $('#' + ((justification.data().valid == true) ? 'JustificationsTable' : 'VerifierTable')).DataTable().row.add([
+                                            ` <td  class='justif_id'>
+                <button type="button" id='${absence.id} ${justification.id}'
                 class="mt-2 btn-icon-split btn btn-primary btn-justif"
                 data-toggle="modal" data-target="#exampleModal">
                 <span class="icon text-white-50">
@@ -128,6 +127,7 @@ db.collection('justifications').onSnapshot((justifs) => {
                                         $('.btn-justif').unbind()
                                         $('.btn-justif').bind('click', function () {
 
+                                            let div_btn = $(this)
                                             if (justification.data().valid == true) {
                                                 $('#btn-valider').hide()
                                                 $('#btn-rejeter').hide()
@@ -135,18 +135,55 @@ db.collection('justifications').onSnapshot((justifs) => {
                                             else {
                                                 $('#btn-valider').show()
                                                 $('#btn-rejeter').show()
-                                                $('#btn-valider').attr('id', $(this).parent().attr('id'))
+                                                $('#btn-rejeter').unbind()
+                                                $('#btn-rejeter').bind('click', function () {
+                                                    $('#exampleModal').modal('hide')
+                                                    db.collection('absences').doc(div_btn.attr('id').split(' ')[0]).update({
+                                                        justifiee: false
+                                                    });
+                                                    console.log(div_btn.attr('id').split(' ')[0])
+                                                    db.collection('justifications').where('absence', '==', div_btn.attr('id').split(' ')[0])
+                                                        .get()
+                                                        .then(querySnapshot => {
+                                                            querySnapshot.forEach((doc) => {
+                                                                doc.ref.delete().then(() => {
+                                                                    document.getElementById('sound-success').play()
+                                                                    new Notyf().success({
+                                                                        message: "L'absence a été refusée",
+                                                                        duration: 4000,
+
+                                                                        position: {
+                                                                            x: 'center',
+                                                                            y: 'bottom',
+                                                                        }
+                                                                    });
+                                                                })
+
+                                                            })
+                                                        })
+                                                })
                                                 $('#btn-valider').unbind()
                                                 $('#btn-valider').bind('click', function () {
-                                                    db.collection('justifications').doc(justification.id).update({
+                                                    $('#exampleModal').modal('hide')
+                                                    db.collection('justifications').doc(div_btn.attr('id').split(' ')[1]).update({
                                                         valid: true
                                                     });
+                                                    document.getElementById('sound-success').play()
+                                                    new Notyf().success({
+                                                        message: "L'absence a été validée",
+                                                        duration: 4000,
 
+                                                        position: {
+                                                            x: 'center',
+                                                            y: 'bottom',
+                                                        }
+                                                    });
                                                 })
 
                                             }
 
-                                            db.collection('justifications').doc($(this).parent().attr('id')).get().then((justifi) => {
+
+                                            db.collection('justifications').doc($(this).attr('id').split(' ')[1]).get().then((justifi) => {
                                                 $('#text-justification').empty()
                                                 $('#text-justification').append(`
                                                    <hr>
@@ -157,7 +194,7 @@ db.collection('justifications').onSnapshot((justifs) => {
                                             })
 
 
-                                            db.collection('absences').doc($(this).attr('id')).get().then((abs) => {
+                                            db.collection('absences').doc($(this).attr('id').split(' ')[0]).get().then((abs) => {
 
                                                 let retard_hours = ''
                                                 let retard_minutes = ''

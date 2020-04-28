@@ -12,8 +12,6 @@ const db = firebase.firestore()
 const annee = '2019-2020'
 
 
-
-
 // SECURITE VERIF ID
 
 console.log($('#poste_id').val())

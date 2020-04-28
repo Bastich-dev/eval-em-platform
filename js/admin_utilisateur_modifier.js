@@ -253,5 +253,144 @@ $('.editMark').on('change', function () {
 })
 
 
+console.log(localStorage.getItem('editUserPoste'))
+if (localStorage.getItem('editUserPoste') == 'eleves') {
+
+    $('.container-fluid').append(`  <div class="row">
+
+<!-- Card abscences hebdomadaire -->
+<div class="col-xl-3 col-md-6 mb-4" id='absences-semaine'>
+</div>
+
+<!-- Card abscences mensuel -->
+<div class="col-xl-3 col-md-6 mb-4" id='absences-mois'>
+
+</div>
 
 
+
+<!-- Card abscences trimestre -->
+<div class="col-xl-3 col-md-6 mb-4" id='absences-trimestre'>
+</div>
+
+<!-- Card abscences à justifier -->
+<div class="col-xl-3 col-md-6 mb-4" id='absences-justifier'>
+</div>
+
+</div>`)
+
+
+    db.collection('absences').where('eleve', '==', localStorage.getItem('editUser')).get().then((doc) => {
+
+
+        let absences_semaine = 0
+        let absences_mois = 0
+        let absences_trimestre = 0
+
+
+        doc.forEach((elem) => {
+
+            let date = Date.parse(elem.data().date)
+            let trimestre = [
+                Date.parse(annee.split('-')[0] + '-08-31'),
+                Date.parse(annee.split('-')[0] + '-12-31'),
+                Date.parse(annee.split('-')[1] + '-03-31'),
+                Date.parse(annee.split('-')[1] + '-06-31')
+            ]
+
+            const today = new Date();
+            const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+            const pastDaysOfYear = (today - firstDayOfYear) / 86400000;
+            let sem_now = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+
+            const today2 = new Date(elem.data().date);
+            const firstDay = new Date(today2.getFullYear(), 0, 1);
+            const pastDays = (today2 - firstDay) / 86400000;
+            let sem_abs = Math.ceil((pastDays + firstDay.getDay() + 1) / 7);
+
+            if (sem_now == sem_abs) absences_semaine += 1
+
+
+            let this_month = '' + (new Date().getMonth() + 1)
+            if (this_month.length != 2) this_month = '0' + this_month
+            if (this_month == elem.data().date.slice(5, 7)) absences_mois += 1
+
+            let datenow = new Date()
+            for (let i = 0; i < trimestre.length; i++) {
+                if (datenow < trimestre[i]) datenow = i
+            }
+            if ((date < trimestre[datenow]) && (date > trimestre[datenow - 1])) absences_trimestre += 1
+
+
+        })
+
+
+
+
+        $('#absences-semaine').append(cardManager(absences_semaine, 'Absences cette semaine'))
+        $('#absences-trimestre').append(cardManager(absences_trimestre, 'Absences ce trimestre'))
+        $('#absences-mois').append(cardManager(absences_mois, 'Absences ce mois-ci'))
+
+
+        db.collection('absences').where('eleve', '==', localStorage.getItem('editUser')).onSnapshot((abs) => {
+            let absences_non_justifiee = 0
+            abs.forEach((elem) => {
+
+                if (elem.data().justifiee == false) absences_non_justifiee += 1
+
+            })
+            $('#absences-justifier').empty()
+            $('#absences-justifier').append(cardManager(absences_non_justifiee, 'Absences à justifier'))
+        })
+
+
+
+    })
+
+
+}
+
+
+
+
+
+
+function cardManager(nb, titre) {
+
+    let card = {
+        color: '',
+        icon: ``
+    }
+    if (nb < 3) {
+        card.color = 'success'
+        card.icon = `<i class="fas fa-check-circle fa-2x text-300 text-success"></i>`
+    }
+    else if (nb < 10) {
+        card.color = 'warning'
+        card.icon = `<i class="fas fa-exclamation-triangle fa-2x text-300 text-warning"></i>`
+    }
+    else if (nb >= 10) {
+        card.color = 'danger'
+        card.icon = `<i class="fas fa-exclamation-circle fa-2x text-300 text-danger"></i>`
+    }
+
+    return `
+    <div class="card border-left-${card.color} shadow h-100 py-2">
+    <div class="card-body">
+      <div class="row no-gutters align-items-center">
+        <div class="col mr-2">
+          <div class="text-sm font-weight-bold text-${card.color} text-uppercase mb-1">${titre}</div>
+          <div class="row no-gutters align-items-center">
+            <div class="col-auto">
+              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">${nb}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+        ${card.icon}
+        </div>
+      </div>
+    </div>
+    </div>
+    `
+}

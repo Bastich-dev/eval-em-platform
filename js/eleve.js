@@ -400,6 +400,16 @@ $('#justifier-envoi').on('submit', function (e) {
         db.collection('absences').doc($(this).find('.id_abs').attr('id')).update({
             justifiee: true
         })
+        document.getElementById('sound-success').play()
+        new Notyf().success({
+            message: "L'absence a été justifiée",
+            duration: 4000,
+
+            position: {
+                x: 'center',
+                y: 'bottom',
+            }
+        });
         $("#exampleModal").modal('hide');
     }).catch(() => { alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement") })
 
@@ -460,7 +470,7 @@ let calendar = new FullCalendar.Calendar(calendarEl, {
                           <br>
                           Salle : ${cours.data().salle}
                           <br>
-                          Passé : ${cours.data().actif == true ? 'Prévu' : 'Passé'}
+                          Statut : ${cours.data().actif == true ? 'Prévu' : 'Passé'}
                                 `)
 
             })
@@ -478,8 +488,7 @@ db.collection('eleves').doc(localStorage.getItem('ID')).get().then((eleve) => {
 
         cours.forEach((cour) => {
 
-            let olll = cour.data().date + ' ' + cour.data().hr_debut + ':00'
-            console.log(olll)
+
 
             db.collection('formateurs').doc(cour.data().formateur).get().then((formateur) => {
 

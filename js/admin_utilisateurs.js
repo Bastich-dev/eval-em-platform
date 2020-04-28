@@ -22,7 +22,7 @@ db.collection('eleves').get()
           let absences_semaine = 0
           let absences_mois = 0
           let absences_trimestre = 0
-
+          let absences_non_justifiee = 0
 
 
 
@@ -64,6 +64,11 @@ db.collection('eleves').get()
             })
           })
 
+          db.collection('absences').where('eleve', '==', eleve.id).onSnapshot((abs) => {
+            abs.forEach((elem) => {
+              if (elem.data().justifiee == false) absences_non_justifiee += 1
+            })
+          })
 
 
           $('#EleveTable').DataTable().row.add([
@@ -82,9 +87,11 @@ db.collection('eleves').get()
                   <div class="col-auto">
                     <i class="${ colorIndicator(absences_trimestre)}  text-300" style="color: #f6c23e;"></i>
                   </div>
+                  <div class="col-auto">
+                  <i class="${ colorIndicator(absences_non_justifiee)}  text-300" style="color: #f6c23e;"></i>
+                </div>
                 </div>
               </td>`,
-            `      <td>  Modifier </td>`
           ]).draw();
 
 
@@ -129,8 +136,6 @@ db.collection('formateurs').get()
 
     // [Start] Pour chaque formateur ...
     formateurs.forEach(formateur => {
-
-      let nb_cours = 0
       db.collection('cours').where('formateur', '==', formateur.id).get().then((info) => {
 
 

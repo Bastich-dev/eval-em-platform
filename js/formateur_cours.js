@@ -43,7 +43,7 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                     ` <td> ${eleve_infos.data().mail}  </td>`,
                                     ` <td>  ${classe.data().nom}</td>`,
                                     ` ${classe.data().groupe}`,
-                                    `  <div class="container">
+                                    `  <div class="container_abs container">
                                     <div class="button-wrap d-flex">
                                       <input class="hidden radio-label radio present" id="present-${eleve_infos.id}" type="radio" name="${eleve_infos.id}" checked="checked"/>
                                       <label class="button-label" for="present-${eleve_infos.id}">
@@ -209,10 +209,7 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                     db.collection('cours').doc(localStorage.getItem("ID_cours")).update({
                                         actif: false
                                     }).then(() => {
-                                        $(".container").each(function (index) {
-
-
-
+                                        $(".container_abs").each(function (index) {
                                             db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                                 .get()
                                                 .then(cours => {
