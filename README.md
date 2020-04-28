@@ -95,10 +95,10 @@ const annee = '2019-2020'
 ### Pages : 
 
 
-##### Espace élève : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
+#### Espace élève : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
 
 
-### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
+##### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
 
 <h2><a name="espace-formateur">Espace Formateur</a></h2>
 
@@ -112,13 +112,13 @@ const annee = '2019-2020'
 ### Pages : 
 
 
-##### Espace formateur : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
+#### Espace formateur : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
 * Démarrer les cours prévu pour aujourd'hui
 * Savoir son emploi du temps
 * Consulter ses cours à venir
 
 
-##### Espace Formateur - Cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur_cours.js)
+#### Espace Formateur - Cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur_cours.js)
 * Démarrer un cours, le mettre en pause et finir le cours 
 * Mettre un élève en présent, retard, absent
 
@@ -128,23 +128,62 @@ const annee = '2019-2020'
 ### Fonctionalités : 
 * Consulter la liste des utilisateurs
 * Consulter les absences et justifications
-* Ajouter un cours
+* Accepter ou refuser justifications
+
 * Ajouter un utilisateur
-* Ajouter une classe
-* Modifier un cours
 * Modifier un utilisateur
+
+* Ajouter une classe
 * Modifier une classe
+
+* Ajouter un cours
+* Modifier un cours
 
 ### Pages : 
 
 
+#### Espace Administrateur - Utilisateurs : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_utilisateurs.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_utilisateurs.js)
+* Consulter la liste des utilisateurs
+
+#### Espace Administrateur - Justifications & absences : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_justifications.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_justifications.js)
+* Consulter les absences et justifications
+* Accepter ou refuser justifications
+
+#### Espace Administrateur - Ajouter utilisateur : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_utilisateur_ajouter.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_utilisateur_ajouter.js)
+* Ajouter un utilisateur
+
+#### Espace Administrateur - Modifier utilisateur : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_utilisateur_modifier.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_utilisateur_modifier.js)
+* Modifier un utilisateur
+
+#### Espace Administrateur - Ajouter classe : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_classes.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_classes.js)
+* Ajouter une classe
+
+#### Espace Administrateur - Modifier classe : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_classe_modifier.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_classe_modifier.js)
+* Modifier une classe
+
+#### Espace Administrateur - Ajouter cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_cours_ajouter.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_cours.js)
+* Ajouter un cours
+
+#### Espace Administrateur - Modifier cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_cours_modifier.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_cours_modifier.js)
+* Modifier un cours
 
 
 <h2><a name="espace-password">Mot de passe oublié</a></h2>
+
+### Fonctionalités : 
+* Envoyer le mot de passe par e-mail
+
+![alt text](markdown-assets/Capture-forgot-password.JPG "Logo Title Text 1")
+<!-- ###### [HTML](https://github.com/BastosC/Bascent/blob/master/forgot-password.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js) -->
+###### L'espace 'Mot de passe oublié' permet de recuperer son mot de passe en rentrant son identifiant, le mot de passe sera envoyé à l'adresse e-mail liée à l'identifiant
+
+
+
 <h2><a name="espace-refresh">Retour à l'espace connexion</a></h2>
 
-
-
+![alt text](markdown-assets/Capture-refresh.JPG "Logo Title Text 1")
+###### [HTML](https://github.com/BastosC/Bascent/blob/master/lost_connection.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js)
+###### La page 'Retour à l'espace connexion' se déclenche si l'utilisateur tentee de se connecter sans passer par l'espace connexion, cette page renvoit l'utilisateur sur l'espace connection après 2,5 secondes . Cela assure la sécurité des fonctionalités reservées à un certain poste .
 
 
 
