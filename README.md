@@ -62,12 +62,12 @@ const annee = '2019-2020'
 
 # Présentation :
 
-#### [Espace Connexion](#espace-connexion)
-#### [Espace Élève](#espace-eleve)
-#### [EspaceFormateur](#espace-formateur)
-#### [EspaceAdministrateur](#espace-administrateur)
-#### [Mot de passe oublié](#espace-password)
-#### [Retour à l'espace connexion](#espace-refresh)
+#### [- Espace Connexion](#espace-connexion)
+#### [- Espace Élève](#espace-eleve)
+#### [- Espace Formateur](#espace-formateur)
+#### [- Espace Administrateur](#espace-administrateur)
+#### [- Mot de passe oublié](#espace-password)
+#### [- Retour à l'espace connexion](#espace-refresh)
 
 <hr>
 
@@ -100,7 +100,7 @@ const annee = '2019-2020'
 
 ##### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
 
-<h1><a id="espace-formateur">Espace Formateur</a></h1>
+<h1><a name="espace-formateur">Espace Formateur</a></h1>
 
 
 ### Fonctionalités : 
@@ -124,7 +124,7 @@ const annee = '2019-2020'
 * Mettre un élève en présent, retard, absent
 
 
-<h1><a id="espace-administrateur">Espace Administrateur</a></h1>
+<h1><a name="espace-administrateur">Espace Administrateur</a></h1>
 
 ### Fonctionalités : 
 * Consulter la liste des utilisateurs
