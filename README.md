@@ -60,7 +60,7 @@ const db = firebase.firestore()
 const annee = '2019-2020'
 ```
 
-## Présentation :
+# Présentation :
 
 #### [Espace Connexion](#espace-connexion)
 #### [Espace Élève](#espace-eleve)
@@ -69,11 +69,11 @@ const annee = '2019-2020'
 #### [Mot de passe oublié](#espace-password)
 #### [Retour à l'espace connexion](#espace-refresh)
 
+<hr>
 
 
 
-
-<h3><a name="espace-connexion">Espace Connexion :</a></h3>
+<h2><a name="espace-connexion">Espace Connexion :</a></h2>
 
 ![alt text](markdown-assets/Capture-espace-connexion.JPG "Logo Title Text 1")
 ###### [HTML](https://github.com/BastosC/Bascent/blob/master/index.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/login.js)
@@ -81,11 +81,9 @@ const annee = '2019-2020'
 
 
 
-<h3><a name="espace-eleve">Espace Eleve</a></h3>
+<h2><a name="espace-eleve">Espace Eleve</a></h2>
 
-
-###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
-###### L'espace élève, disponible uniquement pour les élèves, permet de :
+### Fonctionalités : 
 * Savoir son nombre absences
 * Savoir son emploi du temps
 * Si il y a cours ( en direct )
@@ -93,29 +91,60 @@ const annee = '2019-2020'
 * Consulter les messages importants de la classe
 * Contacter un formateur en cas de retard occasionnel
 
+
+### Pages : 
+
+Espace élève :
+###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
+###### L'espace élève, disponible uniquement pour les élèves, permet de :
+
+
 ###### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
 
-<h3><a name="espace-formateur">Espace Formateur</a></h3>
+<h2><a name="espace-formateur">Espace Formateur</a></h2>
 
+### Fonctionalités : 
+* Démarrer les cours prévu pour aujourd'hui
+* Savoir son emploi du temps
+* Consulter ses cours à venir
+* Démarrer un cours, le mettre en pause et finir le cours 
+* Mettre un élève en présent, retard, absent
 
+### Pages : 
+
+Espace formateur :
 ###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
 ###### L'espace formateur, disponible uniquement pour les formateurs, permet de :
 * Démarrer les cours prévu pour aujourd'hui
 * Savoir son emploi du temps
 * Consulter ses cours à venir
 
-##### Quand on clique sur un cours : 
-
+Espace Formateur - Cours
 ###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur_cours.js)
 ###### L'espace formateur, disponible uniquement pour les formateurs, permet de :
-* Démarrer les cours prévu pour aujourd'hui
-* Savoir son emploi du temps
-* Consulter ses cours à venir
+* Démarrer un cours, le mettre en pause et finir le cours 
+* Mettre un élève en présent, retard, absent
 
 
-<h3><a name="espace-administrateur">Espace Administrateur</a></h3>
-<h3><a name="espace-password">Mot de passe oublié</a></h3>
-<h3><a name="espace-refresh">Retour à l'espace connexion</a></h3>
+<h2><a name="espace-administrateur">Espace Administrateur</a></h2>
+
+### Fonctionalités : 
+* Consulter la liste des utilisateurs
+* Consulter les absences et justifications
+* Ajouter un cours
+* Ajouter un utilisateur
+* Ajouter une classe
+* Modifier un cours
+* Modifier un utilisateur
+* Modifier une classe
+
+### Pages : 
+
+
+
+
+<h2><a name="espace-password">Mot de passe oublié</a></h2>
+<h2><a name="espace-refresh">Retour à l'espace connexion</a></h2>
 
 
 
