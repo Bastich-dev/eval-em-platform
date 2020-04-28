@@ -41,6 +41,11 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 
 <h3><a name="espace-connexion">Espace Connexion</a></h3>
+
+Inline-style: 
+![alt text](markdown-assets/Caputre-espace-connexion "Logo Title Text 1")
+
+
 <h3><a name="espace-eleve">Espace Eleve</a></h3>
 <h3><a name="espace-formateur">Espace Formateur</a></h3>
 <h3><a name="espace-administrateur">Espace Administrateur</a></h3>
