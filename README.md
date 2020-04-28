@@ -117,8 +117,8 @@ const annee = '2019-2020'
 * Savoir son emploi du temps
 * Consulter ses cours à venir
 
-Espace Formateur - Cours
-###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur_cours.js)
+
+###### Espace Formateur - Cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur_cours.js)
 ###### L'espace formateur, disponible uniquement pour les formateurs, permet de :
 * Démarrer un cours, le mettre en pause et finir le cours 
 * Mettre un élève en présent, retard, absent
