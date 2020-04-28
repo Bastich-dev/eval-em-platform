@@ -1,6 +1,10 @@
-# Lien de visualisation : [Lien](https://portfolio-bastien-chantrel.000webhostapp.com/index.html)
+## Démo : [Lien](https://portfolio-bastien-chantrel.000webhostapp.com/index.html)
+
+
 
 # ClassroomRegister - L'école multimédia
+
+## Consignes
 
 Nous devions réaliser une application web qui permet de gérer au mieux la présence des étudiants en classe.
 
@@ -14,17 +18,34 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 3. Pour l’école, comment avoir accès à une synthèse permettant de connaître les étudiants présents, absents ou en retard par classe, par élève.
 
-## Commencer
 
-open index.html
+## Présentation
 
-## Créer avec
+Template [SSB - Admin 2 ](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
+Javascript [jQuery](https://jquery.com/) 
+Calendrier [FullCalendar](https://fullcalendar.io/)
+Base de données [Cloud Firestore](https://firebase.google.com/docs/firestore)
 
-* [jQuery](https://jquery.com/) - Library
-* [SSB - Admin 2 ](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2) - Template
 
 
-## Tutoriel
+[ici](../README.md# Espace Connection)
+Espace connexion
+
+Espace élève
+
+Espace formateur
+
+Espace administrateur
+
+Mot de passe oublié
+Retour à l'espace connexion
+
+
+
+
+
+
+
 
 ### Espace Connection
 
