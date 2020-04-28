@@ -26,6 +26,31 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 *  [FullCalendar](https://fullcalendar.io/) - API pour le calendrier
 *  [Cloud Firestore](https://firebase.google.com/docs/firestore) - Base de données
 
+## Prérequis :
+
+###### Créer une base de données cloud firestore avec ces collections vides :
+###### * eleves
+###### * formateurs
+###### * administrateurs
+###### * cours
+###### * absences
+###### * justifications
+
+###### Puis ajouter la firebaseConfig de votre base de données au projet ainsi que l'année actuelle dans [all_tools.js](https://github.com/BastosC/Bascent/blob/master/js/all_tools.js)
+`
+const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore()
+const annee = '2019-2020'
+`
 
 ## Présentation :
 
@@ -43,9 +68,8 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 <h3><a name="espace-connexion">Espace Connexion :</a></h3>
 
 ![alt text](markdown-assets/Capture-espace-connexion.JPG "Logo Title Text 1")
-###### L'espace connexion permet de se connecter avec ses identifiants en sélectionnant le poste correspondant 
-###### [fichier html](https://github.com/BastosC/Bascent/blob/master/index.html)
-###### [fichier javascript](https://github.com/BastosC/Bascent/blob/master/js/login.js)
+###### L'espace connexion permet de se connecter avec ses identifiants en sélectionnant le poste correspondant, l'utilisateur peux accéder à la page pour retrouver son mot de passe
+###### [HTML](https://github.com/BastosC/Bascent/blob/master/index.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/login.js)
 
 
 <h3><a name="espace-eleve">Espace Eleve</a></h3>

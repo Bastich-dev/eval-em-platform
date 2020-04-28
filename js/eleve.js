@@ -420,6 +420,7 @@ let calendar = new FullCalendar.Calendar(calendarEl, {
     minTime: "08:00:00",
     maxTime: "19:00:00",
     allDaySlot: false,
+    height: 650,
     hiddenDays: [0],
     header: {
         right: 'prev,today,next ',
