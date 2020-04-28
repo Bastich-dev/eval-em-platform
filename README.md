@@ -95,7 +95,7 @@ const annee = '2019-2020'
 ### Pages : 
 
 
-###### Espace élève : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
+##### Espace élève : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
 
 
 ### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
@@ -112,14 +112,13 @@ const annee = '2019-2020'
 ### Pages : 
 
 
-###### Espace formateur : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
+##### Espace formateur : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
 * Démarrer les cours prévu pour aujourd'hui
 * Savoir son emploi du temps
 * Consulter ses cours à venir
 
 
-###### Espace Formateur - Cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur_cours.js)
-###### L'espace formateur, disponible uniquement pour les formateurs, permet de :
+##### Espace Formateur - Cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur_cours.js)
 * Démarrer un cours, le mettre en pause et finir le cours 
 * Mettre un élève en présent, retard, absent
 
