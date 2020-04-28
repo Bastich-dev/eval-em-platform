@@ -40,13 +40,17 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 
 
-<h3><a name="espace-connexion">Espace Connexion</a></h3>
+<h3><a name="espace-connexion">Espace Connexion :</a></h3>
 
-Inline-style: 
 ![alt text](markdown-assets/Capture-espace-connexion.JPG "Logo Title Text 1")
+###### L'espace connexion permet de se connecter avec ses identifiants en sélectionnant le poste correspondant 
+###### [fichier html](https://github.com/BastosC/Bascent/blob/master/index.html)
+###### [fichier javascript](https://github.com/BastosC/Bascent/blob/master/js/login.js)
 
 
 <h3><a name="espace-eleve">Espace Eleve</a></h3>
+
+
 <h3><a name="espace-formateur">Espace Formateur</a></h3>
 <h3><a name="espace-administrateur">Espace Administrateur</a></h3>
 <h3><a name="espace-password">Mot de passe oublié</a></h3>
