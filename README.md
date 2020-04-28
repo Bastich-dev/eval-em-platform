@@ -19,7 +19,7 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 3. Pour l’école, comment avoir accès à une synthèse permettant de connaître les étudiants présents, absents ou en retard par classe, par élève.
 
 
-## Présentation
+## Développé avec :
 
 * [SSB - Admin 2 ](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2) - Template
 *  [jQuery](https://jquery.com/) - Bibliothèque / Librairie
@@ -27,36 +27,25 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 *  [Cloud Firestore](https://firebase.google.com/docs/firestore) - Base de données
 
 
-### [Espace Connexion](#espace-connexion)
-### [Espace Élève](#espace-eleve)
-### [Espace Formateur](#espace-formateur)
-### [Espace Administrateur](#espace-administrateur)
-### [Mot de passe oublié](#espace-password)
-### [Retour à l'espace connexion](#espace-refresh)
+## Présentation :
 
-
-Espace élève
-
-Espace formateur
-
-Espace administrateur
-
-Mot de passe oublié
-Retour à l'espace connexion
+#### [Espace Connexion](#espace-connexion)
+#### [Espace Élève](#espace-eleve)
+#### [Espace Formateur](#espace-formateur)
+#### [Espace Administrateur](#espace-administrateur)
+#### [Mot de passe oublié](#espace-password)
+#### [Retour à l'espace connexion](#espace-refresh)
 
 
 
 
 
-<h4><a name="espace-connexion">Espace Connexion</a></h4>
-
-
-
-<h4><a name="espace-eleve">Espace Eleve</a></h4>
-<h4><a name="espace-formateur">Espace Formateur</a></h4>
-<h4><a name="espace-administrateur">Espace Administrateur</a></h4>
-<h4><a name="espace-password">Mot de passe oublié</a></h4>
-<h4><a name="espace-refresh">Retour à l'espace connexion</a></h4>
+<h3><a name="espace-connexion">Espace Connexion</a></h3>
+<h3><a name="espace-eleve">Espace Eleve</a></h3>
+<h3><a name="espace-formateur">Espace Formateur</a></h3>
+<h3><a name="espace-administrateur">Espace Administrateur</a></h3>
+<h3><a name="espace-password">Mot de passe oublié</a></h3>
+<h3><a name="espace-refresh">Retour à l'espace connexion</a></h3>
 
 
 
