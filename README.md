@@ -84,9 +84,9 @@ const annee = '2019-2020'
 <h1><a name="espace-eleve">Espace Eleve</a></h1>
 
 ### Fonctionalités : 
-* Savoir son nombre absences
-* Savoir son emploi du temps
-* Si il y a cours ( en direct )
+* Consulter son nombre absences
+* Consulter son emploi du temps
+* Consulter le statut du cours ( savoir si le cours a démarré )
 * Il peux justifier ses absences
 * Consulter les messages importants de la classe
 * Contacter un formateur en cas de retard occasionnel
@@ -105,7 +105,7 @@ const annee = '2019-2020'
 
 ### Fonctionalités : 
 * Démarrer les cours prévu pour aujourd'hui
-* Savoir son emploi du temps
+* Consulter son emploi du temps
 * Consulter ses cours à venir
 * Démarrer un cours, le mettre en pause et finir le cours 
 * Mettre un élève en présent, retard, absent
@@ -115,7 +115,7 @@ const annee = '2019-2020'
 
 #### Espace formateur : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
 * Démarrer les cours prévu pour aujourd'hui
-* Savoir son emploi du temps
+* Consulter son emploi du temps
 * Consulter ses cours à venir
 
 
@@ -162,7 +162,7 @@ const annee = '2019-2020'
 #### Espace Administrateur - Modifier classe : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_classe_modifier.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_classe_modifier.js)
 * Modifier une classe
 
-#### Espace Administrateur - Ajouter cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_cours_ajouter.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_cours.js)
+#### Espace Administrateur - Ajouter cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_cours.js)
 * Ajouter un cours
 
 #### Espace Administrateur - Modifier cours : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_admin_cours_modifier.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/admin_cours_modifier.js)
@@ -183,7 +183,7 @@ const annee = '2019-2020'
 <h1><a name="espace-refresh">Retour à l'espace connexion</a></h1>
 
 ![alt text](markdown-assets/Capture-refresh.JPG "Logo Title Text 1")
-#### [HTML](https://github.com/BastosC/Bascent/blob/master/lost_connection.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js)
+<!-- #### [HTML](https://github.com/BastosC/Bascent/blob/master/lost_connection.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js) -->
 #### La page 'Retour à l'espace connexion' se déclenche si l'utilisateur tentee de se connecter sans passer par l'espace connexion, cette page renvoit l'utilisateur sur l'espace connection après 2,5 secondes . Cela assure la sécurité des fonctionalités reservées à un certain poste .
 
 
