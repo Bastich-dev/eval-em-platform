@@ -72,8 +72,8 @@ const annee = '2019-2020'
 <hr>
 
 
-
-<h2><a name="espace-connexion">Espace Connexion :</a></h2>
+# Espace connexion {#espace-connexion}
+<h1><a name="espace-connexion">Espace Connexion :</a></h1>
 
 ![alt text](markdown-assets/Capture-espace-connexion.JPG "Logo Title Text 1")
 ###### [HTML](https://github.com/BastosC/Bascent/blob/master/index.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/login.js)
@@ -81,7 +81,7 @@ const annee = '2019-2020'
 
 
 
-<h2><a name="espace-eleve">Espace Eleve</a></h2>
+<h1><a name="espace-eleve">Espace Eleve</a></h1>
 
 ### Fonctionalités : 
 * Savoir son nombre absences
@@ -100,7 +100,7 @@ const annee = '2019-2020'
 
 ##### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
 
-<h2><a name="espace-formateur">Espace Formateur</a></h2>
+<h1><a name="espace-formateur">Espace Formateur</a></h1>
 
 ### Fonctionalités : 
 * Démarrer les cours prévu pour aujourd'hui
@@ -123,7 +123,7 @@ const annee = '2019-2020'
 * Mettre un élève en présent, retard, absent
 
 
-<h2><a name="espace-administrateur">Espace Administrateur</a></h2>
+<h1><a name="espace-administrateur">Espace Administrateur</a></h1>
 
 ### Fonctionalités : 
 * Consulter la liste des utilisateurs
@@ -168,22 +168,22 @@ const annee = '2019-2020'
 * Modifier un cours
 
 
-<h2><a name="espace-password">Mot de passe oublié</a></h2>
+<h1><a name="espace-password">Mot de passe oublié</a></h1>
 
 ### Fonctionalités : 
 * Envoyer le mot de passe par e-mail
 
 ![alt text](markdown-assets/Capture-forgot-password.JPG "Logo Title Text 1")
-<!-- ###### [HTML](https://github.com/BastosC/Bascent/blob/master/forgot-password.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js) -->
-###### L'espace 'Mot de passe oublié' permet de recuperer son mot de passe en rentrant son identifiant, le mot de passe sera envoyé à l'adresse e-mail liée à l'identifiant
+<!-- #### [HTML](https://github.com/BastosC/Bascent/blob/master/forgot-password.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js) -->
+#### L'espace 'Mot de passe oublié' permet de recuperer son mot de passe en rentrant son identifiant, le mot de passe sera envoyé à l'adresse e-mail liée à l'identifiant
 
 
 
-<h2><a name="espace-refresh">Retour à l'espace connexion</a></h2>
+<h1><a name="espace-refresh">Retour à l'espace connexion</a></h1>
 
 ![alt text](markdown-assets/Capture-refresh.JPG "Logo Title Text 1")
-###### [HTML](https://github.com/BastosC/Bascent/blob/master/lost_connection.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js)
-###### La page 'Retour à l'espace connexion' se déclenche si l'utilisateur tentee de se connecter sans passer par l'espace connexion, cette page renvoit l'utilisateur sur l'espace connection après 2,5 secondes . Cela assure la sécurité des fonctionalités reservées à un certain poste .
+#### [HTML](https://github.com/BastosC/Bascent/blob/master/lost_connection.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js)
+#### La page 'Retour à l'espace connexion' se déclenche si l'utilisateur tentee de se connecter sans passer par l'espace connexion, cette page renvoit l'utilisateur sur l'espace connection après 2,5 secondes . Cela assure la sécurité des fonctionalités reservées à un certain poste .
 
 
 
