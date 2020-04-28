@@ -27,9 +27,13 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 *  [Cloud Firestore](https://firebase.google.com/docs/firestore) - Base de données
 
 
-### [link](#section)
+### [Espace Connexion](#espace-connexion)
+### [Espace Élève](#espace-eleve)
+### [Espace Formateur](#espace-formateur)
+### [Espace Administrateur](#espace-administrateur)
+### [Mot de passe oublié](#espace-password)
+### [Retour à l'espace connexion](#espace-refresh)
 
-Espace connexion
 
 Espace élève
 
@@ -43,38 +47,21 @@ Retour à l'espace connexion
 
 
 
-<h3>
-<a name="espace_eleve">EDDDDDDDDDD</a>
-</h3>
+
+<h4><a name="espace-connexion">Espace Connexion</a></h4>
 
 
 
-### Espace Connection
+<h4><a name="espace-eleve">Espace Eleve</a></h4>
+<h4><a name="espace-formateur">Espace Formateur</a></h4>
+<h4><a name="espace-administrateur">Espace Administrateur</a></h4>
+<h4><a name="espace-password">Mot de passe oublié</a></h4>
+<h4><a name="espace-refresh">Retour à l'espace connexion</a></h4>
 
-### Espace Eleve
 
-#### Pages : 
--  Afficher élève
 
-### Espace Formateur
 
-#### Pages : 
-- Afficher formateur
-- Afficher cours du formateur
 
-### Espace Administrateur
-
-#### Pages : 
-- Afficher tableaux (  justifications , elèves, formateurs, admins, classes )
-
-- Afficher Justifications
-- Afficher / Ajouter Cours
-
-- Afficher utilisateur
-- Ajouter utilisateur
-
-- Afficher Classe / Ajouter Groupe
-- Ajouter Classe
 
 ## Auteurs
 
