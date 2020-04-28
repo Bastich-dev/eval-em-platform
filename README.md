@@ -28,13 +28,20 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 ## Prérequis :
 
+
 ###### Créer une base de données cloud firestore avec ces collections vides :
-###### * eleves
-###### * formateurs
-###### * administrateurs
-###### * cours
-###### * absences
-###### * justifications
+* ######  eleves
+* ###### formateurs
+* ###### administrateurs
+* ###### cours
+* ###### classes
+* ###### groupes
+* ###### absences
+* ###### justifications
+
+
+![alt text](markdown-assets/Capture-database.JPG "Logo Title Text 1")
+
 
 ###### Puis ajouter la firebaseConfig de votre base de données au projet ainsi que l'année actuelle dans [all_tools.js](https://github.com/BastosC/Bascent/blob/master/js/all_tools.js)
 
@@ -77,7 +84,35 @@ const annee = '2019-2020'
 <h3><a name="espace-eleve">Espace Eleve</a></h3>
 
 
+###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
+###### L'espace élève, disponible uniquement pour les élèves, permet de :
+* Savoir son nombre absences
+* Savoir son emploi du temps
+* Si il y a cours ( en direct )
+* Il peux justifier ses absences
+* Consulter les messages importants de la classe
+* Contacter un formateur en cas de retard occasionnel
+
+###### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
+
 <h3><a name="espace-formateur">Espace Formateur</a></h3>
+
+
+###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
+###### L'espace formateur, disponible uniquement pour les formateurs, permet de :
+* Démarrer les cours prévu pour aujourd'hui
+* Savoir son emploi du temps
+* Consulter ses cours à venir
+
+##### Quand on clique sur un cours : 
+
+###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur_cours.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur_cours.js)
+###### L'espace formateur, disponible uniquement pour les formateurs, permet de :
+* Démarrer les cours prévu pour aujourd'hui
+* Savoir son emploi du temps
+* Consulter ses cours à venir
+
+
 <h3><a name="espace-administrateur">Espace Administrateur</a></h3>
 <h3><a name="espace-password">Mot de passe oublié</a></h3>
 <h3><a name="espace-refresh">Retour à l'espace connexion</a></h3>
