@@ -94,12 +94,11 @@ const annee = '2019-2020'
 
 ### Pages : 
 
-Espace élève :
-###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
-###### L'espace élève, disponible uniquement pour les élèves, permet de :
+
+###### Espace élève : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_eleve.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/eleve.js)
 
 
-###### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
+### NB :  L'espace élève est consultable sur mobile, pour plus de facilité pour les élèves
 
 <h2><a name="espace-formateur">Espace Formateur</a></h2>
 
@@ -112,9 +111,8 @@ Espace élève :
 
 ### Pages : 
 
-Espace formateur :
-###### [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
-###### L'espace formateur, disponible uniquement pour les formateurs, permet de :
+
+###### Espace formateur : [HTML](https://github.com/BastosC/Bascent/blob/master/espace_formateur.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/formateur.js)
 * Démarrer les cours prévu pour aujourd'hui
 * Savoir son emploi du temps
 * Consulter ses cours à venir
