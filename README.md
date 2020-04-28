@@ -37,7 +37,8 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 ###### * justifications
 
 ###### Puis ajouter la firebaseConfig de votre base de données au projet ainsi que l'année actuelle dans [all_tools.js](https://github.com/BastosC/Bascent/blob/master/js/all_tools.js)
-`
+
+```javascript
 const firebaseConfig = {
     apiKey: "",
     authDomain: "",
@@ -50,7 +51,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 const annee = '2019-2020'
-`
+```
 
 ## Présentation :
 
@@ -68,8 +69,9 @@ const annee = '2019-2020'
 <h3><a name="espace-connexion">Espace Connexion :</a></h3>
 
 ![alt text](markdown-assets/Capture-espace-connexion.JPG "Logo Title Text 1")
-###### L'espace connexion permet de se connecter avec ses identifiants en sélectionnant le poste correspondant, l'utilisateur peux accéder à la page pour retrouver son mot de passe
 ###### [HTML](https://github.com/BastosC/Bascent/blob/master/index.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/login.js)
+###### L'espace connexion permet de se connecter avec ses identifiants en sélectionnant le poste correspondant, l'utilisateur peux accéder à la page pour retrouver son mot de passe
+
 
 
 <h3><a name="espace-eleve">Espace Eleve</a></h3>
