@@ -64,8 +64,8 @@ const annee = '2019-2020'
 
 #### [Espace Connexion](#espace-connexion)
 #### [Espace Élève](#espace-eleve)
-#### [Espace Formateur](#espace-formateur)
-#### [Espace Administrateur](#espace-administrateur)
+#### [EspaceFormateur](#espace-formateur)
+#### [EspaceAdministrateur](#espace-administrateur)
 #### [Mot de passe oublié](#espace-password)
 #### [Retour à l'espace connexion](#espace-refresh)
 
