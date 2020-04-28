@@ -21,14 +21,14 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 ## Présentation
 
-###### Template [SSB - Admin 2 ](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
-*Javascript [jQuery](https://jquery.com/) 
-*Calendrier [FullCalendar](https://fullcalendar.io/)
-*Base de données [Cloud Firestore](https://firebase.google.com/docs/firestore)
+* [SSB - Admin 2 ](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2) - Template
+*  [jQuery](https://jquery.com/) - Bibliothèque / Librairie
+*  [FullCalendar](https://fullcalendar.io/) - API pour le calendrier
+*  [Cloud Firestore](https://firebase.google.com/docs/firestore) - Base de données
 
 
+[link](#section)
 
-[ici](../README.md#Espace Connection)
 Espace connexion
 
 Espace élève
@@ -44,7 +44,7 @@ Retour à l'espace connexion
 
 
 
-
+<a name="section">EDDDDDDDDDD</a>
 
 
 ### Espace Connection
