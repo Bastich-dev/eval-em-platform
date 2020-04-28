@@ -407,6 +407,106 @@ $('#justifier-envoi').on('submit', function (e) {
 
 
 
+// On va chercher la div dans le HTML
+let calendarEl = document.getElementById('calendrier');
+
+
+// On instancie le calendrier
+let calendar = new FullCalendar.Calendar(calendarEl, {
+    // On charge le composant "dayGrid"
+    defaultView: 'timeGridWeek',
+    plugins: ['dayGrid', 'timeGrid'],
+    locale: 'fr',
+    minTime: "08:00:00",
+    maxTime: "19:00:00",
+    allDaySlot: false,
+    hiddenDays: [0],
+    header: {
+        right: 'prev,today,next ',
+        center: 'dayGridMonth,timeGridWeek,dayGridDay',
+        left: 'title'
+    },
+    buttonText: {
+        today: "Aujourd'hui",
+        month: 'Mois',
+        week: 'Semaine',
+        day: 'Jour',
+        list: 'Liste'
+    },
+    events: [],
+    navLinks: true,
+    eventClick: function (event) {
+        $('.case').attr('data-toggle', 'modal');
+        $('.case').attr('data-target', '#basicExampleModal');
+        console.log(event.event.id)
+        db.collection('cours').doc(event.event.id).get().then((cours) => {
+
+            db.collection('formateurs').doc(cours.data().formateur).get().then((formateur) => {
+                $('#data-cours').empty()
+                $('#data-cours').append(`
+                                <div class='d-none id_abs' id='${cours.id}'></div>
+                          Date : ${cours.data().date} 
+                          <br>
+                    Horaires : ${cours.data().hr_debut} à ${cours.data().hr_fin} 
+                          <br>
+                          Formateur : ${formateur.data().prenom} ${formateur.data().nom}
+                          <br>
+                          Module : ${cours.data().module}
+                          <br>
+                          Salle : ${cours.data().salle}
+                          <br>
+                          Passé : ${cours.data().actif == false ? 'Prévu' : 'Passé'}
+                                `)
+
+            })
+        })
+
+
+    }
+});
+
+
+db.collection('eleves').doc(localStorage.getItem('ID')).get().then((eleve) => {
+
+
+    db.collection('cours').where('classe', '==', eleve.data().classe).get().then((cours) => {
+
+        cours.forEach((cour) => {
+
+            let olll = cour.data().date + ' ' + cour.data().hr_debut + ':00'
+            console.log(olll)
+
+            db.collection('formateurs').doc(cour.data().formateur).get().then((formateur) => {
+
+                calendar.addEvent({
+                    title: cour.data().module + '\n' + formateur.data().prenom + ' ' + formateur.data().nom,
+                    start: cour.data().date + ' ' + cour.data().hr_debut + ':00',
+                    end: cour.data().date + ' ' + cour.data().hr_fin + ':00',
+                    allDay: false,
+                    textColor: 'white',
+                    className: 'case',
+                    id: cour.id
+
+                })
+            })
+
+
+
+
+        })
+
+    })
+
+
+}).then(() => {
+    calendar.render();
+})
+
+
+
+
+
+
 function getDateFromHours(time) {
     time = time.split(':');
     let now = new Date();
