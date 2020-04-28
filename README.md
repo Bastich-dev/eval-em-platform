@@ -1,8 +1,8 @@
-## Démo : [Lien](https://portfolio-bastien-chantrel.000webhostapp.com/index.html)
-
-
 
 # ClassroomRegister - L'école multimédia
+
+## Démo : [Lien](https://portfolio-bastien-chantrel.000webhostapp.com/index.html)
+
 
 ## Consignes
 
@@ -21,10 +21,10 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 
 ## Présentation
 
-Template [SSB - Admin 2 ](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
-Javascript [jQuery](https://jquery.com/) 
-Calendrier [FullCalendar](https://fullcalendar.io/)
-Base de données [Cloud Firestore](https://firebase.google.com/docs/firestore)
+###### Template [SSB - Admin 2 ](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
+*Javascript [jQuery](https://jquery.com/) 
+*Calendrier [FullCalendar](https://fullcalendar.io/)
+*Base de données [Cloud Firestore](https://firebase.google.com/docs/firestore)
 
 
 
