@@ -196,12 +196,12 @@
                                                     <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                         <b>Nom</b>
                                                         <input type="text" class="mt-2 form-control form-control-user"
-                                                            id="input-nom" name='nom'>
+                                                            id="input-nom" name='nom' required>
                                                     </div>
                                                     <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                         <b>Prenom</b>
                                                         <input type="text" class="mt-2 form-control form-control-user"
-                                                            id="input-prenom" name='prenom'>
+                                                            id="input-prenom" name='prenom' required>
                                                     </div>
                                                     <div class="form-group m-2 mt-3  ml-5 " style="width: 80%;">
                                                         <b>Classe</b>
@@ -254,7 +254,7 @@
                                                 <div class="form-group m-2 mt-3  ml-5 " style="width: 39%;">
                                                     <b class="ml-2">E-mail</b>
                                                     <input type="text" class="mt-2 ml-2 form-control form-control-user"
-                                                        id="input-mail" name='mail'>
+                                                        id="input-mail" name='tomail' required>
                                                 </div>
 
                                             </div>
@@ -283,6 +283,9 @@
 
                                         <div class="row">
                                             <div class="col-12 text-center">
+
+
+
                                                 <input type="submit" class="btn btn-primary m-5"
                                                     style="font-size: calc( 1.5vw + 1.5vh );" id='input-ajouter'
                                                     value='Ajouter utilisateur'>
@@ -295,14 +298,16 @@
                                         </div>
 
                                     </div>
-
+                                    <input class='' type="text" name="identifiant" id='iden' value=''
+                                        style="visibility: hidden;">
+                                    <input class='' type="text" name="motdepasse" id='pass' value=''
+                                        style="visibility: hidden;">
                                 </form>
                             </div>
                         </div>
                     </div>
 
                 </div>
-
 
             </div>
             <!-- End of Main Content -->
@@ -329,6 +334,7 @@
     </a>
 
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 
     <audio id='sound-success'>
         <source src="Sounds/success.mp3" />

@@ -29,16 +29,7 @@ Les questions auxquelles notre application doit répondre au minimum sont les su
 ## Prérequis :
 
 
-###### Créer une base de données cloud firestore avec ces collections vides :
-* ######  eleves
-* ###### formateurs
-* ###### administrateurs
-* ###### cours
-* ###### classes
-* ###### groupes
-* ###### absences
-* ###### justifications
-
+###### Créer une base de données cloud firestore :
 
 ![alt text](markdown-assets/Capture-database.JPG "Logo Title Text 1")
 
@@ -184,7 +175,7 @@ const annee = '2019-2020'
 
 ![alt text](markdown-assets/Capture-refresh.JPG "Logo Title Text 1")
 <!-- #### [HTML](https://github.com/BastosC/Bascent/blob/master/lost_connection.html) / [Javascript](https://github.com/BastosC/Bascent/blob/master/js/forgot_password.js) -->
-#### La page 'Retour à l'espace connexion' se déclenche si l'utilisateur tentee de se connecter sans passer par l'espace connexion, cette page renvoit l'utilisateur sur l'espace connection après 2,5 secondes . Cela assure la sécurité des fonctionalités reservées à un certain poste .
+#### La page 'Retour à l'espace connexion' se déclenche si l'utilisateur tente de se connecter sans passer par l'espace connexion, cette page renvoie l'utilisateur sur l'espace connection après 2,5 secondes . Cela assure la sécurité des fonctionalitées réservées à un certain poste .
 
 
 

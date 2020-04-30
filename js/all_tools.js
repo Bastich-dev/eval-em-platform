@@ -11,6 +11,8 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 const annee = '2019-2020'
 
+const USER_ID = 'user_tj5B4Sy5rP8kEIPzlRfU2'
+const TEMPLATE_ID = 'template_LRgZvfAq'
 
 // SECURITE VERIF ID
 

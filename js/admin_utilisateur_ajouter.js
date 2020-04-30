@@ -12,75 +12,93 @@ $('#formulaire').on('submit', function (evt) {
     const mdp = generatePassword()
 
 
-    // [Start] Si on ajoute un élève ...
-    if ($('#input-poste').val() == 'eleve') {
-        db.collection('eleves').add({
-            nom: infos[0].value,
-            prenom: infos[1].value,
-            classe: infos[2].value,
-            mail: infos[3].value,
-            identifiant: identifiant,
-            password: mdp,
-            poste: 'Élève',
-        }).then(user => {
-            console.log('élève ajouté , ID: ', user.id);
+    document.getElementById('iden').value = identifiant
+    document.getElementById('pass').value = mdp
 
-            // Ajoute id eleve dans le tableau eleve de la  classe
-            db.collection('classes').doc(infos[2].value).update({
-                eleves: firebase.firestore.FieldValue.arrayUnion(user.id)
-            });
-            localStorage.setItem('Notif', "L'élève a bien été ajouté")
-            localStorage.setItem("editUser", user.id);
-            localStorage.setItem("editUserPoste", 'eleves');
-            self.location.href = 'espace_admin_utilisateur_modifier.html'
-        }).catch(() => {
-            alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement")
-        })
-    }
-    // [End] Si on ajoute un élève ...
+    emailjs
+        .sendForm('gmail', TEMPLATE_ID, document.getElementById('formulaire'), USER_ID)
+        .then(
+            () => {
 
 
-    // [Start] Si on ajoute un formateur ...
-    else if ($('#input-poste').val() == 'formateur') {
-        db.collection('formateurs').add({
-            nom: infos[0].value,
-            prenom: infos[1].value,
-            mail: infos[2].value,
-            identifiant: identifiant,
-            password: mdp,
-            poste: 'Formateur',
-        }).then(ref => {
-            console.log('formateur ajouté , ID: ', ref.id);
-            localStorage.setItem('Notif', "Le formateur a bien été ajouté")
-            localStorage.setItem("editUser", ref.id);
-            localStorage.setItem("editUserPoste", 'formateurs');
-            self.location.href = 'espace_admin_utilisateur_modifier.html'
-        }).catch(() => { alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement") })
-    }
-    // [End] Si on ajoute un formateur ...
 
-    // [Start] Si on ajoute un administrateur ...
-    else if ($('#input-poste').val() == 'admin') {
-        let date = '' + new Date()
-        date = date.split('GMT')
-        console.log(date)
-        db.collection('admins').add({
-            nom: infos[0].value,
-            prenom: infos[1].value,
-            mail: infos[2].value,
-            identifiant: identifiant,
-            password: mdp,
-            poste: 'Administrateur',
-            date: date[0]
-        }).then(ref => {
-            console.log('administrateur ajouté , ID: ', ref.id);
-            localStorage.setItem('Notif', "L'administrateur a bien été ajouté")
-            localStorage.setItem("editUser", ref.id);
-            localStorage.setItem("editUserPoste", 'admins');
-            self.location.href = 'espace_admin_utilisateur_modifier.html'
-        }).catch(() => { alert("Une erreur est survenue, réessayez ultérieurement") })
-    }
-    // [End] Si on ajoute un administrateur ...
+
+                // [Start] Si on ajoute un élève ...
+                if ($('#input-poste').val() == 'eleve') {
+                    db.collection('eleves').add({
+                        nom: infos[0].value,
+                        prenom: infos[1].value,
+                        classe: infos[2].value,
+                        mail: infos[3].value,
+                        identifiant: identifiant,
+                        password: mdp,
+                        poste: 'Élève',
+                    }).then(user => {
+                        console.log('élève ajouté , ID: ', user.id);
+                        // Ajoute id eleve dans le tableau eleve de la  classe
+                        db.collection('classes').doc(infos[2].value).update({
+                            eleves: firebase.firestore.FieldValue.arrayUnion(user.id)
+                        });
+                        localStorage.setItem('Notif', "L'élève a bien été ajouté")
+                        localStorage.setItem("editUser", user.id);
+                        localStorage.setItem("editUserPoste", 'eleves');
+                        self.location.href = 'espace_admin_utilisateur_modifier.html'
+                    }).catch(() => {
+                        alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement")
+                    })
+                }
+                // [End] Si on ajoute un élève ...
+
+
+                // [Start] Si on ajoute un formateur ...
+                else if ($('#input-poste').val() == 'formateur') {
+                    db.collection('formateurs').add({
+                        nom: infos[0].value,
+                        prenom: infos[1].value,
+                        mail: infos[2].value,
+                        identifiant: identifiant,
+                        password: mdp,
+                        poste: 'Formateur',
+                    }).then(ref => {
+                        console.log('formateur ajouté , ID: ', ref.id);
+                        localStorage.setItem('Notif', "Le formateur a bien été ajouté")
+                        localStorage.setItem("editUser", ref.id);
+                        localStorage.setItem("editUserPoste", 'formateurs');
+                        self.location.href = 'espace_admin_utilisateur_modifier.html'
+                    }).catch(() => { alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement") })
+                }
+                // [End] Si on ajoute un formateur ...
+
+                // [Start] Si on ajoute un administrateur ...
+                else if ($('#input-poste').val() == 'admin') {
+                    let date = '' + new Date()
+                    date = date.split('GMT')
+                    console.log(date)
+                    db.collection('admins').add({
+                        nom: infos[0].value,
+                        prenom: infos[1].value,
+                        mail: infos[2].value,
+                        identifiant: identifiant,
+                        password: mdp,
+                        poste: 'Administrateur',
+                        date: date[0]
+                    }).then(ref => {
+                        console.log('administrateur ajouté , ID: ', ref.id);
+                        localStorage.setItem('Notif', "L'administrateur a bien été ajouté")
+                        localStorage.setItem("editUser", ref.id);
+                        localStorage.setItem("editUserPoste", 'admins');
+                        self.location.href = 'espace_admin_utilisateur_modifier.html'
+                    }).catch(() => { alert("Une erreur est survenue, réessayez ultérieurement") })
+                }
+                // [End] Si on ajoute un administrateur ...
+
+
+
+            },
+            error => {
+                console.log(error.text)
+            }
+        )
 
 
 })
@@ -160,3 +178,8 @@ function generatePassword() {
 
 
 
+
+function SendEMAIL(iden, pass) {
+
+
+}
