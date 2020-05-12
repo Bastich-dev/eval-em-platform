@@ -16,23 +16,16 @@ const TEMPLATE_ID = 'email_tepmplate_oubli'
 
 $('#submit').on('submit', function (e) {
     e.preventDefault()
-
     const postes = ['eleves', 'formateurs', 'admins']
-
     for (let i = 0; i < postes.length; i++) {
-        console.log(postes[i])
-
-
         db.collection(postes[i]).where('identifiant', '==', document.getElementById('exampleInputEmail').value).get()
             .then(user => {
-
                 user.forEach(element => {
                     if (element.empty == true) { console.log('pas trouvé') }
                     else {
                         document.getElementById('tomail').value = element.data().mail
                         document.getElementById('iden').value = element.data().identifiant
                         document.getElementById('pass').value = element.data().password
-
                         emailjs
                             .sendForm('gmail', TEMPLATE_ID, e.target, USER_ID)
                             .then(
@@ -48,18 +41,8 @@ $('#submit').on('submit', function (e) {
                                         }
                                     });
                                 })
-
                     }
                 })
-
-
-
             });
-
-
-
     }
-
-
-
 })

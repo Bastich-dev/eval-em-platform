@@ -1,17 +1,11 @@
 
 
-// FORMULAIRE AJOUTER UTILISATEUR
+// ADD USER ON SUBMIT
 $('#formulaire').on('submit', function (evt) {
-
-
-
-    // [Start] Si le formulaire est validé ...
     let infos = $(this).serializeArray()
     evt.preventDefault();
     const identifiant = ((infos[0].value.slice(0, 2)).toUpperCase() + (infos[1].value).toLowerCase()) + getRandomInt(9) + getRandomInt(9) + getRandomInt(9) + getRandomInt(9)
     const mdp = generatePassword()
-
-
     document.getElementById('iden').value = identifiant
     document.getElementById('pass').value = mdp
 
@@ -20,10 +14,6 @@ $('#formulaire').on('submit', function (evt) {
         .then(
             () => {
 
-
-
-
-                // [Start] Si on ajoute un élève ...
                 if ($('#input-poste').val() == 'eleve') {
                     db.collection('eleves').add({
                         nom: infos[0].value,
@@ -35,7 +25,6 @@ $('#formulaire').on('submit', function (evt) {
                         poste: 'Élève',
                     }).then(user => {
                         console.log('élève ajouté , ID: ', user.id);
-                        // Ajoute id eleve dans le tableau eleve de la  classe
                         db.collection('classes').doc(infos[2].value).update({
                             eleves: firebase.firestore.FieldValue.arrayUnion(user.id)
                         });
@@ -47,10 +36,7 @@ $('#formulaire').on('submit', function (evt) {
                         alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement")
                     })
                 }
-                // [End] Si on ajoute un élève ...
 
-
-                // [Start] Si on ajoute un formateur ...
                 else if ($('#input-poste').val() == 'formateur') {
                     db.collection('formateurs').add({
                         nom: infos[0].value,
@@ -60,16 +46,13 @@ $('#formulaire').on('submit', function (evt) {
                         password: mdp,
                         poste: 'Formateur',
                     }).then(ref => {
-                        console.log('formateur ajouté , ID: ', ref.id);
                         localStorage.setItem('Notif', "Le formateur a bien été ajouté")
                         localStorage.setItem("editUser", ref.id);
                         localStorage.setItem("editUserPoste", 'formateurs');
                         self.location.href = 'espace_admin_utilisateur_modifier.html'
                     }).catch(() => { alert("Une erreur est survenue dans l'ajout, réessayez ultérieurement") })
                 }
-                // [End] Si on ajoute un formateur ...
 
-                // [Start] Si on ajoute un administrateur ...
                 else if ($('#input-poste').val() == 'admin') {
                     let date = '' + new Date()
                     date = date.split('GMT')
@@ -83,30 +66,25 @@ $('#formulaire').on('submit', function (evt) {
                         poste: 'Administrateur',
                         date: date[0]
                     }).then(ref => {
-                        console.log('administrateur ajouté , ID: ', ref.id);
                         localStorage.setItem('Notif', "L'administrateur a bien été ajouté")
                         localStorage.setItem("editUser", ref.id);
                         localStorage.setItem("editUserPoste", 'admins');
                         self.location.href = 'espace_admin_utilisateur_modifier.html'
                     }).catch(() => { alert("Une erreur est survenue, réessayez ultérieurement") })
                 }
-                // [End] Si on ajoute un administrateur ...
-
-
-
             },
             error => {
+                console.log('ERROR EMAIL')
                 console.log(error.text)
             }
         )
-
-
 })
 
 
+
+// SET CLASS OPTIONS 
 db.collection('classes').get()
     .then(classes => {
-        // [Start] Pour chaque formateur ...
         classes.forEach(classe => {
             $('#input-classe').append(`
             <option value="${classe.id}">${classe.data().nom}</option>
@@ -116,7 +94,7 @@ db.collection('classes').get()
 
 
 
-// CLICK VIDER CHAMPS
+// CLEAR VALUES ON CLICK
 $('#vider_champs').on('click', function () {
     document.getElementById('input-nom').value = ''
     document.getElementById('input-prenom').value = ''
@@ -133,7 +111,7 @@ $('#vider_champs').on('click', function () {
 // SELECT POSTE AUTO
 $("#input-poste").prop("selectedIndex", localStorage.getItem('sidebar-ajout-user'));
 
-// ENABLE INPUT CLASSE POUR ELEVE
+// ENABLE INPUT CLASSE FOR STUDENT
 document.getElementById('input-poste').addEventListener('change', function () {
     enableClasse()
 })
@@ -176,10 +154,3 @@ function generatePassword() {
     return retVal;
 }
 
-
-
-
-function SendEMAIL(iden, pass) {
-
-
-}

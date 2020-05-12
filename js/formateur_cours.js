@@ -29,21 +29,19 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                             `)
 
 
+                    console.log(classe.id + ' hey')
+                    db.collection('eleves').where('classe', '==', doc.data().classe).get().then(elevess => {
+
+                        elevess.forEach(eleve_infos => {
 
 
-                    classe.data().eleves.forEach(eleve => {
 
-
-                        db.collection('eleves').doc(eleve).get()
-                            .then(eleve_infos => {
-
-
-                                $('#EleveFormateur').DataTable().row.add([
-                                    `   <td>  <b class='ideleve' id='${eleve_infos.id}'> ${eleve_infos.data().nom} ${eleve_infos.data().prenom} </b>  </td>`,
-                                    ` <td> ${eleve_infos.data().mail}  </td>`,
-                                    ` <td>  ${classe.data().nom}</td>`,
-                                    ` ${classe.data().groupe}`,
-                                    `  <div class="container_abs container">
+                            $('#EleveFormateur').DataTable().row.add([
+                                `   <td>  <b class='ideleve' id='${eleve_infos.id}'> ${eleve_infos.data().nom} ${eleve_infos.data().prenom} </b>  </td>`,
+                                ` <td> ${eleve_infos.data().mail}  </td>`,
+                                ` <td>  ${classe.data().nom}</td>`,
+                                ` ${classe.data().groupe}`,
+                                `  <div class="container_abs container">
                                     <div class="button-wrap d-flex">
                                       <input class="hidden radio-label radio present" id="present-${eleve_infos.id}" type="radio" name="${eleve_infos.id}" checked="checked"/>
                                       <label class="button-label" for="present-${eleve_infos.id}">
@@ -72,35 +70,35 @@ db.collection('cours').doc(localStorage.getItem("ID_cours"))
                                     </div>
                                   </div>  `,
 
-                                ]).draw();
+                            ]).draw();
 
 
-                                $('.retard').on('click', function () {
-                                    $(this).parent().find('select').prop("disabled", false);
-                                })
-                                $('.radio').on('click', function () {
-                                    $(this).parent().find('select').prop("disabled", true);
-                                })
+                            $('.retard').on('click', function () {
+                                $(this).parent().find('select').prop("disabled", false);
+                            })
+                            $('.radio').on('click', function () {
+                                $(this).parent().find('select').prop("disabled", true);
+                            })
 
-                                $('#trigger').click(function () {
-                                    $('#overlay').fadeIn(300);
-                                    console.log(eleve_infos.data().nom)
-                                });
+                            $('#trigger').click(function () {
+                                $('#overlay').fadeIn(300);
+                                console.log(eleve_infos.data().nom)
+                            });
 
-                                $('.closebtn').click(function () {
-                                    $('#overlay').fadeOut(300);
-                                });
-                                $('.button-wrap').on('change', function () {
-
-
-                                })
-
+                            $('.closebtn').click(function () {
+                                $('#overlay').fadeOut(300);
+                            });
+                            $('.button-wrap').on('change', function () {
 
 
                             })
+
+
+
+
+                        })
+
                     })
-
-
 
 
 

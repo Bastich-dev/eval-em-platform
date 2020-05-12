@@ -1,9 +1,7 @@
 
 
-// FORMULAIRE AJOUTER COURS
+// ADD COURSE
 $('#formulaire_cours').on('submit', function (evt) {
-
-    // [Start] Si le formulaire est validé ...
 
     let infos = $(this).serializeArray()
     evt.preventDefault();
@@ -17,83 +15,43 @@ $('#formulaire_cours').on('submit', function (evt) {
         hr_fin: infos[6].value + ':' + infos[7].value,
         salle: infos[8].value,
         actif: true,
-    }).then(ref => {
-        console.log('cours ajouté , ID: ', ref.id);
-
+    }).then(() => {
         document.getElementById('sound-success').play()
         new Notyf({ duration: 4000, position: { x: 'center', y: 'bottom', } }).success('Cours à été ajouté avec succès');
-
-    }).catch(ref => {
-        document.getElementById('sound-error').play()
-        new Notyf({ duration: 4000, position: { x: 'center', y: 'bottom', } }).error('Une erreur est survenue, réessayez ultérieurement');
     })
-
 })
 
 
-// AFFICHAGE FORMATEUR
-
-// [Start] Récupère tous les formateurs ...  
+// SET FORMERS OPTIONS
 db.collection('formateurs').get()
     .then(formateurs => {
         formateurs.forEach(formateur => {
             $('#select-formateur').append(`   <option value="${formateur.id}">${formateur.data().nom}  ${formateur.data().prenom} </option  `)
         });
     })
-    .then(() => {
-        console.log('Affichage formateurs réussi');
-    })
-    .catch(err => {
-        console.log('Error getting informations', err);
-    });
-// [End] Récupère tous les formateurs ...  
 
 
 
 
-// AFFICHAGE CLASSES
 
-// [Start] Récupère toutes les classes ...  
+// SET CLASS OPTIONS
 db.collection('classes').get()
     .then(classes => {
         classes.forEach(classe => {
             $('#select-classe').append(`   <option value="${classe.id}">${classe.data().nom}   </option  `)
         });
     })
-    .then(() => {
-        console.log('Affichage classes réussi');
-    })
-    .catch(err => {
-        console.log('Error getting informations', err);
-    });
-// [End] Récupère tous les classes ...  
 
 
-// AFFICHAGE COURS
-
-// [Start] Quand 'cours' est mofiifé... 
+// SET COURSE DATATABLES
 db.collection('cours').onSnapshot((cours_actifs) => {
     $('#CoursTable').DataTable().clear()
-
-
-    // [Start] Récupère tous les cours actifs ...  
-    // [Start] Pour chaque cours actif ...
     cours_actifs.forEach(cours => {
-
         if (cours.data().actif == true) {
-
-
-
-
             db.collection('classes').doc(cours.data().classe).get()
                 .then(classe => {
-
-                    // [Start] Récupère  les infos du formateur ...  
                     db.collection('formateurs').doc(cours.data().formateur).get()
                         .then(formateur => {
-
-
-
                             $('#CoursTable').DataTable().row.add([
                                 `<td>  ${cours.data().date}</td>`,
                                 `<td> <a href="espace_admin_classe_modifier.html" class='goToClasse' id ='${classe.id}'>  ${classe.data().nom}    </a> </td>`,
@@ -105,47 +63,40 @@ db.collection('cours').onSnapshot((cours_actifs) => {
                                 `<td> ${(cours.data().actif == true ? 'Prévu' : 'Passé')}  </td>`,
                                 `<td>  <a href='espace_admin_cours_modifier.html'>  <i id="${cours.id}" class="fas fa-edit fa-2x btn btn-warning delete_cours"></i> </ </td>`,
                             ]).draw();
-
-                            $('.delete_cours').unbind()
-                            $('.delete_cours').bind('click', function () {
-
-
-                                localStorage.setItem('ID_cours_modif', $(this).attr('id'))
-
-                            })
-
-                            $('.goToUser').unbind()
-                            $('.goToUser').bind('click', function () {
-                                const goToPoste = $(this).attr('class').split(' ')
-                                localStorage.setItem("editUser", $(this).attr('id'));
-                                localStorage.setItem("editUserPoste", goToPoste[1]);
-                            })
-                            $('.goToClasse').unbind()
-                            $('.goToClasse').bind('click', function () {
-
-                                localStorage.setItem("editClasse", $(this).attr('id'));
-
-                            })
                         })
-                    // [End] Récupère  les infos du formateur ...  
                 })
-
         }
-
-        // [End] Récupère les infos de la classe ...  
     });
-    // [End] Pour chaque cours actif ...
-
-
-    // [End] Récupère tous les cours actifs ...  
-
 });
-// [End] Quand 'cours' est mofiifé...
 
 
 
+// DELETE COURSE ON CLICK
+$('#CoursTable').on('click', '.delete_cours', function () {
+    localStorage.setItem('ID_cours_modif', $(this).attr('id'))
+})
+
+// GOTOCLASS ON CLICK
+$('#CoursTable').on('click', '.goToClasse', function () {
+    localStorage.setItem("editClasse", $(this).attr('id'));
+})
+
+// GOTOUSER ON CLICK
+$('#CoursTable').on('click', '.goToUser', function () {
+    const goToPoste = $(this).attr('class').split(' ')
+    localStorage.setItem("editUser", $(this).attr('id'));
+    localStorage.setItem("editUserPoste", goToPoste[1]);
+})
+
+
+
+// CLEAR VALUES ON CLICK
 $('#viderchamps').on('click', function () {
-
-    localStorage.setItem('Notif', 'Les champs ont été vidés')
-    self.location.href = 'espace_admin_cours.html'
+    $('input[type="text"]').val('')
+    $('input[type="date"]').val('')
+    $('select').val('')
+    $('select[name="hr2-debut"]').val('00')
+    $('select[name="hr2-fin"]').val('00')
+    document.getElementById('sound-success').play()
+    new Notyf({ duration: 4000, position: { x: 'center', y: 'bottom', } }).success('Les champs ont été vidés')
 })

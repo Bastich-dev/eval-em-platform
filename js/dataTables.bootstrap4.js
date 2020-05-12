@@ -185,6 +185,9 @@
 
 
 
+
+///// OPTIONS DATATABLES
+
 $('#EleveTable').dataTable({
 	"lengthMenu": [5, 10, 15, 30, 50],
 	"language": {

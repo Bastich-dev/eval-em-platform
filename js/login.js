@@ -11,7 +11,6 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
 localStorage.setItem('Notif', null)
-
 localStorage.setItem('ID', null)
 localStorage.setItem('ID_poste', null)
 
