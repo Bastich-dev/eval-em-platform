@@ -1,8 +1,6 @@
 
 # ClassroomRegister - L'école multimédia
 
-## Démo : [Lien](https://portfolio-bastien-chantrel.000webhostapp.com/index.html)
-
 
 ## Consignes
 
